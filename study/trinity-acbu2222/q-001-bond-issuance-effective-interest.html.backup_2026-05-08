@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Q-001 — Bond Issuance · Effective Interest Method</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --ink-soft: #4a4a5e;
+    --paper: #fafafa;
+    --paper-warm: #f3f1ec;
+    --accent: #6d5dfc;
+    --accent-soft: #8d80ff;
+    --accent-pale: #e8e4ff;
+    --formula-bg: #fff8e7;
+    --formula-border: #d4a93a;
+    --example-bg: #e8f5e9;
+    --example-border: #4caf50;
+    --warn-bg: #fff0f0;
+    --warn-border: #d96565;
+    --question-bg: #f0f4ff;
+    --question-border: #5a6acf;
+    --line: #e0dfd9;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 760px; margin: 0 auto; padding: 36px 24px 60px; }
+
+  header { border-bottom: 3px solid var(--accent); padding-bottom: 18px; margin-bottom: 24px; }
+  .topic-tag {
+    display: inline-block; background: var(--accent); color: white;
+    padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 10px;
+  }
+  h1 { font-size: 28px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 4px; }
+  .subtitle { font-size: 14px; color: var(--ink-soft); }
+
+  section { margin-bottom: 28px; }
+  h2 {
+    font-size: 16px; font-weight: 600; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line);
+  }
+  p { margin-bottom: 10px; font-size: 15px; }
+
+  .question {
+    background: var(--question-bg);
+    border-left: 4px solid var(--question-border);
+    padding: 18px 20px;
+    border-radius: 6px;
+  }
+  .question .label {
+    font-size: 11px; font-weight: 700; color: var(--question-border);
+    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px;
+  }
+  .question .given {
+    font-family: var(--mono); font-size: 13px; line-height: 1.7;
+    background: white; padding: 10px 12px; border-radius: 4px; margin-bottom: 12px;
+    white-space: pre-wrap;
+  }
+  .question ol { padding-left: 22px; font-size: 14px; line-height: 1.7; }
+
+  .formula {
+    background: var(--formula-bg); border: 1px solid var(--formula-border);
+    border-radius: 6px; padding: 12px 16px; margin: 10px 0;
+    font-family: var(--mono); font-size: 14px;
+  }
+  .formula .name {
+    font-family: var(--sans); font-size: 11px; font-weight: 700;
+    color: var(--formula-border); text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 4px;
+  }
+
+  .part {
+    background: white; border: 1px solid var(--line); border-left: 4px solid var(--accent);
+    border-radius: 6px; padding: 18px 20px; margin-bottom: 16px;
+  }
+  .part .h {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .part .desc { font-size: 14px; color: var(--ink-soft); margin-bottom: 12px; }
+
+  .journal {
+    font-family: var(--mono); font-size: 13px; line-height: 1.7;
+    background: var(--paper-warm); padding: 12px 14px; border-radius: 4px;
+    margin: 8px 0;
+  }
+  .journal .acc { display: inline-block; min-width: 240px; }
+  .journal .dr  { color: #d96565; font-weight: 600; }
+  .journal .cr  { color: #4caf50; font-weight: 600; padding-left: 20px; }
+
+  table.amort {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    font-family: var(--mono); margin: 10px 0;
+  }
+  table.amort th {
+    background: var(--accent); color: white; padding: 8px 10px;
+    text-align: right; font-weight: 600; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  table.amort th:first-child { text-align: center; }
+  table.amort td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: right; }
+  table.amort td:first-child { text-align: center; font-weight: 600; color: var(--accent); }
+  table.amort tr:last-child td { border-bottom: 2px solid var(--accent); font-weight: 600; }
+  table.amort tr.issue td { color: var(--ink-soft); font-style: italic; }
+
+  .check {
+    background: var(--example-bg); border-left: 4px solid var(--example-border);
+    padding: 10px 14px; border-radius: 4px; font-size: 13px;
+    font-family: var(--mono); margin: 8px 0;
+  }
+  .check .label {
+    font-family: var(--sans); font-size: 11px; font-weight: 700;
+    color: var(--example-border); text-transform: uppercase;
+    letter-spacing: 0.12em; margin-bottom: 4px;
+  }
+
+  .mistakes {
+    background: var(--warn-bg); border-left: 4px solid var(--warn-border);
+    padding: 14px 16px; border-radius: 6px; margin: 12px 0;
+  }
+  .mistakes .label {
+    font-size: 11px; font-weight: 700; color: var(--warn-border);
+    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px;
+  }
+  .mistakes ul { list-style: none; padding-left: 0; }
+  .mistakes li {
+    padding: 4px 0 4px 18px; position: relative; font-size: 14px; line-height: 1.55;
+  }
+  .mistakes li::before { content: "⚠"; position: absolute; left: 0; color: var(--warn-border); }
+  .mistakes li b { color: var(--warn-border); }
+
+  .takeaway {
+    background: var(--accent-pale); border-radius: 6px;
+    padding: 14px 18px; margin-top: 16px;
+  }
+  .takeaway .label {
+    font-size: 11px; font-weight: 700; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px;
+  }
+  .takeaway ul { padding-left: 20px; font-size: 14px; line-height: 1.7; }
+  .takeaway li { margin-bottom: 4px; }
+
+  footer {
+    margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line);
+    text-align: center; font-size: 13px; color: var(--ink-soft);
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 24px 16px 40px; }
+    h1 { font-size: 22px; }
+    .journal { font-size: 12px; }
+    table.amort { font-size: 11px; }
+    table.amort th, table.amort td { padding: 6px 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <span class="topic-tag">ACBU 2222 · Q-001 · Ch 10 FRQ ★★★★★</span>
+  <h1>Bond Issuance — Effective Interest Method</h1>
+  <div class="subtitle">Newton Corp · Premium amortization · 5 parts · 2026-05-08</div>
+</header>
+
+<section>
+  <h2>Question</h2>
+  <div class="question">
+    <div class="label">📝 Given</div>
+    <div class="given">Newton Corp issues 4-year, $100,000 face value bonds
+on January 1, 2026.
+Stated rate = 6% (annual)
+Interest paid annually on December 31
+Market rate at issuance = 5%
+Issue price = $103,545.95</div>
+    <div class="label">🎯 Required (5 parts)</div>
+    <ol>
+      <li>(a) Journal entry on January 1, 2026 (issue date).</li>
+      <li>(b) Bond amortization schedule (4 years, effective interest method).</li>
+      <li>(c) Journal entry on December 31, 2026 (year 1 interest payment + premium amortization).</li>
+      <li>(d) Carrying value of bonds on December 31, 2027 (end of year 2).</li>
+      <li>(e) Total interest expense recognized over the 4-year life of the bond.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>Setup — Key Formulas &amp; Numbers</h2>
+
+  <div class="formula">
+    <div class="name">① Cash Interest (constant every year)</div>
+    <code>Cash Interest = Face × Stated Rate = $100,000 × 6% = <b>$6,000</b></code>
+  </div>
+
+  <div class="formula">
+    <div class="name">② Interest Expense (effective interest method)</div>
+    <code>Interest Expense = Beginning Carrying Value × Market Rate (5%)</code>
+  </div>
+
+  <div class="formula">
+    <div class="name">③ Premium Amortization</div>
+    <code>Premium Amort = Cash Interest − Interest Expense</code>
+  </div>
+
+  <div class="formula">
+    <div class="name">④ Ending Carrying Value</div>
+    <code>Ending CV = Beginning CV − Premium Amortization</code>
+  </div>
+
+  <p style="margin-top:10px"><b>Total premium at issue</b> = $103,545.95 − $100,000 = <b>$3,545.95</b>. This will fully amortize to $0 over 4 years (CV returns to face value at maturity).</p>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">(a) Issue Date — January 1, 2026</div>
+    <div class="desc">Receive cash, recognize face value of bonds and premium separately.</div>
+    <div class="journal">
+<span class="acc dr">Cash</span><span class="dr">103,545.95</span><br>
+<span class="acc">  Bonds Payable</span><span class="cr">100,000.00</span><br>
+<span class="acc">  Premium on Bonds Payable</span><span class="cr">3,545.95</span>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><b>Why split?</b> Bonds Payable always records at <b>face value</b>. The extra cash received above face becomes <b>Premium on Bonds Payable</b> (a liability adjunct account).</p>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">(b) Amortization Schedule (4 years)</div>
+    <div class="desc">Each year: Interest Expense = prior CV × 5%. Premium amortization = $6,000 − Interest Expense. CV decreases until it reaches face value $100,000.</div>
+    <table class="amort">
+      <tr>
+        <th>Year</th>
+        <th>Beg CV</th>
+        <th>Cash Int (6%)</th>
+        <th>Int Expense (5%)</th>
+        <th>Premium Amort</th>
+        <th>End CV</th>
+      </tr>
+      <tr class="issue"><td>0</td><td>—</td><td>—</td><td>—</td><td>—</td><td>103,545.95</td></tr>
+      <tr><td>1</td><td>103,545.95</td><td>6,000.00</td><td>5,177.30</td><td>822.70</td><td>102,723.25</td></tr>
+      <tr><td>2</td><td>102,723.25</td><td>6,000.00</td><td>5,136.16</td><td>863.84</td><td>101,859.41</td></tr>
+      <tr><td>3</td><td>101,859.41</td><td>6,000.00</td><td>5,092.97</td><td>907.03</td><td>100,952.38</td></tr>
+      <tr><td>4</td><td>100,952.38</td><td>6,000.00</td><td>5,047.62</td><td>952.38</td><td>100,000.00</td></tr>
+    </table>
+    <div class="check">
+      <div class="label">✅ Verification</div>
+      Total Premium Amortization = 822.70 + 863.84 + 907.03 + 952.38 = <b>$3,545.95</b> ✓ (matches issue premium)
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><b>Notice the pattern:</b> Interest Expense decreases each year (5,177 → 5,136 → 5,093 → 5,048) because CV is shrinking. Premium amortization grows each year (822 → 863 → 907 → 952) — the opposite movement.</p>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">(c) Year 1 Entry — December 31, 2026</div>
+    <div class="desc">Pay $6,000 cash. Recognize $5,177.30 interest expense. Amortize $822.70 of premium (debit, because premium decreases).</div>
+    <div class="journal">
+<span class="acc dr">Interest Expense</span><span class="dr">5,177.30</span><br>
+<span class="acc dr">Premium on Bonds Payable</span><span class="dr">822.70</span><br>
+<span class="acc">  Cash</span><span class="cr">6,000.00</span>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><b>Why is Premium debited?</b> Premium has a credit balance (it adds to Bonds Payable to form CV). When CV decreases, Premium decreases — and decreasing a credit balance means we <b>debit</b> it.</p>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">(d) Carrying Value on December 31, 2027</div>
+    <div class="desc">End of year 2 = "End CV" column in row 2 of the schedule.</div>
+    <div class="check" style="font-size:16px">
+      <div class="label">📌 Answer</div>
+      <b>Carrying Value (12/31/2027) = $101,859.41</b>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px">Breakdown: Bonds Payable $100,000 + Premium on Bonds Payable $1,859.41 = $101,859.41.</p>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">(e) Total Interest Expense — 4 Years</div>
+    <div class="desc">Sum of the Interest Expense column. Or use the shortcut: Total Cash Interest − Total Premium Amortized.</div>
+    <div class="formula" style="font-size:13px">
+      <div class="name">Method 1 — sum the schedule</div>
+      <code>5,177.30 + 5,136.16 + 5,092.97 + 5,047.62 = $20,454.05</code>
+    </div>
+    <div class="formula" style="font-size:13px">
+      <div class="name">Method 2 — shortcut</div>
+      <code>(Cash Interest × 4) − Total Premium = ($6,000 × 4) − $3,545.95<br>= $24,000 − $3,545.95 = <b>$20,454.05</b></code>
+    </div>
+    <div class="check" style="font-size:16px">
+      <div class="label">📌 Answer</div>
+      <b>Total Interest Expense (4 years) = $20,454.05</b>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><b>Intuition:</b> Even though we pay out $24,000 in cash interest, our actual borrowing cost is only $20,454.05 — because we initially received an extra $3,545.95 (the premium) above what we owe at maturity.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Common Mistakes (must-avoid traps)</h2>
+  <div class="mistakes">
+    <div class="label">⚠ The 5 traps that cost points on this exact question type</div>
+    <ul>
+      <li><b>Stated rate vs Market rate confusion</b><br>Cash Interest uses the <b>stated rate × face</b>. Interest Expense uses the <b>market rate × CV</b>. Mixing these = wrong on every line.</li>
+      <li><b>Premium vs Discount direction</b><br>Issue price &gt; face → <b>premium</b> → Int Exp &lt; Cash Int → premium amortizes <i>down</i>. Issue price &lt; face → <b>discount</b> → Int Exp &gt; Cash Int → discount amortizes <i>up</i>. They move in opposite directions.</li>
+      <li><b>Wrong sign on Premium in the journal entry</b><br>When amortizing, premium is <b>debited</b> (because credit balance is decreasing). Many students credit it by accident.</li>
+      <li><b>CV update timing</b><br>Use <b>beginning</b> CV (not ending) to compute that year's Interest Expense. Year N's ending CV becomes Year N+1's beginning CV.</li>
+      <li><b>Carrying value composition</b><br>CV = Bonds Payable (always face) + Unamortized Premium (or − Unamortized Discount). Don't confuse CV with Bonds Payable alone.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="takeaway">
+    <div class="label">💡 Key Takeaway — 30-second review before the exam</div>
+    <ul>
+      <li><b>Interest Expense = CV × market rate</b>. That's the whole effective interest method in one line.</li>
+      <li><b>Cash Interest is constant</b> = face × stated rate. The volatility is in Interest Expense, not Cash.</li>
+      <li><b>Premium</b>: CV moves <i>down</i> toward face. Interest Expense decreases each year.</li>
+      <li><b>Discount</b>: CV moves <i>up</i> toward face. Interest Expense increases each year.</li>
+      <li><b>Total Interest Expense (life of bond)</b> = Total Cash Interest − Premium (or + Discount). Always.</li>
+      <li><b>At maturity</b>, CV always equals face value. Premium/Discount has fully amortized to zero.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Newton Study Hub · ACBU 2222 · Q-001 · Bond Issuance EIM<br>
+  <span style="color:var(--accent);font-style:italic">made by daddy with ❤️ — 파이팅 Trinity!</span>
+</footer>
+
+</div>
+</body>
+</html>

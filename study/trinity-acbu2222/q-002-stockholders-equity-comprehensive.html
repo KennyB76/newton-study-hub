@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Q-002 — Stockholders Equity Comprehensive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e; --ink-soft: #4a4a5e;
+    --paper: #fafafa; --paper-warm: #f3f1ec;
+    --accent: #6d5dfc; --accent-soft: #8d80ff; --accent-pale: #e8e4ff;
+    --formula-bg: #fff8e7; --formula-border: #d4a93a;
+    --example-bg: #e8f5e9; --example-border: #4caf50;
+    --warn-bg: #fff0f0; --warn-border: #d96565;
+    --question-bg: #f0f4ff; --question-border: #5a6acf;
+    --line: #e0dfd9;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .page{max-width:760px;margin:0 auto;padding:36px 24px 60px}
+  header{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:24px}
+  .topic-tag{display:inline-block;background:var(--accent);color:white;padding:4px 12px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:10px}
+  h1{font-size:28px;font-weight:700;line-height:1.2;letter-spacing:-0.01em;margin-bottom:4px}
+  .subtitle{font-size:14px;color:var(--ink-soft)}
+  section{margin-bottom:28px}
+  h2{font-size:16px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  p{margin-bottom:10px;font-size:15px}
+  .question{background:var(--question-bg);border-left:4px solid var(--question-border);padding:18px 20px;border-radius:6px}
+  .question .label{font-size:11px;font-weight:700;color:var(--question-border);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px}
+  .question .given{font-family:var(--mono);font-size:13px;line-height:1.7;background:white;padding:10px 12px;border-radius:4px;margin-bottom:12px;white-space:pre-wrap}
+  .question ol{padding-left:22px;font-size:14px;line-height:1.7}
+  .formula{background:var(--formula-bg);border:1px solid var(--formula-border);border-radius:6px;padding:12px 16px;margin:10px 0;font-family:var(--mono);font-size:14px}
+  .formula .name{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--formula-border);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px}
+  .part{background:white;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:18px 20px;margin-bottom:16px}
+  .part .h{font-size:18px;font-weight:700;color:var(--accent);margin-bottom:8px}
+  .part .desc{font-size:14px;color:var(--ink-soft);margin-bottom:12px}
+  .journal{font-family:var(--mono);font-size:13px;line-height:1.7;background:var(--paper-warm);padding:12px 14px;border-radius:4px;margin:8px 0;white-space:pre-wrap}
+  .journal .acc{display:inline-block;min-width:280px}
+  .journal .dr{color:#d96565;font-weight:600}
+  .journal .cr{color:#4caf50;font-weight:600;padding-left:20px}
+  table.eq{width:100%;border-collapse:collapse;font-size:13px;font-family:var(--mono);margin:10px 0}
+  table.eq td{padding:6px 10px;border-bottom:1px solid var(--line)}
+  table.eq td:last-child{text-align:right}
+  table.eq tr.total td{font-weight:700;border-top:2px solid var(--accent);border-bottom:2px solid var(--accent);color:var(--accent)}
+  table.eq tr.subtotal td{border-bottom:1px solid var(--accent);font-weight:600}
+  .check{background:var(--example-bg);border-left:4px solid var(--example-border);padding:10px 14px;border-radius:4px;font-size:13px;font-family:var(--mono);margin:8px 0}
+  .check .label{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--example-border);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:4px}
+  .mistakes{background:var(--warn-bg);border-left:4px solid var(--warn-border);padding:14px 16px;border-radius:6px;margin:12px 0}
+  .mistakes .label{font-size:11px;font-weight:700;color:var(--warn-border);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px}
+  .mistakes ul{list-style:none;padding-left:0}
+  .mistakes li{padding:4px 0 4px 18px;position:relative;font-size:14px;line-height:1.55}
+  .mistakes li::before{content:"⚠";position:absolute;left:0;color:var(--warn-border)}
+  .mistakes li b{color:var(--warn-border)}
+  .takeaway{background:var(--accent-pale);border-radius:6px;padding:14px 18px;margin-top:16px}
+  .takeaway .label{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px}
+  .takeaway ul{padding-left:20px;font-size:14px;line-height:1.7}
+  .takeaway li{margin-bottom:4px}
+  footer{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);text-align:center;font-size:13px;color:var(--ink-soft)}
+  @media (max-width:480px){.page{padding:24px 16px 40px}h1{font-size:22px}.journal{font-size:12px}table.eq{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <span class="topic-tag">ACBU 2222 · Q-002 · Ch 11 FRQ ★★★★★</span>
+  <h1>Stockholders Equity — Comprehensive</h1>
+  <div class="subtitle">ABC Corp · Treasury + Cumulative Preferred + 3-date Dividends · 5 parts · 2026-05-08</div>
+</header>
+
+<section>
+  <h2>Question</h2>
+  <div class="question">
+    <div class="label">📝 Given — Jan 1, 2026 Stockholders' Equity</div>
+    <div class="given">Common Stock, $5 par, 100,000 authorized,
+  50,000 issued and outstanding                  $250,000
+Paid-in Capital in Excess of Par — Common         400,000
+8% Cumulative Preferred Stock, $50 par, 10,000
+  authorized, 5,000 issued and outstanding        250,000
+Retained Earnings                                 800,000
+
+Preferred dividends in arrears: $20,000 (2 years unpaid)</div>
+    <div class="label" style="margin-top:12px">📅 2026 Events</div>
+    <div class="given">• Mar 1  — Issued 5,000 common @ $20/share
+• Jun 15 — Repurchased 1,000 common as treasury @ $22 (cost method)
+• Sep 1  — Reissued 500 treasury @ $25/share
+• Nov 1  — Declared cash dividends:
+            - Preferred current: $20,000
+            - Preferred arrears: $20,000
+            - Common: $0.50/share (on outstanding)
+            - Record: Nov 15  ·  Payment: Dec 1
+• Dec 31 — Net income: $300,000</div>
+    <div class="label" style="margin-top:12px">🎯 Required (5 parts)</div>
+    <ol>
+      <li>(a) Mar 1 journal entry — common stock issuance</li>
+      <li>(b) Jun 15 journal entry — treasury repurchase (cost method)</li>
+      <li>(c) Sep 1 journal entry — treasury reissuance</li>
+      <li>(d) ALL dividend journal entries (Nov 1 + Nov 15 + Dec 1)</li>
+      <li>(e) Stockholders' Equity section on Dec 31, 2026</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>Setup — Key Formulas</h2>
+  <div class="formula">
+    <div class="name">① Common Stock Issuance Above Par</div>
+    <code>Cash = Shares × Issue Price<br>Common Stock = Shares × Par<br>Paid-in Capital in Excess = Cash − Common Stock</code>
+  </div>
+  <div class="formula">
+    <div class="name">② Treasury Stock — Cost Method</div>
+    <code>Treasury Stock (debit) = Shares × Repurchase Cost<br>On reissue: Cash − Cost = Paid-in Cap from Treasury (credit)<br>If Cash &lt; Cost: debit Paid-in Cap from Treasury, then RE</code>
+  </div>
+  <div class="formula">
+    <div class="name">③ Outstanding Shares (for common dividend)</div>
+    <code>Outstanding = Issued − Treasury<br>Track changes through the year, use balance at record date</code>
+  </div>
+  <div class="formula">
+    <div class="name">④ Cumulative Preferred Dividend Priority</div>
+    <code>Pay Order: Arrears → Current Preferred → Common<br>Arrears must be cleared first; common gets nothing until preferred is current</code>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">(a) Mar 1, 2026 — Common Stock Issuance</div>
+    <div class="desc">5,000 shares × $20 = $100,000 received. Par = $5/share = $25,000. Excess = $15/share = $75,000.</div>
+    <div class="journal"><span class="acc dr">Cash</span><span class="dr">100,000</span>
+<span class="acc">  Common Stock (5,000 × $5)</span><span class="cr">25,000</span>
+<span class="acc">  Paid-in Capital in Excess of Par — Common</span><span class="cr">75,000</span></div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><b>After this:</b> Common Stock = $275,000 (55,000 shares issued). PIC Excess = $475,000.</p>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">(b) Jun 15, 2026 — Treasury Repurchase</div>
+    <div class="desc">Cost method: Treasury Stock recorded at full repurchase cost. 1,000 × $22 = $22,000.</div>
+    <div class="journal"><span class="acc dr">Treasury Stock</span><span class="dr">22,000</span>
+<span class="acc">  Cash</span><span class="cr">22,000</span></div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><b>Treasury Stock</b> is a contra-equity (deducted from total SE). <b>No change to Common Stock</b> account itself — the shares are still issued, just not outstanding.</p>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:4px"><b>After this:</b> 55,000 issued, 1,000 treasury, 54,000 outstanding.</p>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">(c) Sep 1, 2026 — Treasury Reissuance Above Cost</div>
+    <div class="desc">500 shares × $25 = $12,500 received. Cost basis = 500 × $22 = $11,000. Excess $1,500 → Paid-in Capital from Treasury Stock (credit).</div>
+    <div class="journal"><span class="acc dr">Cash</span><span class="dr">12,500</span>
+<span class="acc">  Treasury Stock (500 × $22)</span><span class="cr">11,000</span>
+<span class="acc">  Paid-in Capital from Treasury Stock</span><span class="cr">1,500</span></div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><b>Critical:</b> Reissue gain never goes to Retained Earnings. It always goes to Paid-in Capital from Treasury Stock.</p>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:4px"><b>After this:</b> 500 treasury remaining, 54,500 outstanding common.</p>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">(d) Dividends — Nov 1 / Nov 15 / Dec 1</div>
+    <div class="desc">Cumulative preferred: arrears + current must be paid before common. Calculate each piece.</div>
+
+    <div class="formula">
+      <div class="name">Compute each dividend</div>
+      <code>Preferred arrears:        $20,000<br>Preferred current (8%):   $20,000  ($250,000 × 8%)<br>Total Preferred:          $40,000<br>──────────────────────────────────<br>Common shares outstanding (Nov 15 record): 54,500<br>Common dividend per share:                  $0.50<br>Total Common:             $27,250  (54,500 × $0.50)<br>──────────────────────────────────<br>TOTAL DIVIDEND:           $67,250</code>
+    </div>
+
+    <p style="margin-top:12px"><b>Nov 1 — Declaration</b> (creates the liability):</p>
+    <div class="journal"><span class="acc dr">Cash Dividends</span><span class="dr">67,250</span>
+<span class="acc">  Dividends Payable</span><span class="cr">67,250</span></div>
+
+    <p style="margin-top:8px"><b>Nov 15 — Record Date</b>:</p>
+    <div class="check">
+      <div class="label">📌 No Journal Entry</div>
+      Record date just identifies who gets paid. No accounting impact.
+    </div>
+
+    <p style="margin-top:8px"><b>Dec 1 — Payment</b>:</p>
+    <div class="journal"><span class="acc dr">Dividends Payable</span><span class="dr">67,250</span>
+<span class="acc">  Cash</span><span class="cr">67,250</span></div>
+
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><b>Closing:</b> Cash Dividends gets closed to Retained Earnings at year-end (reduces RE by $67,250).</p>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">(e) Stockholders' Equity — Dec 31, 2026</div>
+    <div class="desc">Roll forward each component. Retained Earnings = Beg + NI − Dividends. Treasury at cost is a deduction at the bottom.</div>
+
+    <div class="formula">
+      <div class="name">Retained Earnings roll-forward</div>
+      <code>Beginning RE:           $800,000<br>+ Net income:            300,000<br>− Cash dividends:        (67,250)<br>──────────────────────────────<br>Ending RE:            $1,032,750</code>
+    </div>
+
+    <table class="eq">
+      <tr><td colspan="2"><b>ABC Corp — Stockholders' Equity, Dec 31, 2026</b></td></tr>
+      <tr><td>Paid-in Capital:</td><td></td></tr>
+      <tr><td>&nbsp;&nbsp;8% Cumulative Preferred Stock, $50 par (5,000 shares)</td><td>$250,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Common Stock, $5 par (55,000 issued, 54,500 outstanding)</td><td>275,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Paid-in Capital in Excess of Par — Common</td><td>475,000</td></tr>
+      <tr><td>&nbsp;&nbsp;Paid-in Capital from Treasury Stock</td><td>1,500</td></tr>
+      <tr class="subtotal"><td>Total Paid-in Capital</td><td>1,001,500</td></tr>
+      <tr><td>Retained Earnings</td><td>1,032,750</td></tr>
+      <tr class="subtotal"><td>Total Paid-in Capital and Retained Earnings</td><td>2,034,250</td></tr>
+      <tr><td>Less: Treasury Stock (500 shares at cost)</td><td>(11,000)</td></tr>
+      <tr class="total"><td>Total Stockholders' Equity</td><td>$2,023,250</td></tr>
+    </table>
+
+    <div class="check">
+      <div class="label">✅ Sanity Check</div>
+      Beg SE = 250 + 250 + 400 + 800 = $1,700,000<br>
+      + NI 300,000 − Dividends 67,250 + Stock issued 100,000 + Treasury reissue gain 1,500 − Treasury balance 11,000<br>
+      = $1,700,000 + 300,000 − 67,250 + 100,000 + 1,500 − 11,000 = <b>$2,023,250</b> ✓
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Common Mistakes</h2>
+  <div class="mistakes">
+    <div class="label">⚠ The 5 traps that cost points on this question type</div>
+    <ul>
+      <li><b>Forgetting cumulative preferred arrears</b><br>Cumulative preferred MUST receive arrears before any common dividend. If you give common $0.50 without clearing arrears, that's wrong.</li>
+      <li><b>Wrong outstanding share count for common dividend</b><br>Common dividend uses <b>outstanding</b> shares (issued − treasury), not issued. At record date Nov 15: 55,000 − 500 = 54,500.</li>
+      <li><b>Treasury reissue gain to Retained Earnings</b><br>Excess on reissue NEVER hits RE. Always Paid-in Capital from Treasury Stock (credit).</li>
+      <li><b>Recording journal entry on record date</b><br>Record date = no journal entry. Many students debit/credit something — wrong. It's just a list of payees.</li>
+      <li><b>Treasury Stock placement on Balance Sheet</b><br>Treasury is a deduction at the BOTTOM of stockholders' equity, after Retained Earnings. NOT in Paid-in Capital.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="takeaway">
+    <div class="label">💡 Key Takeaway — 30-second review</div>
+    <ul>
+      <li><b>Common Stock</b> always recorded at par. Excess goes to Paid-in Capital in Excess of Par.</li>
+      <li><b>Treasury Stock (cost method)</b>: debit at cost, contra-equity (subtracted from total SE).</li>
+      <li><b>Treasury reissue above cost</b>: extra → Paid-in Capital from Treasury Stock (credit). Never RE.</li>
+      <li><b>Cumulative preferred</b>: arrears + current paid before any common dividend.</li>
+      <li><b>Common dividend</b>: per-share amount × <b>outstanding</b> shares (not issued).</li>
+      <li><b>3 dividend dates</b>: Declaration (debit Dividends, credit Payable) → Record (no entry) → Payment (debit Payable, credit Cash).</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Newton Study Hub · ACBU 2222 · Q-002 · Stockholders Equity Comprehensive<br>
+  <span style="color:var(--accent);font-style:italic">made by Kenny — 파이팅 Trinity!</span>
+</footer>
+
+</div>
+</body>
+</html>

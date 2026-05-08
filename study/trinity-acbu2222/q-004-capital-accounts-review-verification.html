@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Q-004 — Capital Accounts Review (Verification)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1a2e;--ink-soft:#4a4a5e;--paper:#fafafa;--paper-warm:#f3f1ec;
+  --accent:#6d5dfc;--accent-pale:#e8e4ff;--formula-bg:#fff8e7;--formula-border:#d4a93a;
+  --good-bg:#e8f5e9;--good-border:#4caf50;--warn-bg:#fff0f0;--warn-border:#d96565;
+  --question-bg:#f0f4ff;--question-border:#5a6acf;--line:#e0dfd9;
+  --sans:'Inter',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65}
+.page{max-width:760px;margin:0 auto;padding:36px 24px 60px}
+header{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:24px}
+.tag{display:inline-block;background:var(--accent);color:white;padding:4px 12px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:10px}
+h1{font-size:26px;font-weight:700;line-height:1.2;margin-bottom:4px}
+.subtitle{font-size:14px;color:var(--ink-soft)}
+section{margin-bottom:24px}
+h2{font-size:16px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.banner{background:var(--good-bg);border-left:4px solid var(--good-border);padding:14px 18px;border-radius:6px;margin-bottom:20px;font-size:15px}
+.banner b{color:var(--good-border)}
+.qa{background:white;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:16px 20px;margin-bottom:14px}
+.qa .q{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.qa .you{font-size:13px;color:var(--ink-soft);margin-bottom:6px}
+.qa .you b{color:var(--accent)}
+.qa .check{font-size:13px;color:var(--good-border);font-weight:600;margin-bottom:8px}
+.qa .why{font-size:13px;color:var(--ink-soft);background:var(--paper-warm);padding:8px 12px;border-radius:4px}
+.je{background:white;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:16px 20px;margin-bottom:14px}
+.je .h{font-size:16px;font-weight:700;color:var(--accent);margin-bottom:6px}
+.je .scenario{font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+.entry{font-family:var(--mono);font-size:13px;line-height:1.7;background:var(--paper-warm);padding:10px 14px;border-radius:4px;margin:8px 0;white-space:pre}
+.dr{color:#d96565;font-weight:600}
+.cr{color:#4caf50;font-weight:600}
+.acc{display:inline-block;min-width:240px}
+.calc{background:var(--formula-bg);border:1px solid var(--formula-border);padding:8px 12px;border-radius:4px;font-family:var(--mono);font-size:12px;margin:6px 0}
+.verdict{font-size:13px;font-weight:600;padding:6px 10px;border-radius:4px;display:inline-block}
+.verdict.ok{background:var(--good-bg);color:var(--good-border)}
+.verdict.fix{background:var(--warn-bg);color:var(--warn-border)}
+.mistakes{background:var(--warn-bg);border-left:4px solid var(--warn-border);padding:14px 16px;border-radius:6px;margin:14px 0}
+.mistakes .label{font-size:11px;font-weight:700;color:var(--warn-border);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px}
+.mistakes ul{list-style:none;padding-left:0}
+.mistakes li{padding:4px 0 4px 18px;position:relative;font-size:14px;line-height:1.55}
+.mistakes li::before{content:"⚠";position:absolute;left:0;color:var(--warn-border)}
+.mistakes li b{color:var(--warn-border)}
+.takeaway{background:var(--accent-pale);border-radius:6px;padding:14px 18px;margin-top:16px}
+.takeaway .label{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px}
+.takeaway ul{padding-left:20px;font-size:14px;line-height:1.7}
+footer{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);text-align:center;font-size:13px;color:var(--ink-soft)}
+@media (max-width:480px){.page{padding:24px 16px 40px}h1{font-size:22px}.entry{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <span class="tag">ACBU 2222 · Q-004 · Capital Accounts Review</span>
+  <h1>Capital Accounts — Verification</h1>
+  <div class="subtitle">Poinsettia Company · Stockholders Equity transactions · 2026-05-08</div>
+</header>
+
+<div class="banner">
+  <b>✅ Hey T — your answers are basically all correct!</b><br>
+  Just one small clarification on the Nov declaration entry. Walk through below to lock it in.
+</div>
+
+<section>
+  <h2>Conceptual Q&A — verify</h2>
+
+  <div class="qa">
+    <div class="q">1. Difference between Preferred & Common Stock?</div>
+    <div class="you">Your answer: <b>Voting rights, Dividends in arrears</b></div>
+    <div class="check">✅ Correct</div>
+    <div class="why">Common = voting rights, residual claim. Preferred = no voting (usually), fixed dividend rate, dividend priority. "Cumulative" preferred can have arrears (unpaid dividends accumulate).</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">2. What's Excess / Additional Paid-In Capital?</div>
+    <div class="you">Your answer: <b>Monies above par value</b></div>
+    <div class="check">✅ Correct</div>
+    <div class="why">When stock issues for more than par, the excess goes to APIC. Example: $42 issue − $10 par = $32 to APIC per share.</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">3. Treasury Stock is what type of account?</div>
+    <div class="you">Your answer: <b>Contra-Equity</b></div>
+    <div class="check">✅ Correct</div>
+    <div class="why">Treasury Stock has a debit balance and is subtracted from total stockholders' equity at the bottom of the balance sheet.</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">4. Why do companies issue / acquire stock?</div>
+    <div class="you">Your answer: <b>Finance themselves, increase market value, decrease shares outstanding</b></div>
+    <div class="check">✅ Correct</div>
+    <div class="why">Issue → raise cash. Buyback (treasury) → reduce shares outstanding (boost EPS), support price, fund stock comp, fight takeover.</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">5. Retained Earnings affected by which two accounts?</div>
+    <div class="you">Your answer: <b>Net Income & Dividends</b></div>
+    <div class="check">✅ Correct</div>
+    <div class="why">RE rolls forward: Beg RE + Net Income − Dividends = End RE. (Plus prior period adjustments in some cases.)</div>
+  </div>
+</section>
+
+<section>
+  <h2>Journal Entries — verify</h2>
+
+  <div class="je">
+    <div class="h">(1) Mar — Issue 2,000 shares @ $42 ($10 par)</div>
+    <div class="scenario">Cash received = 2,000 × $42 = $84,000. Par = 2,000 × $10 = $20,000. Excess = $64,000.</div>
+    <div class="entry"><span class="acc dr">Cash</span><span class="dr">84,000</span>
+<span class="acc">  Common Stock</span>      <span class="cr">20,000</span>
+<span class="acc">  APIC — C.S.</span>       <span class="cr">64,000</span></div>
+    <span class="verdict ok">✅ Matches your answer exactly</span>
+  </div>
+
+  <div class="je">
+    <div class="h">(2) Buy back 500 treasury @ $45</div>
+    <div class="scenario">Cost method: Treasury Stock recorded at full repurchase cost. 500 × $45 = $22,500.</div>
+    <div class="entry"><span class="acc dr">Treasury Stock</span><span class="dr">22,500</span>
+<span class="acc">  Cash</span>             <span class="cr">22,500</span></div>
+    <span class="verdict ok">✅ Matches your answer</span>
+  </div>
+
+  <div class="je">
+    <div class="h">(3) Sell 200 treasury @ $50 (above cost)</div>
+    <div class="scenario">Cash = 200 × $50 = $10,000. Cost basis = 200 × $45 = $9,000. Excess $1,000 → APIC from Treasury (credit).</div>
+    <div class="entry"><span class="acc dr">Cash</span><span class="dr">10,000</span>
+<span class="acc">  Treasury Stock</span>   <span class="cr">9,000</span>
+<span class="acc">  APIC — T.S.</span>       <span class="cr">1,000</span></div>
+    <span class="verdict ok">✅ Matches your answer</span>
+  </div>
+
+  <div class="je">
+    <div class="h">(4) Sell 200 treasury @ $39 (below cost)</div>
+    <div class="scenario">Cash = 200 × $39 = $7,800. Cost = 200 × $45 = $9,000. Shortfall $1,200. Use APIC—T.S. balance ($1,000 from #3) FIRST, then Retained Earnings for remaining $200.</div>
+    <div class="entry"><span class="acc dr">Cash</span><span class="dr">7,800</span>
+<span class="acc dr">APIC — T.S.</span>       <span class="dr">1,000</span>
+<span class="acc dr">Retained Earnings</span> <span class="dr">200</span>
+<span class="acc">  Treasury Stock</span>   <span class="cr">9,000</span></div>
+    <span class="verdict ok">✅ Matches your answer perfectly — this is the trickiest one and you nailed it</span>
+  </div>
+
+  <div class="je">
+    <div class="h">(5) Outstanding shares?</div>
+    <div class="scenario">2,000 issued − 500 treasury + 200 reissued (#3) + 200 reissued (#4) = <b>1,900 outstanding</b></div>
+    <div class="calc">Issued: 2,000  ·  Treasury bought: 500  ·  Treasury sold back: 400  ·  Net treasury remaining: 100  ·  Outstanding = 2,000 − 100 = 1,900</div>
+    <span class="verdict ok">✅ Matches your answer</span>
+  </div>
+
+  <div class="je">
+    <div class="h">(6) Jul 10 — Declare $0.50 dividend on outstanding</div>
+    <div class="scenario">Total dividend = 1,900 × $0.50 = $950. <b>Declaration entry needs BOTH sides</b>:</div>
+    <div class="entry"><span class="acc dr">Cash Dividends</span><span class="dr">950</span>
+<span class="acc">  Dividends Payable</span><span class="cr">950</span></div>
+    <span class="verdict fix">⚠ Your page only shows "DVDs Payable 950" — make sure to write the FULL entry with the debit (Cash Dividends) on top and credit (Dividends Payable) on the bottom. Just $950 by itself isn't a complete journal entry.</span>
+  </div>
+
+  <div class="je">
+    <div class="h">(7) Jul 30 — Record date</div>
+    <div class="scenario">Record date is just an admin checkpoint to identify shareholders eligible for the dividend.</div>
+    <div class="entry">No journal entry — just lists who gets paid.</div>
+    <span class="verdict ok">✅ Matches your answer (N/A)</span>
+  </div>
+
+  <div class="je">
+    <div class="h">(8) Aug 1 — Payment date</div>
+    <div class="entry"><span class="acc dr">Dividends Payable</span><span class="dr">950</span>
+<span class="acc">  Cash</span>             <span class="cr">950</span></div>
+    <span class="verdict ok">✅ Matches your answer</span>
+  </div>
+</section>
+
+<section>
+  <h2>Common Mistakes</h2>
+  <div class="mistakes">
+    <div class="label">⚠ The 5 traps on this exact problem type</div>
+    <ul>
+      <li><b>Treasury reissue BELOW cost</b><br>Don't dump the whole shortfall to Retained Earnings. ALWAYS use APIC—T.S. balance first, then RE for any remaining. (You got this right in #4 — keep it.)</li>
+      <li><b>Outstanding shares vs Issued shares</b><br>Outstanding = Issued − Treasury (held back). Dividend per share uses OUTSTANDING.</li>
+      <li><b>Incomplete journal entries</b><br>Every JE needs a debit AND a credit. "DVDs Payable 950" alone is wrong format. (Fix in #6 above.)</li>
+      <li><b>No entry on record date</b><br>Many students try to record something. Don't — record date is admin only.</li>
+      <li><b>"Cash Dividends" vs "Retained Earnings" on declaration</b><br>Either works (book uses Cash Dividends as a temporary account that closes to RE at year-end). Both treated the same in net effect.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="takeaway">
+    <div class="label">💡 Key Takeaway — 30 sec</div>
+    <ul>
+      <li><b>Issue stock</b>: Cash debit, Common Stock at par, APIC for excess.</li>
+      <li><b>Treasury (cost method)</b>: debit at cost, contra-equity.</li>
+      <li><b>Reissue ABOVE cost</b>: extra → APIC—T.S. (credit).</li>
+      <li><b>Reissue BELOW cost</b>: shortfall → APIC—T.S. first, then RE (both debit).</li>
+      <li><b>Outstanding</b> = Issued − Treasury. Use this for per-share dividend.</li>
+      <li><b>3 dividend dates</b>: Declaration (debit Cash Dividends, credit Payable) → Record (no entry) → Payment (debit Payable, credit Cash).</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Newton Study Hub · Q-004 · Capital Accounts Verification<br>
+  <span style="color:var(--accent);font-style:italic">사랑해 ❤️ 파이팅 — you've got this</span>
+</footer>
+
+</div>
+</body>
+</html>

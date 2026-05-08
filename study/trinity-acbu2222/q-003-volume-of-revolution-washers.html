@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Q-003 — Volume of Revolution (Washers)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+:root{--ink:#1a1a2e;--ink-soft:#4a4a5e;--paper:#fafafa;--paper-warm:#f3f1ec;
+  --accent:#6d5dfc;--accent-pale:#e8e4ff;--formula-bg:#fff8e7;--formula-border:#d4a93a;
+  --example-bg:#e8f5e9;--example-border:#4caf50;--warn-bg:#fff0f0;--warn-border:#d96565;
+  --question-bg:#f0f4ff;--question-border:#5a6acf;--line:#e0dfd9;
+  --sans:'Inter',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:36px 24px 60px}
+header{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:24px}
+.topic-tag{display:inline-block;background:var(--accent);color:white;padding:4px 12px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:10px}
+h1{font-size:26px;font-weight:700;line-height:1.2;letter-spacing:-0.01em;margin-bottom:4px}
+.subtitle{font-size:14px;color:var(--ink-soft)}
+section{margin-bottom:28px}
+h2{font-size:16px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+p{margin-bottom:10px;font-size:15px}
+.question{background:var(--question-bg);border-left:4px solid var(--question-border);padding:18px 20px;border-radius:6px}
+.question .label{font-size:11px;font-weight:700;color:var(--question-border);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px}
+.formula{background:var(--formula-bg);border:1px solid var(--formula-border);border-radius:6px;padding:14px 16px;margin:12px 0}
+.formula .name{font-size:11px;font-weight:700;color:var(--formula-border);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px}
+.part{background:white;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:18px 20px;margin-bottom:16px}
+.part .h{font-size:18px;font-weight:700;color:var(--accent);margin-bottom:8px}
+.part .desc{font-size:14px;color:var(--ink-soft);margin-bottom:12px}
+.work{background:var(--paper-warm);padding:14px 18px;border-radius:4px;margin:10px 0;font-size:15px;overflow-x:auto}
+.check{background:var(--example-bg);border-left:4px solid var(--example-border);padding:12px 14px;border-radius:4px;font-size:14px;margin:10px 0}
+.check .label{font-size:11px;font-weight:700;color:var(--example-border);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:4px}
+.mistakes{background:var(--warn-bg);border-left:4px solid var(--warn-border);padding:14px 16px;border-radius:6px;margin:12px 0}
+.mistakes .label{font-size:11px;font-weight:700;color:var(--warn-border);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px}
+.mistakes ul{list-style:none;padding-left:0}
+.mistakes li{padding:4px 0 4px 18px;position:relative;font-size:14px;line-height:1.55}
+.mistakes li::before{content:"⚠";position:absolute;left:0;color:var(--warn-border)}
+.mistakes li b{color:var(--warn-border)}
+.takeaway{background:var(--accent-pale);border-radius:6px;padding:14px 18px;margin-top:16px}
+.takeaway .label{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px}
+.takeaway ul{padding-left:20px;font-size:14px;line-height:1.7}
+.boxed{display:inline-block;border:2px solid var(--accent);padding:6px 14px;border-radius:6px;font-weight:700;color:var(--accent);font-size:18px}
+footer{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);text-align:center;font-size:13px;color:var(--ink-soft)}
+@media (max-width:480px){.page{padding:24px 16px 40px}h1{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <span class="topic-tag">CALCULUS · Q-003 · WASHER METHOD ★★★★</span>
+  <h1>Volume of Solid of Revolution</h1>
+  <div class="subtitle">$y=\sqrt{x}$ and $y=x^2$, rotated about $y=2$ · Washer method · 2026-05-08</div>
+</header>
+
+<section>
+  <h2>Question</h2>
+  <div class="question">
+    <div class="label">📝 Given</div>
+    <p>Find the volume of the solid generated when the region enclosed by $y=\sqrt{x}$ and $y=x^2$ is rotated about the line $y=2$.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Strategy — when to use Washers vs Disks</h2>
+  <div class="formula">
+    <div class="name">Washer Method (axis is OUTSIDE the region)</div>
+    $$V = \pi \int_a^b \left[R_{\text{outer}}(x)^2 - R_{\text{inner}}(x)^2\right] dx$$
+    <p style="margin-top:8px;font-size:13px;color:var(--ink-soft)">Use when there's a "hole" — the rotation axis sits outside the region, so each slice is a washer (ring), not a solid disk.</p>
+  </div>
+  <p style="font-size:14px"><b>Here:</b> axis $y=2$ is above the region (region lives in $0 \le y \le 1$). Axis is outside → use washers, integrate in $x$.</p>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">Step 1 — Find intersection points</div>
+    <div class="desc">Set the curves equal to find the bounds of integration.</div>
+    <div class="work">
+      $\sqrt{x} = x^2$<br>
+      Square both sides: $x = x^4$<br>
+      $x^4 - x = 0 \;\Rightarrow\; x(x^3-1)=0 \;\Rightarrow\; x=0,\,1$
+    </div>
+    <p style="font-size:14px"><b>Bounds:</b> $a=0,\;b=1$</p>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">Step 2 — Identify upper vs lower curve</div>
+    <div class="desc">On $[0,1]$, which curve is on top? Test a point inside.</div>
+    <div class="work">
+      At $x=\tfrac{1}{2}$: $\;\sqrt{0.5}\approx 0.707$, $(0.5)^2=0.25$<br>
+      $\therefore\; \sqrt{x} > x^2$ on $(0,1)$
+    </div>
+    <p style="font-size:14px"><b>Upper:</b> $y=\sqrt{x}\quad$ <b>Lower:</b> $y=x^2$</p>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">Step 3 — Set up the radii (axis $y=2$ above region)</div>
+    <div class="desc">For any $x \in [0,1]$, distance from axis to a curve = $2 - y_{\text{curve}}$. Whichever is FARTHER from axis = outer; closer = inner.</div>
+    <div class="work">
+      Lower curve $x^2$ is FARTHER from $y=2$ (smaller $y$, larger $2-y$)<br>
+      Upper curve $\sqrt{x}$ is CLOSER<br><br>
+      $R_{\text{outer}}(x) = 2 - x^2$<br>
+      $R_{\text{inner}}(x) = 2 - \sqrt{x}$
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">Step 4 — Set up and expand the integral</div>
+    <div class="work">
+      $V = \pi \displaystyle\int_0^1 \left[(2-x^2)^2 - (2-\sqrt{x})^2\right] dx$
+    </div>
+    <div class="formula">
+      <div class="name">Expand each square</div>
+      $(2-x^2)^2 = 4 - 4x^2 + x^4$<br>
+      $(2-\sqrt{x})^2 = 4 - 4\sqrt{x} + x$
+    </div>
+    <div class="work">
+      Difference: $(4 - 4x^2 + x^4) - (4 - 4\sqrt{x} + x)$<br>
+      $= x^4 - 4x^2 - x + 4\sqrt{x}$
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">Step 5 — Integrate term by term</div>
+    <div class="work">
+      $\displaystyle V = \pi \int_0^1 \left(x^4 - 4x^2 - x + 4x^{1/2}\right) dx$<br><br>
+      $= \pi \left[\dfrac{x^5}{5} - \dfrac{4x^3}{3} - \dfrac{x^2}{2} + \dfrac{8x^{3/2}}{3}\right]_0^1$
+    </div>
+    <div class="formula">
+      <div class="name">Note on $\int 4\sqrt{x}\,dx$</div>
+      $\displaystyle \int 4x^{1/2}\,dx = 4 \cdot \dfrac{x^{3/2}}{3/2} = \dfrac{8x^{3/2}}{3}$
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="part">
+    <div class="h">Step 6 — Evaluate at bounds</div>
+    <div class="work">
+      At $x=1$: $\;\dfrac{1}{5} - \dfrac{4}{3} - \dfrac{1}{2} + \dfrac{8}{3}$<br><br>
+      Group: $\dfrac{1}{5} + \left(\dfrac{8}{3} - \dfrac{4}{3}\right) - \dfrac{1}{2} = \dfrac{1}{5} + \dfrac{4}{3} - \dfrac{1}{2}$<br><br>
+      Common denom $30$: $\;\dfrac{6}{30} + \dfrac{40}{30} - \dfrac{15}{30} = \dfrac{31}{30}$<br><br>
+      At $x=0$: all terms $= 0$
+    </div>
+    <p class="center" style="text-align:center;margin:18px 0">
+      <span class="boxed">$V = \dfrac{31\pi}{30}$</span>
+    </p>
+    <div class="check">
+      <div class="label">✅ Decimal check</div>
+      $V \approx \dfrac{31 \cdot 3.14159}{30} \approx 3.246$ cubic units<br>
+      Region area is small (~0.33 sq units between curves), revolved at distance 1.5–2 from axis → volume on order of 3 makes sense.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Common Mistakes</h2>
+  <div class="mistakes">
+    <div class="label">⚠ The 5 traps that cost points on washer problems</div>
+    <ul>
+      <li><b>Forgetting to subtract from the axis</b><br>Radius is NOT $\sqrt{x}$ or $x^2$ directly. It's $2 - y$ because the axis is at $y=2$. If axis were $y=0$ (the x-axis), radius would just be $y$.</li>
+      <li><b>Swapping outer and inner radius</b><br>The curve FARTHER from the axis = outer. Here axis is ABOVE, so the LOWER curve ($x^2$) is farther. If axis were below, the upper curve would be outer.</li>
+      <li><b>Squaring before subtracting</b><br>$(R_o^2 - R_i^2) \neq (R_o - R_i)^2$. Always square each radius separately, then subtract.</li>
+      <li><b>Wrong antiderivative for $\sqrt{x}$</b><br>$\int x^{1/2}\,dx = \dfrac{x^{3/2}}{3/2} = \dfrac{2x^{3/2}}{3}$, NOT $\dfrac{x^{3/2}}{2}$. Bump exponent by 1, divide by new exponent.</li>
+      <li><b>Missing the $\pi$ factor</b><br>The $\pi$ is OUTSIDE the integral. Easy to drop in the final answer. Always write $V = \pi \int \ldots$ from the start.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="takeaway">
+    <div class="label">💡 Key Takeaway — washer method in 30 seconds</div>
+    <ul>
+      <li><b>Axis outside region</b> → washer method. Axis on boundary → disk.</li>
+      <li><b>Radius</b> = distance from axis to curve. If axis is $y = c$, radius $= |c - y_{\text{curve}}|$.</li>
+      <li><b>Outer = farther curve, Inner = closer curve.</b> Always relative to the axis.</li>
+      <li><b>Formula</b>: $V = \pi \int_a^b (R_o^2 - R_i^2)\,dx$ — square each separately.</li>
+      <li><b>Integrate carefully:</b> $\int x^n\,dx = \dfrac{x^{n+1}}{n+1}$ — works for fractional $n$ too.</li>
+      <li><b>Sanity check</b>: convert to decimal, see if magnitude is reasonable for the geometry.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Newton Study Hub · Q-003 · Volume of Revolution (Washers)<br>
+  <span style="color:var(--accent);font-style:italic">made by Kenny — 사랑해 ❤️</span>
+</footer>
+
+</div>
+</body>
+</html>

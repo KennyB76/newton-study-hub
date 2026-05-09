@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q-013 — Master Practice: 50 MCQ + 5 FR + Full Glossary | ACBU 2222 Final Review</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 920px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+  h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 10px; font-size: 1.7em; }
+  h2 { color: #c2185b; margin-top: 40px; font-size: 1.35em; }
+  h3 { color: #5d4037; margin-top: 22px; }
+  h4 { color: #37474f; margin: 12px 0 6px 0; }
+  .source { background: #fff3e0; padding: 12px 18px; border-left: 4px solid #ff9800; font-size: 0.92em; margin-bottom: 20px; }
+  .toc { background: #e3f2fd; padding: 14px 20px; border-radius: 8px; margin: 20px 0 30px 0; font-size: 0.95em; }
+  .toc a { color: #1565c0; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .section-label { display: inline-block; background: #c2185b; color: white; padding: 3px 14px; border-radius: 12px; font-size: 0.88em; font-weight: bold; margin-bottom: 10px; }
+  /* MCQ */
+  .mcq-group { margin-bottom: 30px; }
+  .mcq-group-title { background: #1565c0; color: white; padding: 8px 18px; border-radius: 6px; font-weight: bold; margin-bottom: 12px; font-size: 1.0em; }
+  .problem { background: white; border: 2px solid #1565c0; border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+  .problem-num { display: inline-block; background: #1565c0; color: white; padding: 3px 13px; border-radius: 18px; font-weight: bold; margin-right: 8px; font-size: 0.95em; }
+  .choices { list-style: none; padding: 0; margin: 10px 0 0 0; }
+  .choices li { padding: 4px 10px; border-radius: 4px; margin: 3px 0; }
+  .choices li:hover { background: #e3f2fd; }
+  .answer { background: #e8f5e9; border-left: 5px solid #2e7d32; padding: 12px 18px; margin: 10px 0; border-radius: 6px; }
+  .answer summary { font-weight: bold; cursor: pointer; color: #2e7d32; padding: 4px 0; }
+  .answer[open] summary { margin-bottom: 10px; }
+  .correct-tag { display: inline-block; background: #2e7d32; color: white; padding: 2px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+  .gotcha { background: #ffebee; padding: 10px 14px; border-left: 4px solid #c62828; margin: 10px 0; font-size: 0.93em; border-radius: 4px; }
+  .gotcha strong { color: #c62828; }
+  /* FR Problems */
+  .fr-problem { background: white; border: 2px solid #c2185b; border-radius: 10px; padding: 22px 26px; margin: 22px 0; }
+  .fr-num { display: inline-block; background: #c2185b; color: white; padding: 4px 15px; border-radius: 18px; font-weight: bold; margin-right: 10px; }
+  table { border-collapse: collapse; margin: 12px 0; width: 100%; background: white; font-size: 0.95em; }
+  th, td { border: 1px solid #bdbdbd; padding: 7px 12px; }
+  th { background: #eceff1; font-weight: bold; }
+  td.num, th.num { text-align: right; font-family: Menlo, Consolas, monospace; }
+  td.indent { padding-left: 28px; }
+  td.indent2 { padding-left: 44px; }
+  .formula { background: #fff8e1; padding: 10px 15px; border-radius: 6px; font-family: Menlo, Consolas, monospace; margin: 8px 0; font-size: 0.9em; line-height: 1.6; white-space: pre-wrap; }
+  .je { font-family: Menlo, Consolas, monospace; background: #f3e5f5; padding: 10px 16px; border-radius: 6px; margin: 8px 0; white-space: pre; line-height: 1.5; font-size: 0.88em; }
+  .tip { background: #e3f2fd; padding: 9px 15px; border-radius: 4px; font-size: 0.92em; color: #1565c0; margin: 8px 0; }
+  .step { background: #f9fbe7; border-left: 4px solid #827717; padding: 10px 15px; margin: 10px 0; border-radius: 4px; }
+  /* Glossary */
+  .gloss-card { background: white; border: 1px solid #90caf9; border-radius: 8px; padding: 16px 20px; margin: 14px 0; border-left: 5px solid #1565c0; }
+  .gloss-term { font-size: 1.1em; font-weight: bold; color: #1565c0; }
+  .gloss-kr { color: #c2185b; font-size: 0.95em; margin-left: 8px; }
+  .gloss-def { margin: 6px 0; }
+  .gloss-ex { background: #f3e5f5; padding: 7px 13px; border-radius: 5px; font-size: 0.9em; margin: 6px 0; }
+  .gloss-q { background: #e8f5e9; padding: 10px 15px; border-radius: 6px; margin: 8px 0; font-size: 0.92em; }
+  .gloss-q summary { cursor: pointer; font-weight: bold; color: #2e7d32; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #ccc; color: #888; font-size: 0.88em; text-align: center; }
+  .exam-badge { display: inline-block; background: #c62828; color: white; padding: 3px 12px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+  .alpha-divider { background: #eceff1; padding: 4px 14px; border-radius: 4px; color: #37474f; font-weight: bold; margin: 20px 0 8px 0; display: inline-block; font-size: 1.05em; }
+  .scroll-top { position: fixed; bottom: 28px; right: 28px; background: #1565c0; color: white; border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 1.3em; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+</style>
+</head>
+<body>
+
+<h1>ACBU 2222 — Master Practice &amp; Glossary</h1>
+<div class="source">
+  <strong>Exam:</strong> Final Exam — 5/9 (Fri) 9:00 AM &nbsp;|&nbsp;
+  <strong>Coverage:</strong> Full semester — Accounting Cycle through Financial Analysis &nbsp;|&nbsp;
+  <strong>Format:</strong> 50 MCQ + 5 Free Response + Full Glossary (30+ terms)
+</div>
+
+<div class="toc">
+  <strong>Jump to section:</strong><br>
+  <a href="#part1">Part 1 — 50 Multiple Choice</a> (Groups A–I) &nbsp;|&nbsp;
+  <a href="#part2">Part 2 — 5 Free Response</a> &nbsp;|&nbsp;
+  <a href="#part3">Part 3 — Glossary (30+ terms)</a>
+</div>
+
+<!-- ======================================================= -->
+<!-- PART 1: 50 MCQ -->
+<!-- ======================================================= -->
+<h2 id="part1"><span class="section-label">PART 1</span> — 50 Multiple Choice Questions</h2>
+
+<p style="color:#555;font-size:0.95em;">Click "Show Answer" under each question to reveal the correct answer and explanation. Try answering on your own first.</p>
+
+<!-- GROUP A: Accounting Cycle / Journal Entries / T-Accounts -->
+<div class="mcq-group">
+<div class="mcq-group-title">Group A — Accounting Cycle / Journal Entries / T-Accounts (Q1–Q5)</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q1</span> Which financial statement reports revenues and expenses for a specific period?</h3>
+<ul class="choices">
+  <li>A) Balance Sheet</li>
+  <li>B) Income Statement</li>
+  <li>C) Statement of Cash Flows</li>
+  <li>D) Statement of Retained Earnings</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Income Statement</span></p>
+<p>The <strong>Income Statement</strong> (also called P&amp;L) covers revenues and expenses over a time period (e.g., "for the year ended Dec 31"). The Balance Sheet is a snapshot at one date. Retained Earnings connects the two.</p>
+<div class="gotcha"><strong>Common Mistake:</strong> Confusing Balance Sheet (one moment in time) with Income Statement (a period of time). Think: IS = movie, BS = photograph.</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q2</span> A company pays $12,000 cash for a 1-year insurance policy on July 1. Which entry is recorded on July 1?</h3>
+<ul class="choices">
+  <li>A) Dr. Insurance Expense $12,000 / Cr. Cash $12,000</li>
+  <li>B) Dr. Prepaid Insurance $12,000 / Cr. Cash $12,000</li>
+  <li>C) Dr. Cash $12,000 / Cr. Prepaid Insurance $12,000</li>
+  <li>D) Dr. Insurance Expense $6,000 / Cr. Prepaid Insurance $6,000</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Dr. Prepaid Insurance / Cr. Cash</span></p>
+<p>On July 1, the company has NOT yet used the insurance — it's a future benefit. So it records an <strong>asset (Prepaid Insurance)</strong>, not an expense. The expense is recognized monthly via adjusting entry ($1,000/month).</p>
+<div class="gotcha"><strong>Common Mistake:</strong> Expensing the full $12,000 at payment. Under accrual accounting, expenses are recorded when incurred, not when paid.</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q3</span> On a T-account, which side increases an asset account?</h3>
+<ul class="choices">
+  <li>A) Credit (right) side</li>
+  <li>B) Debit (left) side</li>
+  <li>C) Either side, depending on account type</li>
+  <li>D) Only when closing entries are posted</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Debit (left) side</span></p>
+<p>DEAD CLIC mnemonic: <strong>D</strong>ebits increase <strong>D</strong>ividends, <strong>E</strong>xpenses, <strong>A</strong>ssets, <strong>D</strong>rawings. Credits increase the rest (Liabilities, Equity, Revenue).</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q4</span> The accounting equation is best expressed as:</h3>
+<ul class="choices">
+  <li>A) Assets = Revenues − Expenses</li>
+  <li>B) Assets = Liabilities + Stockholders' Equity</li>
+  <li>C) Cash = Net Income + Depreciation</li>
+  <li>D) Liabilities = Assets − Revenue</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Assets = Liabilities + Stockholders' Equity</span></p>
+<p>This is the fundamental accounting equation. Every journal entry must keep this equation in balance. Stockholders' Equity = Common Stock + Retained Earnings (+ APIC etc.).</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q5</span> The trial balance is prepared to verify:</h3>
+<ul class="choices">
+  <li>A) That net income equals cash flow from operations</li>
+  <li>B) That total debits equal total credits after posting</li>
+  <li>C) That all revenue is recognized in the current period</li>
+  <li>D) That liabilities do not exceed assets</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Total debits equal total credits</span></p>
+<p>The trial balance lists all accounts and their balances. If debits ≠ credits, a posting error occurred. Note: a balanced trial balance does NOT guarantee no errors — you could debit the wrong account but still balance.</p>
+</details>
+</div>
+</div><!-- end Group A -->
+
+<!-- GROUP B: Adjusting + Closing Entries -->
+<div class="mcq-group">
+<div class="mcq-group-title">Group B — Adjusting &amp; Closing Entries (Q6–Q10)</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q6</span> An adjusting entry for accrued salaries that have been earned but not yet paid would be:</h3>
+<ul class="choices">
+  <li>A) Dr. Cash / Cr. Salaries Expense</li>
+  <li>B) Dr. Salaries Expense / Cr. Salaries Payable</li>
+  <li>C) Dr. Salaries Payable / Cr. Salaries Expense</li>
+  <li>D) Dr. Prepaid Salaries / Cr. Cash</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Dr. Salaries Expense / Cr. Salaries Payable</span></p>
+<p>Accrued expense = expense incurred, not yet paid. Record the expense now (debit) and the liability owed (credit). When paid later: Dr. Salaries Payable / Cr. Cash.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q7</span> Depreciation expense for the year is $8,000. Which adjusting entry is correct?</h3>
+<ul class="choices">
+  <li>A) Dr. Equipment / Cr. Cash $8,000</li>
+  <li>B) Dr. Depreciation Expense / Cr. Equipment $8,000</li>
+  <li>C) Dr. Depreciation Expense / Cr. Accumulated Depreciation $8,000</li>
+  <li>D) Dr. Accumulated Depreciation / Cr. Depreciation Expense $8,000</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — Dr. Depreciation Expense / Cr. Accumulated Depreciation</span></p>
+<p>Accumulated Depreciation is a <strong>contra-asset</strong> — it has a credit normal balance and reduces the asset's book value. We NEVER credit Equipment directly for periodic depreciation (that would remove the cost).</p>
+<div class="gotcha"><strong>Common Mistake:</strong> Crediting Equipment instead of Accumulated Depreciation. The equipment's original cost stays on the books until disposal.</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q8</span> At year-end, $3,000 of rent revenue has been collected but not yet earned. The adjusting entry is:</h3>
+<ul class="choices">
+  <li>A) Dr. Unearned Revenue / Cr. Rent Revenue $3,000</li>
+  <li>B) Dr. Rent Revenue / Cr. Unearned Revenue $3,000</li>
+  <li>C) Dr. Cash / Cr. Rent Revenue $3,000</li>
+  <li>D) No entry needed — cash was already received</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">A — Dr. Unearned Revenue / Cr. Rent Revenue</span></p>
+<p>Wait — let's re-read. The cash was already collected (Dr. Cash / Cr. Unearned Revenue at collection). At year-end, some of it IS earned, so we <em>recognize</em> revenue. If the $3,000 is the <strong>earned</strong> portion: Dr. Unearned Revenue / Cr. Rent Revenue. If $3,000 is still UNEARNED — no additional entry is needed at year-end. This question states it's collected but NOT yet earned, so the liability (Unearned Revenue) remains as-is. Answer A reflects the earning adjustment when earned.</p>
+<div class="gotcha"><strong>Key distinction:</strong> Unearned Revenue = liability (collected but not earned). When earned, move from liability to revenue. Do NOT recognize revenue until performance obligation is met.</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q9</span> Which accounts are closed at the end of the accounting period?</h3>
+<ul class="choices">
+  <li>A) Assets, Liabilities, and Equity</li>
+  <li>B) Revenue, Expenses, and Dividends</li>
+  <li>C) Cash, Accounts Receivable, and Revenue</li>
+  <li>D) Retained Earnings, Common Stock, and Dividends</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Revenue, Expenses, and Dividends</span></p>
+<p>These are <strong>temporary accounts</strong> — they reset to zero each period. Balance sheet accounts (Assets, Liabilities, Equity) are <strong>permanent</strong> and carry forward. Closing entries transfer Net Income and Dividends to Retained Earnings.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q10</span> After all closing entries, Retained Earnings has increased by $40,000. The company had revenues of $200,000 and dividends of $10,000. What were total expenses?</h3>
+<ul class="choices">
+  <li>A) $140,000</li>
+  <li>B) $150,000</li>
+  <li>C) $160,000</li>
+  <li>D) $170,000</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — $150,000</span></p>
+<div class="formula">RE change = Net Income − Dividends
+$40,000 = NI − $10,000
+NI = $50,000
+NI = Revenue − Expenses
+$50,000 = $200,000 − Expenses
+Expenses = $150,000</div>
+</details>
+</div>
+</div><!-- end Group B -->
+
+<!-- GROUP C: Inventory -->
+<div class="mcq-group">
+<div class="mcq-group-title">Group C — Inventory: FIFO / LIFO / Weighted Average (Q11–Q15)</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q11</span> In a period of <em>rising prices</em>, which inventory method produces the LOWEST net income?</h3>
+<ul class="choices">
+  <li>A) FIFO</li>
+  <li>B) Weighted Average</li>
+  <li>C) LIFO</li>
+  <li>D) Net income is the same under all methods</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — LIFO</span></p>
+<p>When prices rise, LIFO assigns the <strong>newest (most expensive) costs to COGS</strong> — higher COGS = lower gross profit = lower net income. FIFO gives lower COGS (old cheap costs) = higher net income.</p>
+<div class="gotcha"><strong>Flip rule:</strong> In FALLING prices, LIFO gives the LOWEST cost to COGS (newest = cheapest), so FIFO produces LOWER net income in falling price environments.</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q12</span> Beginning Inventory: 50 units @ $10. Purchase: 100 units @ $15. Sold: 80 units. Under FIFO, what is COGS?</h3>
+<ul class="choices">
+  <li>A) $800</li>
+  <li>B) $950</li>
+  <li>C) $1,100</li>
+  <li>D) $1,200</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — $950</span></p>
+<div class="formula">FIFO = sell oldest first:
+  50 units @ $10 = $500
+  30 units @ $15 = $450  (only 30 more needed to reach 80)
+  COGS = $500 + $450 = $950</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q13</span> The LIFO Reserve represents:</h3>
+<ul class="choices">
+  <li>A) Extra inventory held for emergencies</li>
+  <li>B) The difference between FIFO and LIFO inventory balances</li>
+  <li>C) Accumulated depreciation on inventory equipment</li>
+  <li>D) Reserve for estimated warranty costs</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Difference between FIFO and LIFO inventory balances</span></p>
+<p>LIFO Reserve = FIFO Inventory − LIFO Inventory. It appears as a contra account in LIFO companies and lets analysts convert LIFO to FIFO for comparison.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q14</span> Under the lower-of-cost-or-net-realizable-value (LCNRV) rule, if inventory cost is $80,000 and NRV is $72,000, the journal entry records:</h3>
+<ul class="choices">
+  <li>A) No entry — cost is always used</li>
+  <li>B) Dr. Inventory $8,000 / Cr. Loss on Inventory $8,000</li>
+  <li>C) Dr. Cost of Goods Sold $8,000 / Cr. Inventory $8,000</li>
+  <li>D) Dr. Loss on Inventory Write-Down $8,000 / Cr. Inventory $8,000</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">D — Dr. Loss on Inventory Write-Down / Cr. Inventory</span></p>
+<p>Inventory must be written DOWN to NRV ($72,000). The $8,000 drop = loss. Under US GAAP, this write-down cannot be reversed. Under IFRS, reversals are allowed if NRV later increases.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q15</span> In a periodic inventory system, which account is updated only at period-end?</h3>
+<ul class="choices">
+  <li>A) Cost of Goods Sold</li>
+  <li>B) Sales Revenue</li>
+  <li>C) Inventory (in the general ledger)</li>
+  <li>D) Both A and C</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">D — Both COGS and Inventory are updated only at period-end</span></p>
+<p>In a <strong>periodic</strong> system, purchases are recorded in a Purchases account, not directly to Inventory. COGS and ending inventory are calculated only at period-end via physical count. In <strong>perpetual</strong> systems, Inventory and COGS update with each transaction.</p>
+</details>
+</div>
+</div><!-- end Group C -->
+
+<!-- GROUP D: Receivables -->
+<div class="mcq-group">
+<div class="mcq-group-title">Group D — Receivables / Allowance / Write-off (Q16–Q20)</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q16</span> Using the allowance method, when an account is written off as uncollectible, the entry is:</h3>
+<ul class="choices">
+  <li>A) Dr. Bad Debt Expense / Cr. Accounts Receivable</li>
+  <li>B) Dr. Allowance for Doubtful Accounts / Cr. Accounts Receivable</li>
+  <li>C) Dr. Accounts Receivable / Cr. Allowance for Doubtful Accounts</li>
+  <li>D) Dr. Bad Debt Expense / Cr. Allowance for Doubtful Accounts</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Dr. Allowance for Doubtful Accounts / Cr. Accounts Receivable</span></p>
+<p>The write-off removes the specific A/R and uses up the allowance already set aside. Net A/R (book value) does NOT change — both the asset and contra drop equally. Bad Debt Expense was recorded earlier when the allowance was established.</p>
+<div class="gotcha"><strong>Common Mistake:</strong> Debiting Bad Debt Expense at write-off. That's the direct write-off method (not GAAP for significant amounts). Under allowance method, the expense was recorded in an earlier period.</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q17</span> The allowance method is preferred over the direct write-off method because it:</h3>
+<ul class="choices">
+  <li>A) Eliminates the need to estimate bad debts</li>
+  <li>B) Better matches bad debt expense with the revenue that created the receivable</li>
+  <li>C) Results in lower bad debt expense</li>
+  <li>D) Is required by the IRS</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Matches bad debt expense with revenue</span></p>
+<p>Matching principle: expense in the same period as the related revenue. The allowance method estimates and records bad debt expense in the period of sale, not when the account actually goes bad.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q18</span> Accounts Receivable = $500,000. Allowance for Doubtful Accounts = $20,000. What is Net Realizable Value (NRV) of A/R?</h3>
+<ul class="choices">
+  <li>A) $520,000</li>
+  <li>B) $500,000</li>
+  <li>C) $480,000</li>
+  <li>D) $20,000</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — $480,000</span></p>
+<div class="formula">NRV = Gross A/R − Allowance
+     = $500,000 − $20,000 = $480,000</div>
+<p>This is what the company expects to actually collect. The allowance is a <strong>contra-asset</strong> with a credit balance.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q19</span> A previously written-off account of $5,000 is unexpectedly recovered. What is the FIRST journal entry?</h3>
+<ul class="choices">
+  <li>A) Dr. Cash $5,000 / Cr. Bad Debt Expense $5,000</li>
+  <li>B) Dr. Accounts Receivable $5,000 / Cr. Allowance for Doubtful Accounts $5,000</li>
+  <li>C) Dr. Cash $5,000 / Cr. Accounts Receivable $5,000</li>
+  <li>D) Dr. Allowance for Doubtful Accounts $5,000 / Cr. Accounts Receivable $5,000</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Dr. Accounts Receivable / Cr. Allowance for Doubtful Accounts</span></p>
+<p>Recovery is a two-step process: (1) <strong>Reverse the write-off</strong> (reinstate A/R), then (2) Dr. Cash / Cr. Accounts Receivable when payment is received. Step 1 is B. Step 2 is C.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q20</span> Notes Receivable differs from Accounts Receivable primarily because:</h3>
+<ul class="choices">
+  <li>A) Notes are always long-term; A/R is always short-term</li>
+  <li>B) Notes bear interest; A/R typically does not</li>
+  <li>C) Notes arise only from bank loans</li>
+  <li>D) Notes receivable cannot be sold to a third party</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Notes bear interest</span></p>
+<p>A Note Receivable is a formal written promise with a stated interest rate and maturity date. A/R arises from sales on credit without formal promissory notes. Notes can be short-term OR long-term.</p>
+</details>
+</div>
+</div><!-- end Group D -->
+
+<!-- GROUP E: PP&E + Depreciation -->
+<div class="mcq-group">
+<div class="mcq-group-title">Group E — PP&amp;E: Depreciation / Disposal / Impairment (Q21–Q25)</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q21</span> A machine costs $50,000, has a salvage value of $5,000, and useful life of 5 years. Annual straight-line depreciation is:</h3>
+<ul class="choices">
+  <li>A) $9,000</li>
+  <li>B) $10,000</li>
+  <li>C) $11,000</li>
+  <li>D) $45,000</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">A — $9,000</span></p>
+<div class="formula">Annual SL Depreciation = (Cost − Salvage) / Useful Life
+= ($50,000 − $5,000) / 5 = $45,000 / 5 = $9,000</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q22</span> Under the double-declining balance method, Year 1 depreciation on a $40,000 asset with 4-year life and $4,000 salvage value is:</h3>
+<ul class="choices">
+  <li>A) $9,000</li>
+  <li>B) $10,000</li>
+  <li>C) $18,000</li>
+  <li>D) $20,000</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">D — $20,000</span></p>
+<div class="formula">DDB Rate = 2 × (1 / Useful Life) = 2 × (1/4) = 50%
+Year 1: $40,000 × 50% = $20,000
+(Note: Salvage value is NOT subtracted from cost in DDB calculation — but you stop depreciating when book value reaches salvage.)</div>
+<div class="gotcha"><strong>Common Mistake:</strong> Subtracting salvage before applying DDB rate. DDB ignores salvage in the calculation — only used as the floor.</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q23</span> Equipment with book value $30,000 is sold for $25,000. The journal entry records:</h3>
+<ul class="choices">
+  <li>A) Gain on Sale of $5,000</li>
+  <li>B) Loss on Sale of $5,000</li>
+  <li>C) No gain or loss — cash equals the book value</li>
+  <li>D) Gain of $25,000</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Loss on Sale of $5,000</span></p>
+<div class="formula">Gain/Loss = Sale Price − Book Value = $25,000 − $30,000 = −$5,000 (LOSS)</div>
+<p>Journal Entry: Dr. Cash $25,000 / Dr. Accum. Depr. $XX / Dr. Loss on Sale $5,000 / Cr. Equipment $XX</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q24</span> An impairment loss on PP&E is recognized when:</h3>
+<ul class="choices">
+  <li>A) The asset's market value drops below its original cost</li>
+  <li>B) The asset's carrying amount exceeds its recoverable amount (fair value less costs to sell or value-in-use)</li>
+  <li>C) The asset is more than 50% depreciated</li>
+  <li>D) Management decides to replace the asset next year</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Carrying amount exceeds recoverable amount</span></p>
+<p>Impairment = the asset is worth less than its book value on the balance sheet. Under US GAAP: compare book value to undiscounted future cash flows first (recoverability test), then measure loss at fair value. Under IFRS: compare to recoverable amount directly.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q25</span> Which cost is capitalized (added to the asset's cost), not expensed?</h3>
+<ul class="choices">
+  <li>A) Routine maintenance on a machine</li>
+  <li>B) Annual oil change for company vehicles</li>
+  <li>C) Addition of a new wing to the building that extends its useful life</li>
+  <li>D) Painting the parking lot lines</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — Addition that extends useful life</span></p>
+<p>Capitalize costs that <strong>extend useful life, increase capacity, or improve efficiency</strong>. Routine maintenance and repairs that simply maintain current function are expensed immediately (revenue expenditure).</p>
+</details>
+</div>
+</div><!-- end Group E -->
+
+<!-- GROUP F: Intangibles -->
+<div class="mcq-group">
+<div class="mcq-group-title">Group F — Intangibles / Amortization (Q26–Q28)</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q26</span> A company acquires a patent for $60,000 with a legal life of 20 years and economic life of 10 years. Annual amortization is:</h3>
+<ul class="choices">
+  <li>A) $3,000 (20-year legal life)</li>
+  <li>B) $6,000 (10-year economic life)</li>
+  <li>C) $0 — patents are not amortized</li>
+  <li>D) $60,000 immediately expensed</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — $6,000 (shorter of legal vs. economic)</span></p>
+<p>Amortize over the <strong>shorter of legal life or useful economic life</strong>. $60,000 / 10 = $6,000/year. Intangibles with finite lives are amortized; those with indefinite lives (e.g., goodwill) are NOT amortized but tested annually for impairment.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q27</span> Goodwill arises when:</h3>
+<ul class="choices">
+  <li>A) A company's stock price exceeds book value per share</li>
+  <li>B) A company pays more for another business than the fair value of its identifiable net assets</li>
+  <li>C) A company has excellent management and loyal customers</li>
+  <li>D) R&amp;D spending produces a breakthrough product</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Purchase price exceeds fair value of identifiable net assets</span></p>
+<div class="formula">Goodwill = Purchase Price − Fair Value of Net Assets Acquired</div>
+<p>Goodwill is only recorded through an acquisition. Internally generated goodwill (option C) cannot be capitalized under GAAP.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q28</span> Research costs under US GAAP are:</h3>
+<ul class="choices">
+  <li>A) Always capitalized as intangible assets</li>
+  <li>B) Expensed as incurred</li>
+  <li>C) Capitalized if the project is expected to succeed</li>
+  <li>D) Capitalized at 50% and expensed at 50%</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Expensed as incurred</span></p>
+<p>Under US GAAP, <strong>all R&amp;D is expensed</strong> immediately because future benefits are too uncertain. Under IFRS, development costs (not research) may be capitalized once technical feasibility is established.</p>
+</details>
+</div>
+</div><!-- end Group F -->
+
+<!-- GROUP G: Liabilities / Bonds / Equity -->
+<div class="mcq-group">
+<div class="mcq-group-title">Group G — Current Liabilities / Bonds / EIM / Stockholders Equity (Q29–Q38)</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q29</span> A bond with a face value of $100,000 and a coupon rate of 6% is issued when market rate is 8%. The bond will be issued at:</h3>
+<ul class="choices">
+  <li>A) Par value ($100,000)</li>
+  <li>B) A premium (above $100,000)</li>
+  <li>C) A discount (below $100,000)</li>
+  <li>D) Cannot determine without maturity date</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — At a discount</span></p>
+<p>When the coupon rate (6%) is LESS than the market rate (8%), investors demand a lower price to make the bond yield 8%. Price &lt; Face = discount. Memory trick: <strong>"Coupon &lt; Market → Discount; Coupon &gt; Market → Premium."</strong></p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q30</span> Under the Effective Interest Method, interest expense each period is calculated as:</h3>
+<ul class="choices">
+  <li>A) Face Value × Coupon Rate</li>
+  <li>B) Carrying Value × Market Rate</li>
+  <li>C) Carrying Value × Coupon Rate</li>
+  <li>D) Face Value × Market Rate</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Carrying Value × Market Rate</span></p>
+<div class="formula">Interest Expense = Carrying Value (book value) × Effective (Market) Rate
+Cash Paid       = Face Value × Coupon Rate
+Discount/Premium Amortization = Interest Expense − Cash Paid</div>
+<div class="gotcha"><strong>Common Mistake:</strong> Using face value × market rate. Always use <em>carrying value</em> (which changes each period) × <em>market rate</em>.</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q31</span> A bond is issued at a discount. Over the bond's life, the carrying value will:</h3>
+<ul class="choices">
+  <li>A) Decrease toward zero</li>
+  <li>B) Increase toward face value</li>
+  <li>C) Remain constant</li>
+  <li>D) Decrease toward face value</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Increase toward face value</span></p>
+<p>Each period, the discount is amortized (reduced). Carrying value = Face − Remaining Discount. As discount shrinks → carrying value rises → reaches face value at maturity.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q32</span> Contingent liabilities are recorded when:</h3>
+<ul class="choices">
+  <li>A) The loss is possible and the amount can be estimated</li>
+  <li>B) The loss is probable and the amount can be reasonably estimated</li>
+  <li>C) Management decides it would be prudent to record them</li>
+  <li>D) The company's attorneys advise it is possible</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Probable AND estimable</span></p>
+<p>Both conditions must be met to record. "Possible but not probable" = disclose only in notes. "Remote" = no disclosure required. This is SFAS 5 / ASC 450 logic.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q33</span> When a company declares a cash dividend, which account is credited?</h3>
+<ul class="choices">
+  <li>A) Cash</li>
+  <li>B) Retained Earnings</li>
+  <li>C) Dividends Payable</li>
+  <li>D) Common Stock</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — Dividends Payable</span></p>
+<p>Declaration date: Dr. Retained Earnings (or Dividends) / Cr. Dividends Payable. Payment date: Dr. Dividends Payable / Cr. Cash. Until payment, Dividends Payable is a current liability.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q34</span> Treasury stock is recorded at:</h3>
+<ul class="choices">
+  <li>A) Par value of shares repurchased</li>
+  <li>B) Cost of shares repurchased</li>
+  <li>C) Fair market value at the date of the financial statements</li>
+  <li>D) Original issuance price</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Cost of shares repurchased</span></p>
+<p>Treasury stock (cost method) is a contra-equity account debited at the repurchase price. It reduces total stockholders' equity. Treasury shares are NOT outstanding and receive no dividends or voting rights.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q35</span> A stock dividend:</h3>
+<ul class="choices">
+  <li>A) Increases total stockholders' equity</li>
+  <li>B) Decreases total assets</li>
+  <li>C) Transfers an amount from Retained Earnings to Common Stock accounts</li>
+  <li>D) Creates a liability on the balance sheet</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — Transfers within equity</span></p>
+<p>A stock dividend redistributes equity from Retained Earnings to Paid-in Capital. Total equity, total assets, and total liabilities are UNCHANGED. No cash leaves the company.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q36</span> Paid-in Capital in Excess of Par (APIC) arises when:</h3>
+<ul class="choices">
+  <li>A) The company earns profits above the expected rate</li>
+  <li>B) Shares are sold at a price above par value</li>
+  <li>C) Dividends are paid from prior-year earnings</li>
+  <li>D) The company borrows at a premium</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Shares sold above par value</span></p>
+<div class="formula">Example: 1,000 shares, $1 par, sold at $25 each:
+Dr. Cash         $25,000
+Cr. Common Stock (par)   $1,000
+Cr. APIC                $24,000</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q37</span> Which section of stockholders' equity shows cumulative profits retained in the business?</h3>
+<ul class="choices">
+  <li>A) Common Stock</li>
+  <li>B) Additional Paid-in Capital</li>
+  <li>C) Retained Earnings</li>
+  <li>D) Accumulated Other Comprehensive Income</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — Retained Earnings</span></p>
+<p>RE = Prior RE + Net Income − Dividends. It is the cumulative sum of all profits kept in the business since inception. Negative RE = Accumulated Deficit.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q38</span> Preferred stock that accumulates undeclared dividends is called:</h3>
+<ul class="choices">
+  <li>A) Convertible preferred</li>
+  <li>B) Callable preferred</li>
+  <li>C) Cumulative preferred</li>
+  <li>D) Participating preferred</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — Cumulative preferred</span></p>
+<p>If cumulative dividends are not declared in a year, they become "dividends in arrears" and must be paid before any common dividends. Dividends in arrears are disclosed in footnotes, NOT recorded as liabilities until declared.</p>
+</details>
+</div>
+</div><!-- end Group G -->
+
+<!-- GROUP H: Cash Flow -->
+<div class="mcq-group">
+<div class="mcq-group-title">Group H — Cash Flow Statement (CFO / CFI / CFF) (Q39–Q45)</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q39</span> Depreciation expense is added back in the CFO section (indirect method) because:</h3>
+<ul class="choices">
+  <li>A) It represents a cash inflow from operations</li>
+  <li>B) It was subtracted in net income but involves no cash outflow</li>
+  <li>C) It reduces taxes and therefore increases cash</li>
+  <li>D) It is required by GAAP to report gross cash flows</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Non-cash expense deducted from NI but no cash leaves</span></p>
+<p>Under the indirect method, we start with Net Income and add back all non-cash expenses (depreciation, amortization) because they reduced NI but did NOT reduce cash. We're converting accrual-based NI to cash-based CFO.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q40</span> Purchase of equipment for $80,000 appears in which section of the cash flow statement?</h3>
+<ul class="choices">
+  <li>A) CFO — Operating</li>
+  <li>B) CFI — Investing</li>
+  <li>C) CFF — Financing</li>
+  <li>D) Supplemental disclosure only</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — CFI (Investing)</span></p>
+<p>Buying/selling long-term assets (PP&E, investments) = Investing activities. Rule: if it affects long-term assets, it goes to CFI.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q41</span> Issuing bonds payable for cash is classified as:</h3>
+<ul class="choices">
+  <li>A) CFO</li>
+  <li>B) CFI</li>
+  <li>C) CFF</li>
+  <li>D) Non-cash activity</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — CFF (Financing)</span></p>
+<p>CFF includes borrowing/repaying debt and issuing/repurchasing stock and paying dividends. Mnemonic: <strong>CFF = how the company is funded</strong> (long-term debt + equity transactions).</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q42</span> Net Income $200,000; Depreciation $30,000; A/R increased $15,000; Inventory decreased $10,000; A/P decreased $8,000. CFO (indirect) = ?</h3>
+<ul class="choices">
+  <li>A) $217,000</li>
+  <li>B) $217,000</li>
+  <li>C) $207,000</li>
+  <li>D) $193,000</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — $217,000</span></p>
+<div class="formula">Net Income               $200,000
++ Depreciation            $30,000  (non-cash)
+− A/R increase           ($15,000) (asset ↑ = cash ↓)
++ Inventory decrease      $10,000  (asset ↓ = cash ↑)
+− A/P decrease            ($8,000) (liability ↓ = cash ↓)
+= CFO                    $217,000</div>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q43</span> A gain on the sale of equipment appears in CFO (indirect method) as:</h3>
+<ul class="choices">
+  <li>A) Added to Net Income</li>
+  <li>B) Subtracted from Net Income</li>
+  <li>C) Reported in CFI section</li>
+  <li>D) Ignored — it's already in Net Income</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Subtracted from Net Income</span></p>
+<p>The gain is already included in NI. But the full cash proceeds belong in CFI. To avoid double-counting, we REMOVE the gain from CFO. A loss is added back for the same reason.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q44</span> Which of the following is a NON-CASH financing/investing activity that requires supplemental disclosure?</h3>
+<ul class="choices">
+  <li>A) Paying off a mortgage with cash</li>
+  <li>B) Purchasing land by issuing stock directly to the seller</li>
+  <li>C) Collecting rent from tenants</li>
+  <li>D) Repurchasing treasury stock with cash</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Purchasing land by issuing stock</span></p>
+<p>No cash changed hands, but both a long-term asset and equity were affected. These significant non-cash transactions must be disclosed as supplemental information (below the cash flow statement).</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q45</span> Under the direct method of presenting CFO, which item would appear?</h3>
+<ul class="choices">
+  <li>A) Net Income</li>
+  <li>B) Depreciation expense</li>
+  <li>C) Cash received from customers</li>
+  <li>D) Changes in working capital accounts</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">C — Cash received from customers</span></p>
+<p>The direct method lists actual cash inflows and outflows (Cash from customers, Cash paid to suppliers, Cash paid for wages, etc.). The indirect method starts with NI and adjusts for non-cash items. GAAP prefers direct; indirect is more commonly used in practice.</p>
+</details>
+</div>
+</div><!-- end Group H -->
+
+<!-- GROUP I: Financial Analysis / Ratios -->
+<div class="mcq-group">
+<div class="mcq-group-title">Group I — Financial Statement Analysis / Ratios (Q46–Q50)</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q46</span> Current Ratio = 2.5 means:</h3>
+<ul class="choices">
+  <li>A) The company has $2.50 in profit for every $1 of revenue</li>
+  <li>B) The company has $2.50 in current assets for every $1 of current liabilities</li>
+  <li>C) The company is 2.5 times more liquid than its competitors</li>
+  <li>D) Long-term assets are 2.5 times larger than long-term liabilities</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — $2.50 current assets per $1 current liabilities</span></p>
+<div class="formula">Current Ratio = Current Assets / Current Liabilities</div>
+<p>Higher = more liquid. Quick Ratio excludes inventory (more conservative). Ideal depends on industry.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q47</span> A company's inventory turnover ratio is 8. This means the company:</h3>
+<ul class="choices">
+  <li>A) Sells its entire inventory every 8 months</li>
+  <li>B) Sells and replaces its average inventory 8 times per year</li>
+  <li>C) Has $8 in sales for every $1 of inventory</li>
+  <li>D) Takes 8 months to collect receivables</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Inventory sold and replaced 8 times per year</span></p>
+<div class="formula">Inventory Turnover = COGS / Average Inventory
+Days in Inventory = 365 / Turnover = 365 / 8 ≈ 46 days</div>
+<p>Higher turnover = faster-moving inventory = generally better (less cash tied up).</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q48</span> The debt-to-equity ratio measures:</h3>
+<ul class="choices">
+  <li>A) How profitably a company uses equity</li>
+  <li>B) The proportion of assets financed by creditors vs. owners</li>
+  <li>C) Whether dividends are sustainable</li>
+  <li>D) The market value of debt compared to equity</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Creditor vs. owner financing proportion</span></p>
+<div class="formula">Debt-to-Equity = Total Liabilities / Total Stockholders' Equity</div>
+<p>Higher ratio = more leveraged = more financial risk. Creditors prefer lower D/E; some leverage can boost ROE.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q49</span> Gross Profit Margin = 40% means:</h3>
+<ul class="choices">
+  <li>A) 40 cents of every dollar of sales is net income</li>
+  <li>B) 40 cents of every dollar of sales remains after deducting cost of goods sold</li>
+  <li>C) Operating expenses are 40% of sales</li>
+  <li>D) 40% of inventory is sold each year</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — 40 cents per dollar left after COGS</span></p>
+<div class="formula">Gross Profit Margin = Gross Profit / Net Sales = (Sales − COGS) / Sales</div>
+<p>Net Profit Margin = Net Income / Sales (after all expenses including taxes). Gross margin is above operating expenses.</p>
+</details>
+</div>
+
+<div class="problem">
+<h3><span class="problem-num">Q50</span> Return on Equity (ROE) is calculated as:</h3>
+<ul class="choices">
+  <li>A) Net Income / Total Assets</li>
+  <li>B) Net Income / Average Stockholders' Equity</li>
+  <li>C) Operating Income / Total Revenue</li>
+  <li>D) EPS / Market Price per Share</li>
+</ul>
+<details class="answer"><summary>▶ Show Answer</summary>
+<p><span class="correct-tag">B — Net Income / Average Stockholders' Equity</span></p>
+<div class="formula">ROE = Net Income / Average Stockholders' Equity
+ROA = Net Income / Average Total Assets
+EPS = (NI − Preferred Dividends) / Weighted Avg Common Shares</div>
+<p>ROE measures how efficiently equity is used to generate profit. Higher = better for shareholders.</p>
+</details>
+</div>
+</div><!-- end Group I -->
+
+<!-- ======================================================= -->
+<!-- PART 2: 5 FREE RESPONSE -->
+<!-- ======================================================= -->
+<h2 id="part2"><span class="section-label">PART 2</span> — 5 Free Response Problems</h2>
+
+<p style="color:#555;font-size:0.95em;">Show all work. These mirror the most common calculation problems on accounting finals. Detailed step-by-step answers below each question.</p>
+
+<!-- FR Q1: Bond + EIM -->
+<div class="fr-problem">
+<h3><span class="fr-num">FR1</span> Bond Issuance + Effective Interest Method</h3>
+
+<div class="source">
+  Skyline Corp. issues $200,000 face value bonds on January 1, Year 1.<br>
+  Coupon rate: 5% (paid annually on Dec 31) &nbsp;|&nbsp; Market rate: 7% &nbsp;|&nbsp; Term: 3 years<br>
+  <strong>Issue price = $189,544</strong> (given — you don't need to calculate PV on the exam unless told to).
+</div>
+
+<p><strong>Required:</strong></p>
+<ol>
+  <li>Record the journal entry on Jan 1 (bond issuance).</li>
+  <li>Prepare the full effective interest amortization table (3 years).</li>
+  <li>Record journal entries on Dec 31, Year 1 and Year 2 (interest + amortization).</li>
+  <li>Record the journal entry at maturity (Dec 31, Year 3).</li>
+</ol>
+
+<details class="answer"><summary>▶ Show Full Solution</summary>
+
+<div class="step"><strong>Step 1 — Jan 1: Issuance Entry</strong></div>
+<div class="je">Dr. Cash                      189,544
+    Cr. Bonds Payable (face)         200,000
+    Dr. Discount on Bonds Payable     10,456
+          (200,000 − 189,544 = 10,456 discount)</div>
+
+<div class="step"><strong>Step 2 — Amortization Table (EIM)</strong></div>
+<table>
+  <tr><th>Period</th><th class="num">Carrying Value (Beg)</th><th class="num">Interest Expense (×7%)</th><th class="num">Cash Paid (Face×5%)</th><th class="num">Discount Amortized</th><th class="num">Carrying Value (End)</th></tr>
+  <tr><td>Year 1</td><td class="num">$189,544</td><td class="num">$13,268</td><td class="num">$10,000</td><td class="num">$3,268</td><td class="num">$192,812</td></tr>
+  <tr><td>Year 2</td><td class="num">$192,812</td><td class="num">$13,497</td><td class="num">$10,000</td><td class="num">$3,497</td><td class="num">$196,309</td></tr>
+  <tr><td>Year 3</td><td class="num">$196,309</td><td class="num">$13,691*</td><td class="num">$10,000</td><td class="num">$3,691</td><td class="num">$200,000</td></tr>
+</table>
+<p style="font-size:0.88em;color:#555;">*Year 3 adjusted slightly for rounding to reach exactly $200,000.</p>
+<div class="formula">Interest Expense = Carrying Value × Market Rate (7%)
+Cash Paid        = Face Value ($200,000) × Coupon Rate (5%) = $10,000 always
+Amortization     = Interest Expense − Cash Paid
+New Carrying Val = Old Carrying Val + Amortization</div>
+
+<div class="step"><strong>Step 3 — Dec 31, Year 1 Journal Entry</strong></div>
+<div class="je">Dr. Interest Expense              13,268
+    Cr. Cash (coupon paid)               10,000
+    Cr. Discount on Bonds Payable         3,268</div>
+
+<div class="step"><strong>Step 3b — Dec 31, Year 2 Journal Entry</strong></div>
+<div class="je">Dr. Interest Expense              13,497
+    Cr. Cash                             10,000
+    Cr. Discount on Bonds Payable         3,497</div>
+
+<div class="step"><strong>Step 4 — Dec 31, Year 3 (Maturity — two entries)</strong></div>
+<div class="je">Entry 1: Final interest
+Dr. Interest Expense              13,691
+    Cr. Cash                             10,000
+    Cr. Discount on Bonds Payable         3,691
+
+Entry 2: Repay face value
+Dr. Bonds Payable                200,000
+    Cr. Cash                            200,000</div>
+
+<div class="tip"><strong>Check:</strong> After 3 years, Discount on Bonds Payable should be $0 and Bonds Payable should be retired. Carrying value must equal face value at maturity.</div>
+<div class="gotcha"><strong>Common Mistakes:</strong> (1) Using face value × 7% for interest expense. WRONG — use carrying value × 7%. (2) Forgetting to record the separate repayment entry at maturity. (3) Getting signs backward on the discount amortization.</div>
+</details>
+</div>
+
+<!-- FR Q2: Inventory FIFO LIFO Average -->
+<div class="fr-problem">
+<h3><span class="fr-num">FR2</span> Inventory: FIFO vs. LIFO vs. Weighted Average — Full Calculation + Journal</h3>
+
+<div class="source">
+  Maple Goods Co. had the following inventory data for the month:
+</div>
+
+<table>
+  <tr><th>Date</th><th>Transaction</th><th class="num">Units</th><th class="num">Unit Cost</th><th class="num">Total Cost</th></tr>
+  <tr><td>May 1</td><td>Beginning Inventory</td><td class="num">200</td><td class="num">$12</td><td class="num">$2,400</td></tr>
+  <tr><td>May 8</td><td>Purchase</td><td class="num">300</td><td class="num">$15</td><td class="num">$4,500</td></tr>
+  <tr><td>May 20</td><td>Purchase</td><td class="num">200</td><td class="num">$18</td><td class="num">$3,600</td></tr>
+  <tr><td>May 25</td><td>Sold</td><td class="num">400</td><td class="num">—</td><td class="num">—</td></tr>
+  <tr><th>Total Available</th><th></th><th class="num">700</th><th></th><th class="num">$10,500</th></tr>
+</table>
+
+<p><strong>Required:</strong> Calculate (a) COGS and (b) Ending Inventory under FIFO, LIFO, and Weighted Average. Then write the journal entry to record COGS under FIFO (perpetual system). Assume selling price = $30/unit.</p>
+
+<details class="answer"><summary>▶ Show Full Solution</summary>
+
+<p><strong>Ending Units = 700 − 400 = 300 units remaining</strong></p>
+
+<div class="step"><strong>(a) FIFO — Oldest costs go to COGS first</strong></div>
+<table>
+  <tr><th>Layer Sold</th><th class="num">Units</th><th class="num">Cost</th><th class="num">Total</th></tr>
+  <tr><td>May 1 (oldest)</td><td class="num">200</td><td class="num">$12</td><td class="num">$2,400</td></tr>
+  <tr><td>May 8 (next)</td><td class="num">200</td><td class="num">$15</td><td class="num">$3,000</td></tr>
+  <tr><th>FIFO COGS</th><th class="num">400</th><th></th><th class="num">$5,400</th></tr>
+</table>
+<div class="formula">FIFO Ending Inventory = 100 units @ $15 + 200 units @ $18
+                      = $1,500 + $3,600 = $5,100
+Check: $5,400 + $5,100 = $10,500 ✓</div>
+
+<div class="step"><strong>(b) LIFO — Newest costs go to COGS first</strong></div>
+<table>
+  <tr><th>Layer Sold</th><th class="num">Units</th><th class="num">Cost</th><th class="num">Total</th></tr>
+  <tr><td>May 20 (newest)</td><td class="num">200</td><td class="num">$18</td><td class="num">$3,600</td></tr>
+  <tr><td>May 8 (next)</td><td class="num">200</td><td class="num">$15</td><td class="num">$3,000</td></tr>
+  <tr><th>LIFO COGS</th><th class="num">400</th><th></th><th class="num">$6,600</th></tr>
+</table>
+<div class="formula">LIFO Ending Inventory = 200 units @ $12 + 100 @ $15
+                      = $2,400 + $1,500 = $3,900
+Check: $6,600 + $3,900 = $10,500 ✓</div>
+
+<div class="step"><strong>(c) Weighted Average</strong></div>
+<div class="formula">Weighted Average Cost = Total Cost / Total Units
+                     = $10,500 / 700 = $15.00 per unit
+COGS     = 400 × $15.00 = $6,000
+Ending Inv = 300 × $15.00 = $4,500
+Check: $6,000 + $4,500 = $10,500 ✓</div>
+
+<div class="step"><strong>Comparison Summary</strong></div>
+<table>
+  <tr><th>Method</th><th class="num">COGS</th><th class="num">Ending Inventory</th><th class="num">Gross Profit (400 × $30 − COGS)</th></tr>
+  <tr><td>FIFO</td><td class="num">$5,400</td><td class="num">$5,100</td><td class="num">$6,600</td></tr>
+  <tr><td>Weighted Average</td><td class="num">$6,000</td><td class="num">$4,500</td><td class="num">$6,000</td></tr>
+  <tr><td>LIFO</td><td class="num">$6,600</td><td class="num">$3,900</td><td class="num">$5,400</td></tr>
+</table>
+
+<div class="step"><strong>Journal Entry — COGS under FIFO (perpetual)</strong></div>
+<div class="je">When goods sold on May 25 (perpetual system):
+Dr. Accounts Receivable (or Cash)   12,000   [400 × $30]
+    Cr. Sales Revenue                        12,000
+
+Dr. Cost of Goods Sold               5,400   [FIFO COGS]
+    Cr. Inventory                            5,400</div>
+
+<div class="gotcha"><strong>Rising prices reminder:</strong> FIFO gives LOWEST COGS = HIGHEST net income = HIGHEST taxes. LIFO gives HIGHEST COGS = LOWEST net income = LOWEST taxes (tax advantage = reason US companies used LIFO). Note: LIFO is NOT permitted under IFRS.</div>
+</details>
+</div>
+
+<!-- FR Q3: Cash Flow Statement -->
+<div class="fr-problem">
+<h3><span class="fr-num">FR3</span> Cash Flow Statement — Full Reconciliation (CFO + CFI + CFF) with PP&E Sale</h3>
+
+<div class="source">
+  Riverdale Inc. — Income Statement &amp; Balance Sheet Data for Year Ended Dec 31:
+</div>
+
+<table>
+  <tr><th>Item</th><th class="num">Amount</th></tr>
+  <tr><td>Net Income</td><td class="num">$85,000</td></tr>
+  <tr><td>Depreciation Expense</td><td class="num">$22,000</td></tr>
+  <tr><td>Accounts Receivable — Increase</td><td class="num">$12,000</td></tr>
+  <tr><td>Inventory — Decrease</td><td class="num">$8,000</td></tr>
+  <tr><td>Prepaid Expenses — Increase</td><td class="num">$3,000</td></tr>
+  <tr><td>Accounts Payable — Increase</td><td class="num">$6,000</td></tr>
+  <tr><td>Accrued Liabilities — Decrease</td><td class="num">$4,000</td></tr>
+  <tr><td>Gain on sale of equipment (included in NI)</td><td class="num">$7,000</td></tr>
+  <tr><td>Cash received from equipment sale</td><td class="num">$25,000</td></tr>
+  <tr><td>Purchase of new equipment</td><td class="num">$60,000</td></tr>
+  <tr><td>Purchased investments</td><td class="num">$15,000</td></tr>
+  <tr><td>Issued long-term bonds</td><td class="num">$50,000</td></tr>
+  <tr><td>Repaid long-term loan</td><td class="num">$30,000</td></tr>
+  <tr><td>Paid cash dividends</td><td class="num">$10,000</td></tr>
+  <tr><td>Beginning Cash</td><td class="num">$20,000</td></tr>
+</table>
+
+<p><strong>Required:</strong> Prepare the complete Cash Flow Statement (indirect method). Show CFO, CFI, CFF, and ending cash balance.</p>
+
+<details class="answer"><summary>▶ Show Full Solution</summary>
+
+<table>
+  <tr><th colspan="2" style="background:#1565c0;color:white;">RIVERDALE INC. — Statement of Cash Flows (Year Ended Dec 31)</th></tr>
+
+  <tr><td colspan="2" style="background:#eceff1;font-weight:bold;">OPERATING ACTIVITIES (Indirect Method)</td></tr>
+  <tr><td>Net Income</td><td class="num">$85,000</td></tr>
+  <tr><td class="indent">+ Depreciation (non-cash)</td><td class="num">22,000</td></tr>
+  <tr><td class="indent">− Gain on equipment sale (remove — goes to CFI)</td><td class="num">(7,000)</td></tr>
+  <tr><td class="indent">− A/R Increase (asset ↑ → cash ↓)</td><td class="num">(12,000)</td></tr>
+  <tr><td class="indent">+ Inventory Decrease (asset ↓ → cash ↑)</td><td class="num">8,000</td></tr>
+  <tr><td class="indent">− Prepaid Expenses Increase (asset ↑ → cash ↓)</td><td class="num">(3,000)</td></tr>
+  <tr><td class="indent">+ A/P Increase (liability ↑ → cash ↑)</td><td class="num">6,000</td></tr>
+  <tr><td class="indent">− Accrued Liabilities Decrease (liability ↓ → cash ↓)</td><td class="num">(4,000)</td></tr>
+  <tr><td style="font-weight:bold;">Net Cash from Operating Activities (CFO)</td><td class="num" style="font-weight:bold;">$95,000</td></tr>
+
+  <tr><td colspan="2" style="background:#eceff1;font-weight:bold;">INVESTING ACTIVITIES</td></tr>
+  <tr><td class="indent">+ Sale of equipment (full proceeds — not just gain)</td><td class="num">25,000</td></tr>
+  <tr><td class="indent">− Purchase of equipment</td><td class="num">(60,000)</td></tr>
+  <tr><td class="indent">− Purchased investments</td><td class="num">(15,000)</td></tr>
+  <tr><td style="font-weight:bold;">Net Cash from Investing Activities (CFI)</td><td class="num" style="font-weight:bold;">($50,000)</td></tr>
+
+  <tr><td colspan="2" style="background:#eceff1;font-weight:bold;">FINANCING ACTIVITIES</td></tr>
+  <tr><td class="indent">+ Issued long-term bonds</td><td class="num">50,000</td></tr>
+  <tr><td class="indent">− Repaid long-term loan</td><td class="num">(30,000)</td></tr>
+  <tr><td class="indent">− Paid cash dividends</td><td class="num">(10,000)</td></tr>
+  <tr><td style="font-weight:bold;">Net Cash from Financing Activities (CFF)</td><td class="num" style="font-weight:bold;">$10,000</td></tr>
+
+  <tr><td style="font-weight:bold;">Net Increase in Cash</td><td class="num" style="font-weight:bold;">$55,000</td></tr>
+  <tr><td>Beginning Cash Balance</td><td class="num">$20,000</td></tr>
+  <tr><td style="font-weight:bold;background:#e8f5e9;">Ending Cash Balance</td><td class="num" style="font-weight:bold;background:#e8f5e9;">$75,000</td></tr>
+</table>
+
+<div class="gotcha"><strong>KEY TRAPS in this problem:</strong><br>
+(1) The $7,000 GAIN is subtracted from CFO — it was in NI but belongs in CFI.<br>
+(2) CFI shows the FULL proceeds $25,000 — not just the $7,000 gain.<br>
+(3) A/R INCREASE = SUBTRACT (more owed = less collected).<br>
+(4) A/P INCREASE = ADD (more owed to suppliers = kept more cash).<br>
+(5) Dividends paid = CFF (not CFO, even though they're an operating concept).</div>
+</details>
+</div>
+
+<!-- FR Q4: Stockholders Equity -->
+<div class="fr-problem">
+<h3><span class="fr-num">FR4</span> Stockholders' Equity — Full Statement (Issuance + Treasury + Dividends)</h3>
+
+<div class="source">
+  Crestview Corp. had the following equity activity during the year:
+</div>
+
+<table>
+  <tr><th>Event</th><th>Details</th></tr>
+  <tr><td>Jan 1 — Beginning balances</td><td>Common Stock (par $1) = $5,000 (5,000 shares) | APIC = $95,000 | RE = $120,000 | Treasury Stock = $0</td></tr>
+  <tr><td>Mar 1 — Issued new shares</td><td>2,000 shares at $22 each</td></tr>
+  <tr><td>Jun 15 — Repurchased treasury stock</td><td>500 shares at $20 each</td></tr>
+  <tr><td>Sep 1 — Declared cash dividend</td><td>$0.50 per outstanding share</td></tr>
+  <tr><td>Oct 1 — Paid the dividend</td><td></td></tr>
+  <tr><td>Dec 31 — Net Income for the year</td><td>$40,000</td></tr>
+</table>
+
+<p><strong>Required:</strong> (a) Record journal entries for all events. (b) Prepare the ending Stockholders' Equity section.</p>
+
+<details class="answer"><summary>▶ Show Full Solution</summary>
+
+<div class="step"><strong>(a) Journal Entries</strong></div>
+
+<p><strong>Mar 1 — Issuance of 2,000 shares @ $22:</strong></p>
+<div class="je">Dr. Cash                              44,000  [2,000 × $22]
+    Cr. Common Stock (par $1)              2,000  [2,000 × $1]
+    Cr. APIC                              42,000  [2,000 × $21 excess]</div>
+
+<p><strong>Jun 15 — Treasury Stock Repurchase (500 shares @ $20):</strong></p>
+<div class="je">Dr. Treasury Stock                    10,000  [500 × $20]
+    Cr. Cash                              10,000</div>
+
+<p><strong>Sep 1 — Dividend Declaration:</strong></p>
+<div class="formula">Outstanding shares = 5,000 + 2,000 − 500 = 6,500 shares
+Dividend = 6,500 × $0.50 = $3,250</div>
+<div class="je">Dr. Retained Earnings (Dividends)      3,250
+    Cr. Dividends Payable                  3,250</div>
+
+<p><strong>Oct 1 — Dividend Payment:</strong></p>
+<div class="je">Dr. Dividends Payable                  3,250
+    Cr. Cash                               3,250</div>
+
+<p><strong>Dec 31 — Close Net Income to RE:</strong></p>
+<div class="je">Dr. Income Summary                    40,000
+    Cr. Retained Earnings                 40,000</div>
+
+<div class="step"><strong>(b) Ending Stockholders' Equity Section</strong></div>
+<table>
+  <tr><th colspan="2">Stockholders' Equity — Dec 31</th></tr>
+  <tr><td>Common Stock, $1 par (7,000 shares issued)</td><td class="num">$7,000</td></tr>
+  <tr><td>Additional Paid-in Capital</td><td class="num">$137,000</td></tr>
+  <tr><td>Retained Earnings</td><td class="num">$156,750</td></tr>
+  <tr><td>Less: Treasury Stock (500 shares at cost)</td><td class="num">($10,000)</td></tr>
+  <tr><th>Total Stockholders' Equity</th><th class="num">$290,750</th></tr>
+</table>
+
+<div class="formula">RE calculation:
+Beginning RE          $120,000
++ Net Income           $40,000
+− Dividends            ($3,250)
+Ending RE            $156,750
+
+Common Stock: $5,000 + $2,000 = $7,000
+APIC: $95,000 + $42,000 = $137,000</div>
+
+<div class="gotcha"><strong>Common Mistakes:</strong><br>
+(1) Forgetting to exclude treasury shares from outstanding shares when calculating dividends.<br>
+(2) Debiting Common Stock for dividends — dividends reduce Retained Earnings, not Common Stock.<br>
+(3) Listing Treasury Stock as an asset instead of a deduction from equity (it's contra-equity).</div>
+</details>
+</div>
+
+<!-- FR Q5: Bank Reconciliation + Allowance -->
+<div class="fr-problem">
+<h3><span class="fr-num">FR5</span> Bank Reconciliation + Allowance Method for Bad Debts</h3>
+
+<p style="color:#c2185b;font-weight:bold;">This problem covers BOTH topics — answer the section your professor emphasizes more.</p>
+
+<div class="source">
+  <strong>Part A — Bank Reconciliation</strong><br>
+  Harbor Co. — May 31 Bank Statement Balance: $18,500 | Book Balance: $15,200<br>
+  Items discovered: (1) Outstanding checks = $3,100; (2) Deposit in transit = $2,400; (3) Bank service charge = $75; (4) NSF check returned = $500; (5) Note collected by bank = $1,500 (includes $100 interest); (6) Error: check #441 written for $320 but recorded in books as $230.
+</div>
+
+<details class="answer"><summary>▶ Show Full Solution — Part A (Bank Rec)</summary>
+
+<table>
+  <tr><th colspan="2">Bank Side (Adjusted)</th></tr>
+  <tr><td>Bank Statement Balance</td><td class="num">$18,500</td></tr>
+  <tr><td class="indent">+ Deposit in Transit</td><td class="num">+2,400</td></tr>
+  <tr><td class="indent">− Outstanding Checks</td><td class="num">−3,100</td></tr>
+  <tr><td style="font-weight:bold;">Adjusted Bank Balance</td><td class="num" style="font-weight:bold;">$17,800</td></tr>
+  <tr><th colspan="2">Book Side (Adjusted)</th></tr>
+  <tr><td>Book Balance</td><td class="num">$15,200</td></tr>
+  <tr><td class="indent">+ Note Collected by Bank ($1,500 incl. $100 interest)</td><td class="num">+1,500</td></tr>
+  <tr><td class="indent">− Bank Service Charge</td><td class="num">−75</td></tr>
+  <tr><td class="indent">− NSF Check Returned</td><td class="num">−500</td></tr>
+  <tr><td class="indent">− Error (recorded $230 should be $320: understated by $90)</td><td class="num">−90</td></tr>
+  <tr><td style="font-weight:bold;">Adjusted Book Balance</td><td class="num" style="font-weight:bold;">$17,800</td></tr>
+</table>
+
+<div class="tip">Both sides must equal $17,800 — this is the TRUE cash balance.</div>
+
+<p><strong>Journal Entries for Book Adjustments:</strong></p>
+<div class="je">1. Note collected by bank:
+Dr. Cash                          1,400  [1,500 − 100 principal + 100 interest... ]
+  Actually: Dr. Cash 1,500
+    Cr. Notes Receivable              1,400
+    Cr. Interest Revenue                100
+
+2. Bank Service Charge:
+Dr. Bank Service Charge Expense      75
+    Cr. Cash                               75
+
+3. NSF Check:
+Dr. Accounts Receivable (customer)  500
+    Cr. Cash                              500
+
+4. Book Error (check understated by $90):
+Dr. Accounts Payable (or appropriate)  90
+    Cr. Cash                               90</div>
+
+<div class="gotcha"><strong>Rules:</strong> Bank side adjustments need NO journal entries — they just reconcile. Only BOOK-side differences need journal entries to correct the ledger.</div>
+</details>
+
+<div class="source" style="margin-top:20px;">
+  <strong>Part B — Allowance Method (Aging of Receivables)</strong><br>
+  Sunrise Co. — Dec 31: Gross A/R = $400,000. Allowance (before adjustment) = $3,000 credit balance.<br>
+  Aging analysis estimates total uncollectible = $18,000.
+</div>
+
+<details class="answer"><summary>▶ Show Full Solution — Part B (Allowance)</summary>
+
+<div class="step"><strong>Step 1 — Calculate the adjustment needed</strong></div>
+<div class="formula">Required allowance balance (target)  = $18,000
+Current allowance balance (before adj) = $3,000 credit
+Adjustment needed                     = $18,000 − $3,000 = $15,000 additional</div>
+
+<div class="step"><strong>Step 2 — Journal Entry</strong></div>
+<div class="je">Dr. Bad Debt Expense             15,000
+    Cr. Allowance for Doubtful Accounts  15,000</div>
+
+<div class="step"><strong>Step 3 — Balance Sheet Presentation</strong></div>
+<table>
+  <tr><td>Accounts Receivable (gross)</td><td class="num">$400,000</td></tr>
+  <tr><td class="indent">Less: Allowance for Doubtful Accounts</td><td class="num">($18,000)</td></tr>
+  <tr><td style="font-weight:bold;">Net Realizable Value</td><td class="num" style="font-weight:bold;">$382,000</td></tr>
+</table>
+
+<div class="gotcha"><strong>Important distinction:</strong><br>
+- If allowance had a $3,000 <em>debit</em> balance (unusual — from write-offs exceeding prior estimates), the adjustment would be $18,000 + $3,000 = $21,000.<br>
+- Percentage of Sales method → adjusts the EXPENSE directly.<br>
+- Aging method → adjusts the BALANCE (as above).
+</div>
+</details>
+</div>
+
+<!-- ======================================================= -->
+<!-- PART 3: GLOSSARY -->
+<!-- ======================================================= -->
+<h2 id="part3"><span class="section-label">PART 3</span> — Full Glossary (30+ Terms)</h2>
+
+<p style="color:#555;font-size:0.95em;">Each term includes a definition, a quick example, and a mini practice question. Terms are grouped by topic for easier review.</p>
+
+<!-- ---- ACCOUNTING CYCLE ---- -->
+<div class="alpha-divider">Accounting Cycle &amp; Fundamentals</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Accrual Basis</span><span class="gloss-kr">발생주의</span>
+<div class="gloss-def">Revenue is recorded when <em>earned</em> and expenses are recorded when <em>incurred</em> — regardless of when cash changes hands. Opposite = Cash Basis.</div>
+<div class="gloss-ex">Example: You provide $5,000 of service in December but get paid in January. Under accrual, record $5,000 revenue in December.</div>
+<details class="gloss-q"><summary>Mini Q: A company collects $12,000 cash in advance for 1-year service. In December (month 1), how much revenue is recognized under accrual?</summary>
+$1,000 (only 1 month earned out of 12). The other $11,000 stays as Unearned Revenue (liability).
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Adjusting Entry</span><span class="gloss-kr">수정 분개</span>
+<div class="gloss-def">Journal entries made at period-end to update accounts before financial statements are prepared. Ensures revenues and expenses are in the right period (accrual matching).</div>
+<div class="gloss-ex">Types: Accruals (earn/owe but no cash yet) and Deferrals (cash moved but not yet earned/incurred).</div>
+<details class="gloss-q"><summary>Mini Q: Which is an adjusting entry? (A) Pay employee wages / (B) Record depreciation for the year / (C) Purchase inventory</summary>
+(B) — Depreciation is a year-end adjusting entry. (A) and (C) are routine transactions.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Contra Account</span><span class="gloss-kr">차감 계정</span>
+<div class="gloss-def">An account that has the opposite normal balance of its related account, used to reduce the related account's balance on the financial statements.</div>
+<div class="gloss-ex">Accumulated Depreciation (contra to Equipment), Allowance for Doubtful Accounts (contra to A/R), Treasury Stock (contra to equity).</div>
+<details class="gloss-q"><summary>Mini Q: Why is Accumulated Depreciation a contra account — why not just reduce Equipment directly?</summary>
+Using a contra account preserves the original cost information (historical cost principle) while showing the net book value. This lets users see both cost and usage separately.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Going Concern</span><span class="gloss-kr">계속기업 가정</span>
+<div class="gloss-def">The assumption that a business will continue to operate indefinitely into the future. Allows assets to be valued at cost rather than liquidation value.</div>
+<div class="gloss-ex">If a company is about to go bankrupt, the going concern assumption breaks down — assets may need to be valued at distressed sale prices.</div>
+<details class="gloss-q"><summary>Mini Q: If going concern is in doubt, what must auditors do?</summary>
+Auditors must include an "emphasis of matter" paragraph (going concern opinion) in their audit report, alerting users that the company may not survive 12 months.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Materiality</span><span class="gloss-kr">중요성</span>
+<div class="gloss-def">An accounting principle that says only information significant enough to influence users' decisions needs to be disclosed or separately reported.</div>
+<div class="gloss-ex">A Fortune 500 company might expense a $500 stapler instead of capitalizing it — immaterial amount. A small company might capitalize it.</div>
+<details class="gloss-q"><summary>Mini Q: A $50 calculator has a 3-year life. A billion-dollar company expenses it immediately. Which principle justifies this?</summary>
+Materiality — the amount is too small to affect any user's decision, so capitalizing and depreciating it would waste time with no benefit.
+</details>
+</div>
+
+<!-- ---- RECEIVABLES ---- -->
+<div class="alpha-divider">Receivables &amp; Credit</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Allowance for Doubtful Accounts</span><span class="gloss-kr">대손충당금</span>
+<div class="gloss-def">A contra-asset account that reduces Accounts Receivable to its Net Realizable Value — the estimated amount the company expects to actually collect.</div>
+<div class="gloss-ex">Gross A/R = $100,000. Allowance = $5,000. NRV = $95,000 reported on balance sheet.</div>
+<details class="gloss-q"><summary>Mini Q: The allowance account has a $2,000 credit balance. The aging analysis says needed balance = $9,000. What is Bad Debt Expense?</summary>
+$7,000. (Need $9,000 − Have $2,000 already = $7,000 adjustment)
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Net Realizable Value (NRV)</span><span class="gloss-kr">순실현가능가치</span>
+<div class="gloss-def">The estimated selling price in the ordinary course of business, minus the estimated costs of completion and selling. Used for inventory valuation (LCNRV) and A/R (after allowance).</div>
+<div class="gloss-ex">Inventory cost = $80,000. Expected selling price = $95,000. Selling costs = $10,000. NRV = $85,000. Since NRV &gt; cost, no write-down needed.</div>
+<details class="gloss-q"><summary>Mini Q: Inventory costs $50,000. NRV = $44,000. At what amount is it reported? What loss is recorded?</summary>
+Reported at $44,000 (the lower). Loss = $6,000 (Dr. Loss on Inventory Write-Down / Cr. Inventory).
+</details>
+</div>
+
+<!-- ---- INVENTORY ---- -->
+<div class="alpha-divider">Inventory</div>
+
+<div class="gloss-card">
+<span class="gloss-term">FIFO (First-In, First-Out)</span><span class="gloss-kr">선입선출법</span>
+<div class="gloss-def">The oldest inventory costs are assigned to COGS first. The newest costs remain in ending inventory. Results in highest ending inventory value in rising price periods.</div>
+<div class="gloss-ex">Think of a grocery store rotating milk — oldest dates sold first (first in, first out of COGS).</div>
+<details class="gloss-q"><summary>Mini Q: In a period of RISING prices, which method gives higher net income — FIFO or LIFO?</summary>
+FIFO — sells old cheap costs first, leaving higher priced goods in inventory. Lower COGS = higher gross profit = higher net income.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">LIFO (Last-In, First-Out)</span><span class="gloss-kr">후입선출법</span>
+<div class="gloss-def">The newest inventory costs are assigned to COGS first. Results in higher COGS (and lower net income) in rising price periods. Gives a tax advantage. NOT allowed under IFRS.</div>
+<div class="gloss-ex">Think of a coal pile — new coal dumped on top is shoveled first (last in, first to COGS).</div>
+<details class="gloss-q"><summary>Mini Q: Why do US companies use LIFO even though it lowers reported income?</summary>
+Tax advantage — lower reported income = lower income tax payments in rising price periods. Companies prefer to pay less taxes now even if reported profits look worse.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">COGS (Cost of Goods Sold)</span><span class="gloss-kr">매출원가</span>
+<div class="gloss-def">The direct cost of inventory that was sold during the period. Appears on the Income Statement as the primary operating expense for product-based companies.</div>
+<div class="gloss-ex">COGS = Beginning Inventory + Purchases − Ending Inventory</div>
+<details class="gloss-q"><summary>Mini Q: BI = $30,000; Purchases = $150,000; EI = $40,000. What is COGS?</summary>
+COGS = $30,000 + $150,000 − $40,000 = $140,000
+</details>
+</div>
+
+<!-- ---- PP&E ---- -->
+<div class="alpha-divider">PP&amp;E &amp; Depreciation</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Book Value (Carrying Value)</span><span class="gloss-kr">장부가치</span>
+<div class="gloss-def">The net value of an asset on the balance sheet = Original Cost − Accumulated Depreciation. This is what the asset is "worth" on the books, NOT market value.</div>
+<div class="gloss-ex">Equipment cost $100,000. Accum. Depr. = $60,000. Book Value = $40,000.</div>
+<details class="gloss-q"><summary>Mini Q: Equipment: cost $80,000, 4-year life, $0 salvage, SL method. Book value at end of Year 3?</summary>
+Annual depr = $80,000/4 = $20,000. After 3 years: Accum. Depr = $60,000. Book Value = $80,000 − $60,000 = $20,000.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Depreciation</span><span class="gloss-kr">감가상각</span>
+<div class="gloss-def">The systematic allocation of a long-term asset's cost over its useful life. Not a cash expense — it's a non-cash charge that reduces book value and matches the asset's cost to the periods it benefits.</div>
+<div class="gloss-ex">Straight-Line: (Cost − Salvage) / Useful Life. DDB: 2/Useful Life × Book Value. Units of Production: (Cost − Salvage) / Total Units × Units Used.</div>
+<details class="gloss-q"><summary>Mini Q: Why is depreciation added back in the CFO section of the cash flow statement?</summary>
+Because depreciation reduced Net Income (on the IS) but no cash was paid. When converting NI to actual cash from operations, we must add back non-cash deductions.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Capitalize</span><span class="gloss-kr">자본화</span>
+<div class="gloss-def">To record a cost as an asset (rather than an expense) because it provides economic benefits beyond the current period. The cost is then expensed gradually through depreciation or amortization.</div>
+<div class="gloss-ex">New roof that extends building life 10 years → Capitalize. Patching a small leak → Expense (revenue expenditure).</div>
+<details class="gloss-q"><summary>Mini Q: A company spends $50,000 overhauling a machine, extending its life 5 years. Should this be capitalized or expensed?</summary>
+Capitalized — it extends the asset's useful life beyond the current period. Add $50,000 to the asset's book value and depreciate over remaining useful life.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Impairment</span><span class="gloss-kr">자산손상</span>
+<div class="gloss-def">When an asset's carrying (book) value exceeds its recoverable amount (what you can get from it). Must write the asset down to fair value; the difference = impairment loss on the Income Statement.</div>
+<div class="gloss-ex">Equipment book value = $200,000. Fair value (recoverable amount) = $120,000. Impairment loss = $80,000.</div>
+<details class="gloss-q"><summary>Mini Q: Under US GAAP, if an impaired asset's value later recovers, can you reverse the impairment loss?</summary>
+No — US GAAP prohibits reversal of impairment losses on long-lived assets. IFRS allows reversals (except for goodwill).
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">PP&amp;E (Property, Plant &amp; Equipment)</span><span class="gloss-kr">유형자산</span>
+<div class="gloss-def">Long-term tangible assets used in operations — land, buildings, machinery, vehicles, furniture. Reported at cost minus accumulated depreciation (except land, which is never depreciated).</div>
+<div class="gloss-ex">Land is NOT depreciated because it has an indefinite useful life. Buildings, equipment, and vehicles ARE depreciated.</div>
+<details class="gloss-q"><summary>Mini Q: A company buys land for $500,000 and a building for $1,000,000. Which asset will have depreciation expense?</summary>
+Only the building. Land is never depreciated (indefinite life, no wear or obsolescence).
+</details>
+</div>
+
+<!-- ---- INTANGIBLES ---- -->
+<div class="alpha-divider">Intangibles</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Amortization</span><span class="gloss-kr">무형자산 상각</span>
+<div class="gloss-def">Like depreciation, but for intangible assets with finite useful lives (patents, copyrights, franchises). Intangibles with indefinite lives (goodwill, some trademarks) are NOT amortized — instead tested annually for impairment.</div>
+<div class="gloss-ex">Patent cost $60,000, 10-year economic life → amortize $6,000/year. Usually straight-line, no salvage value assumed.</div>
+<details class="gloss-q"><summary>Mini Q: Goodwill of $500,000 is acquired in a business combination. What is the annual amortization expense?</summary>
+$0 — Goodwill is NOT amortized under US GAAP (IFRS same). It is tested annually for impairment and written down only if impaired.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Goodwill</span><span class="gloss-kr">영업권</span>
+<div class="gloss-def">An intangible asset that arises when a company acquires another business for more than the fair value of its identifiable net assets. Represents brand reputation, customer loyalty, synergies, etc.</div>
+<div class="gloss-ex">Company A buys Company B for $10M. FV of B's net assets = $7M. Goodwill = $3M recorded by Company A.</div>
+<details class="gloss-q"><summary>Mini Q: Can a company record goodwill for its own brand and loyal customers?</summary>
+No — internally generated goodwill cannot be recorded. Only goodwill from an actual acquisition (arm's length purchase) is recognized under GAAP.
+</details>
+</div>
+
+<!-- ---- LIABILITIES / BONDS ---- -->
+<div class="alpha-divider">Liabilities &amp; Bonds</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Bond Discount / Premium</span><span class="gloss-kr">사채할인발행/할증발행</span>
+<div class="gloss-def">Discount: bond issued below face value when coupon rate &lt; market rate. Premium: issued above face value when coupon rate &gt; market rate. Both are amortized over the bond's life using EIM or straight-line.</div>
+<div class="gloss-ex">Face $100,000, coupon 4%, market 6% → Discount. Bond price &lt; $100,000.<br>Face $100,000, coupon 8%, market 6% → Premium. Bond price &gt; $100,000.</div>
+<details class="gloss-q"><summary>Mini Q: A bond is issued at a premium. Does interest expense increase or decrease over time under EIM?</summary>
+Decreases — carrying value decreases toward face as premium amortizes, so Interest Expense (= CV × market rate) also decreases each period.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Effective Interest Method (EIM)</span><span class="gloss-kr">유효이자율법</span>
+<div class="gloss-def">The GAAP-preferred method for amortizing bond discount or premium. Interest expense = Carrying Value × Market Rate. Provides a constant effective interest rate but varying dollar amounts each period.</div>
+<div class="gloss-ex">CV = $95,000, Market Rate = 8%: Interest Expense = $7,600. Cash paid (face $100K × 6%) = $6,000. Discount amortized = $1,600. New CV = $96,600.</div>
+<details class="gloss-q"><summary>Mini Q: Under EIM for a discount bond, does interest expense increase or decrease over time?</summary>
+Increases — as the discount amortizes, carrying value rises, so next period's interest expense (CV × market rate) is slightly higher.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Working Capital</span><span class="gloss-kr">운전자본</span>
+<div class="gloss-def">Current Assets − Current Liabilities. Measures short-term liquidity — the "buffer" of liquid resources available to meet day-to-day obligations.</div>
+<div class="gloss-ex">CA = $200,000, CL = $80,000 → Working Capital = $120,000. Positive = good short-term health.</div>
+<details class="gloss-q"><summary>Mini Q: A company borrows $50,000 long-term (5-year loan). Does this increase, decrease, or have no effect on Working Capital?</summary>
+Increases — Cash (current asset) goes up by $50,000; Long-term loan (non-current liability) goes up. Current liabilities unchanged. WC = CA − CL increases.
+</details>
+</div>
+
+<!-- ---- EQUITY ---- -->
+<div class="alpha-divider">Stockholders' Equity</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Retained Earnings</span><span class="gloss-kr">이익잉여금</span>
+<div class="gloss-def">The cumulative net income earned by a corporation since inception, minus all dividends paid. Represents profits reinvested in the business. A negative balance = Accumulated Deficit.</div>
+<div class="gloss-ex">RE (beg) $50,000 + NI $30,000 − Dividends $10,000 = RE (end) $70,000</div>
+<details class="gloss-q"><summary>Mini Q: A company has Retained Earnings of $200,000. Can they pay a cash dividend of $250,000?</summary>
+Technically the law in most states limits dividends to the retained earnings balance — so no, they typically cannot pay more than $200,000 in dividends.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Treasury Stock</span><span class="gloss-kr">자기주식</span>
+<div class="gloss-def">Shares that a company previously issued and then repurchased. Reduces stockholders' equity. Treasury shares are not outstanding, earn no dividends, and carry no voting rights. Recorded at cost (contra-equity).</div>
+<div class="gloss-ex">Company buys back 1,000 shares at $30: Dr. Treasury Stock $30,000 / Cr. Cash $30,000. Balance sheet shows this as a deduction from equity.</div>
+<details class="gloss-q"><summary>Mini Q: 10,000 shares issued, 1,500 in treasury. How many shares are outstanding?</summary>
+8,500 shares (10,000 − 1,500). Outstanding = shares in investors' hands = used for EPS and dividend calculations.
+</details>
+</div>
+
+<!-- ---- CASH FLOW ---- -->
+<div class="alpha-divider">Cash Flow Statement</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Indirect Method (CFO)</span><span class="gloss-kr">간접법</span>
+<div class="gloss-def">Starts with Net Income and adjusts for: (1) non-cash items like depreciation and amortization, (2) gains/losses on asset sales, and (3) changes in working capital accounts. Most common format in practice.</div>
+<div class="gloss-ex">NI + Depreciation − A/R increase + Inventory decrease ± other WC changes = CFO</div>
+<details class="gloss-q"><summary>Mini Q: Why is an increase in Accounts Payable ADDED in the CFO section?</summary>
+Liability increased = company owes more to suppliers = kept more cash (didn't pay out). Asset/Cash effect is positive. Liability ↑ → Cash ↑ → Add.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">CFO / CFI / CFF</span><span class="gloss-kr">영업/투자/재무 활동 현금흐름</span>
+<div class="gloss-def">Three sections of the cash flow statement: Operating (day-to-day business), Investing (buying/selling long-term assets), Financing (borrowing/repaying debt, issuing/repurchasing stock, paying dividends).</div>
+<div class="gloss-ex">CFO: collect from customers, pay suppliers. CFI: buy equipment, sell investments. CFF: issue bonds, pay dividends.</div>
+<details class="gloss-q"><summary>Mini Q: A company pays $5,000 interest on bonds. Under US GAAP, which section is this classified?</summary>
+CFO — under US GAAP, interest paid is classified as Operating. (Note: under IFRS, interest paid may be classified as CFO or CFF at the company's choice.)
+</details>
+</div>
+
+<!-- ---- ANALYSIS ---- -->
+<div class="alpha-divider">Financial Statement Analysis</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Liquidity</span><span class="gloss-kr">유동성</span>
+<div class="gloss-def">A company's ability to meet short-term obligations as they come due. Measured by current ratio, quick ratio, and cash ratio. High liquidity = can pay bills without selling long-term assets.</div>
+<div class="gloss-ex">Current Ratio = CA/CL. Quick Ratio = (CA − Inventory)/CL. Cash Ratio = Cash/CL (most stringent).</div>
+<details class="gloss-q"><summary>Mini Q: CA = $300,000 (includes $80,000 inventory). CL = $150,000. What is the Quick Ratio?</summary>
+Quick Ratio = ($300,000 − $80,000) / $150,000 = $220,000 / $150,000 = 1.47
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Earnings Per Share (EPS)</span><span class="gloss-kr">주당순이익</span>
+<div class="gloss-def">Net income attributable to each common share. Required disclosure for public companies. Calculated using weighted average shares outstanding during the period.</div>
+<div class="gloss-ex">NI = $100,000, Preferred Dividends = $10,000, Wtd Avg Shares = 45,000: EPS = ($100,000 − $10,000) / 45,000 = $2.00/share</div>
+<details class="gloss-q"><summary>Mini Q: Why are preferred dividends subtracted from NI before calculating EPS?</summary>
+EPS is for COMMON shareholders only. Preferred dividends are paid first and belong to preferred shareholders — they must be removed to calculate what's left for common stockholders.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Accounts Receivable Turnover</span><span class="gloss-kr">매출채권회전율</span>
+<div class="gloss-def">Measures how efficiently a company collects its credit sales. Higher = faster collection. Days Sales Outstanding (DSO) = 365 / A/R Turnover.</div>
+<div class="gloss-ex">Net Credit Sales = $600,000. Average A/R = $100,000. Turnover = 6. DSO = 365/6 ≈ 61 days to collect.</div>
+<details class="gloss-q"><summary>Mini Q: A/R Turnover drops from 10 to 6 year over year. Is this good or bad? Why?</summary>
+Potentially bad — it means the company is taking longer to collect (from 36 days to 61 days). Could signal credit quality issues or lenient credit terms. Needs investigation.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Debt-to-Equity Ratio</span><span class="gloss-kr">부채비율</span>
+<div class="gloss-def">Total Liabilities / Total Stockholders' Equity. Measures financial leverage — how much of the company is funded by creditors vs. owners. Higher = riskier but potential for higher ROE.</div>
+<div class="gloss-ex">Total Liabilities = $400,000. SE = $200,000. D/E = 2.0 — for every $1 of equity, $2 of debt.</div>
+<details class="gloss-q"><summary>Mini Q: A company with D/E = 3.0 vs. another with D/E = 0.5 — which is riskier? Which might have higher ROE?</summary>
+D/E = 3.0 is riskier (more debt obligations). But leverage can amplify returns — the highly leveraged company may have higher ROE when things go well (but also higher risk of bankruptcy).
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Gross Profit / Gross Margin</span><span class="gloss-kr">매출총이익 / 매출총이익률</span>
+<div class="gloss-def">Gross Profit = Net Sales − COGS. Gross Margin = Gross Profit / Net Sales. Shows how much profit remains after direct production costs, before operating expenses.</div>
+<div class="gloss-ex">Sales = $500,000; COGS = $300,000 → Gross Profit = $200,000; Margin = 40%</div>
+<details class="gloss-q"><summary>Mini Q: Gross margin fell from 45% to 38% despite higher sales. What could explain this?</summary>
+Rising COGS (input costs, supply chain issues), competitive pricing pressure forcing price cuts, or a shift in product mix toward lower-margin products.
+</details>
+</div>
+
+<div class="gloss-card">
+<span class="gloss-term">Return on Assets (ROA)</span><span class="gloss-kr">총자산이익률</span>
+<div class="gloss-def">Net Income / Average Total Assets. Measures how efficiently a company uses ALL its assets to generate profit — regardless of how those assets are financed.</div>
+<div class="gloss-ex">NI = $50,000. Assets = $500,000. ROA = 10% — for every $1 of assets, $0.10 profit generated.</div>
+<details class="gloss-q"><summary>Mini Q: Company A: NI $80,000 / Assets $400,000. Company B: NI $120,000 / Assets $800,000. Which is more efficient?</summary>
+Company A — ROA = 20% vs. Company B ROA = 15%. A generates more profit per dollar of assets.
+</details>
+</div>
+
+<div class="footer">
+  <strong>ACBU 2222 Master Practice — Q-013</strong> | Prepared by Kenny (NewtonSchool) for Trinity Baek<br>
+  Exam: May 9, 2026, 9:00 AM | Study hard — you've got this!<br>
+  <em>50 Multiple Choice · 5 Free Response · 30+ Glossary Terms</em>
+</div>
+
+<button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+</body>
+</html>

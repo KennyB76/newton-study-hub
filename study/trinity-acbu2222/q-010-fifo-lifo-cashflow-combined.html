@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q-010 — Combined Help: FIFO/LIFO Journal Entries + Cash Flow Calculation</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 880px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+  h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 8px; }
+  h2 { color: #c2185b; margin-top: 45px; border-top: 2px solid #c2185b; padding-top: 18px; }
+  h3 { color: #5d4037; margin-top: 25px; }
+  h4 { color: #455a64; margin-top: 20px; }
+  .source { background: #fff3e0; padding: 10px 15px; border-left: 4px solid #ff9800; font-size: 0.9em; }
+  .key { background: #e3f2fd; padding: 12px 18px; border-left: 4px solid #1565c0; margin: 18px 0; }
+  .gotcha { background: #ffebee; padding: 12px 18px; border-left: 4px solid #c62828; margin: 18px 0; }
+  .answer { background: #e8f5e9; padding: 12px 18px; border-left: 4px solid #2e7d32; margin: 18px 0; font-weight: 500; }
+  .nav { background: white; border: 2px solid #1565c0; border-radius: 8px; padding: 15px 20px; margin: 25px 0; }
+  .nav ol { margin: 5px 0; padding-left: 22px; }
+  .nav a { color: #1565c0; font-weight: bold; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  table { border-collapse: collapse; margin: 15px 0; width: 100%; background: white; }
+  th, td { border: 1px solid #bdbdbd; padding: 8px 12px; }
+  th { background: #eceff1; }
+  td.num, th.num { text-align: right; }
+  .je { font-family: Menlo, Consolas, monospace; background: #fff8e1; padding: 12px 16px; border-radius: 6px; margin: 10px 0; white-space: pre; line-height: 1.4; font-size: 0.9em; }
+  .vs { display: flex; gap: 15px; margin: 20px 0; }
+  .vs > div { flex: 1; padding: 18px; border-radius: 8px; }
+  .fifo { background: #e3f2fd; border: 2px solid #1565c0; }
+  .lifo { background: #fce4ec; border: 2px solid #c2185b; }
+  .formula { background: #fff8e1; padding: 10px 15px; border-radius: 6px; font-family: Menlo, monospace; margin: 10px 0; }
+  .step { background: white; border: 2px solid #1565c0; border-radius: 8px; padding: 15px 22px; margin: 20px 0; }
+  .step-num { display: inline-block; background: #1565c0; color: white; padding: 4px 12px; border-radius: 50%; margin-right: 8px; font-weight: bold; }
+  .rule-card { background: white; border-left: 4px solid #2e7d32; padding: 10px 16px; margin: 8px 0; }
+  .rule-card.minus { border-left-color: #c62828; }
+  .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #888; font-size: 0.9em; }
+  hr.section-divider { border: none; border-top: 4px double #c2185b; margin: 50px 0 30px 0; }
+  .emoji-big { font-size: 1.4em; }
+</style>
+</head>
+<body>
+
+<h1>Combined Help — FIFO/LIFO + Cash Flow (CFO/CFI/CFF)</h1>
+
+<div class="source">
+  <strong>Source:</strong> Trinity follow-up (2026-05-09) — combined answer to two questions on one page
+</div>
+
+<div class="nav">
+  <strong>Jump to:</strong>
+  <ol>
+    <li><a href="#part1">Part 1 — FIFO/LIFO Journal Entries + When Each Is Better</a></li>
+    <li><a href="#part2">Part 2 — Cash Flow Calculation Deep Dive (CFO / CFI / CFF)</a></li>
+    <li><a href="#combined">Combined Key Takeaways</a></li>
+  </ol>
+</div>
+
+<hr class="section-divider">
+
+<h2 id="part1">Part 1 — FIFO / LIFO Journal Entries + When to Use Which</h2>
+
+<h3>Setup — Skateboard Example</h3>
+
+<table>
+  <tr><th>Date</th><th>Action</th><th class="num">Qty</th><th class="num">Price</th><th class="num">Total</th></tr>
+  <tr><td>Jan 15</td><td>Purchase</td><td class="num">10</td><td class="num">$50</td><td class="num">$500</td></tr>
+  <tr><td>Jun 10</td><td>Purchase</td><td class="num">10</td><td class="num">$60</td><td class="num">$600</td></tr>
+  <tr><td>Nov 20</td><td>Purchase</td><td class="num">10</td><td class="num">$70</td><td class="num">$700</td></tr>
+  <tr><td>Dec 5</td><td><strong>Sale</strong></td><td class="num"><strong>20</strong></td><td class="num">$100</td><td class="num"><strong>$2,000</strong></td></tr>
+</table>
+
+<h3>Step 1 — Purchase Entries (SAME under FIFO and LIFO)</h3>
+
+<p>Method choice only matters when you SELL. Purchases are recorded the same way:</p>
+
+<div class="je">
+Jan 15  Inventory                     500
+            Cash (or A/P)                 500
+
+Jun 10  Inventory                     600
+            Cash (or A/P)                 600
+
+Nov 20  Inventory                     700
+            Cash (or A/P)                 700
+</div>
+
+<p>Total Inventory before sale: <strong>$1,800</strong></p>
+
+<h3>Step 2 — Sale Entries (DIFFER under FIFO vs LIFO)</h3>
+
+<p>Every sale needs <strong>two entries</strong>:</p>
+
+<h4>(a) Sales Entry — Same for Both</h4>
+
+<div class="je">
+Dec 5   Cash (or A/R)               2,000
+            Sales Revenue                2,000
+</div>
+
+<h4>(b) COGS Entry — Under FIFO (oldest first)</h4>
+
+<div class="je">
+Dec 5   Cost of Goods Sold          1,100
+            Inventory                    1,100
+        (10 from Jan @ $50 + 10 from Jun @ $60)
+</div>
+
+<p>Inventory remaining: $700 (the 10 from Nov @ $70)</p>
+
+<h4>(b) COGS Entry — Under LIFO (newest first)</h4>
+
+<div class="je">
+Dec 5   Cost of Goods Sold          1,300
+            Inventory                    1,300
+        (10 from Nov @ $70 + 10 from Jun @ $60)
+</div>
+
+<p>Inventory remaining: $500 (the 10 from Jan @ $50)</p>
+
+<h3>Side-by-Side Impact</h3>
+
+<table>
+  <tr><th></th><th>FIFO</th><th>LIFO</th><th>Difference</th></tr>
+  <tr><td>Sales Revenue</td><td>$2,000</td><td>$2,000</td><td>0 (same)</td></tr>
+  <tr><td>COGS</td><td>$1,100</td><td>$1,300</td><td>$200 higher under LIFO</td></tr>
+  <tr><td><strong>Gross Profit</strong></td><td><strong>$900</strong></td><td><strong>$700</strong></td><td>$200 lower under LIFO</td></tr>
+  <tr><td>Tax (assume 25%)</td><td>$225</td><td>$175</td><td>$50 lower under LIFO</td></tr>
+  <tr><td><strong>Net Income</strong></td><td><strong>$675</strong></td><td><strong>$525</strong></td><td>$150 lower under LIFO</td></tr>
+  <tr><td>Ending Inventory (BS)</td><td>$700</td><td>$500</td><td>$200 lower under LIFO</td></tr>
+</table>
+
+<h3>When Each Is Better</h3>
+
+<div class="vs">
+  <div class="fifo">
+    <h4>✅ FIFO is BETTER when…</h4>
+    <ul>
+      <li><strong>Prices are FALLING</strong> — FIFO COGS uses oldest (higher) costs → higher COGS → lower NI → tax saving</li>
+      <li><strong>Showing strong financials matters</strong> (investors, IPO, lenders)</li>
+      <li><strong>International (IFRS) companies</strong> — IFRS bans LIFO globally</li>
+      <li><strong>Perishable goods</strong> — milk, drugs, food (FIFO matches physical reality)</li>
+      <li><strong>Simplicity</strong> — easier to audit, no LIFO Reserve disclosure</li>
+    </ul>
+  </div>
+  <div class="lifo">
+    <h4>✅ LIFO is BETTER when…</h4>
+    <ul>
+      <li><strong>Prices are RISING (most common)</strong> — LIFO COGS uses newest (higher) costs → higher COGS → lower NI → <strong>lower tax</strong></li>
+      <li><strong>Cash flow priority</strong> — tax savings retain cash in business</li>
+      <li><strong>Industries with persistent inflation</strong> — oil, metals, retail</li>
+      <li><strong>Stockpile inventory</strong> — coal, gravel, oil tanks (newest physically goes first)</li>
+      <li><strong>US-only operations</strong> — only US GAAP allows LIFO</li>
+    </ul>
+  </div>
+</div>
+
+<h3>The Tax Catch — LIFO Conformity Rule</h3>
+
+<div class="gotcha">
+  <strong>If LIFO for tax, you MUST use LIFO for financial reporting too.</strong> The IRS won't let you mix.
+  <ul>
+    <li>LIFO → save tax, but report lower NI to investors</li>
+    <li>FIFO → higher reported NI, but pay more tax</li>
+  </ul>
+</div>
+
+<h3>Quick Decision Framework</h3>
+
+<table>
+  <tr><th>Situation</th><th>Better</th><th>Why</th></tr>
+  <tr><td>US, rising prices, tax priority</td><td><strong>LIFO</strong></td><td>Tax saving</td></tr>
+  <tr><td>International (IFRS)</td><td><strong>FIFO</strong></td><td>LIFO not allowed</td></tr>
+  <tr><td>Falling prices</td><td><strong>FIFO</strong></td><td>Higher COGS = tax saving</td></tr>
+  <tr><td>Perishable goods</td><td><strong>FIFO</strong></td><td>Matches physical flow</td></tr>
+  <tr><td>Going public / raising debt</td><td><strong>FIFO</strong></td><td>Higher NI looks better</td></tr>
+  <tr><td>Tech with falling prices (computers)</td><td><strong>FIFO</strong></td><td>Tax saving in deflation</td></tr>
+  <tr><td>Oil / commodities, rising prices</td><td><strong>LIFO</strong></td><td>Tax savings dominate</td></tr>
+</table>
+
+<hr class="section-divider">
+
+<h2 id="part2">Part 2 — Cash Flow Calculation Deep Dive</h2>
+
+<h3>The Master Equation</h3>
+
+<div class="formula">
+  Beginning Cash + (CFO + CFI + CFF) = Ending Cash
+</div>
+
+<p>Everything is just <strong>which bucket each transaction goes into</strong> + <strong>direction (inflow + or outflow −)</strong>.</p>
+
+<h3>Step-by-Step Recipe (Indirect Method)</h3>
+
+<div class="step">
+  <span class="step-num">1</span> <strong>Start with Net Income</strong> (top of CFO).
+</div>
+
+<div class="step">
+  <span class="step-num">2</span> <strong>Add back non-cash expenses</strong> (Depreciation, Amortization, Impairment, Stock-based comp).
+</div>
+
+<div class="step">
+  <span class="step-num">3</span> <strong>Subtract gains, add losses</strong> (real cash from asset sales is in CFI, not CFO).
+</div>
+
+<div class="step">
+  <span class="step-num">4</span> <strong>Adjust for working capital changes</strong> (sign rules below).
+</div>
+
+<div class="step">
+  <span class="step-num">5</span> <strong>That's CFO</strong>. Then do CFI (assets) and CFF (debt + equity) separately.
+</div>
+
+<h3>The Sign Rules — Memorize</h3>
+
+<div class="rule-card">
+  <strong>Asset UP → Cash DOWN (subtract)</strong> — A/R ↑ means customers owe more = less cash collected
+</div>
+
+<div class="rule-card">
+  <strong>Asset DOWN → Cash UP (add)</strong> — Inventory ↓ means used inventory without buying new = expensed without cash out
+</div>
+
+<div class="rule-card minus">
+  <strong>Liability UP → Cash UP (add)</strong> — A/P ↑ means owe vendors more = expensed without cash out
+</div>
+
+<div class="rule-card minus">
+  <strong>Liability DOWN → Cash DOWN (subtract)</strong> — Taxes Payable ↓ means paid tax = cash out
+</div>
+
+<p><strong>Mnemonic: "Assets and Cash move OPPOSITE. Liabilities and Cash move TOGETHER."</strong></p>
+
+<h3>Non-Cash Items in CFO</h3>
+
+<table>
+  <tr><th>Item</th><th>Direction</th><th>Why</th></tr>
+  <tr><td>Depreciation</td><td>+ add back</td><td>Reduced NI but no cash paid</td></tr>
+  <tr><td>Amortization</td><td>+ add back</td><td>Same as depreciation, intangibles</td></tr>
+  <tr><td>Impairment</td><td>+ add back</td><td>Write-down, no cash</td></tr>
+  <tr><td>Stock-based compensation</td><td>+ add back</td><td>Paid in stock, not cash</td></tr>
+  <tr><td>Gain on sale of asset</td><td>− subtract</td><td>Real cash from sale is in CFI</td></tr>
+  <tr><td>Loss on sale of asset</td><td>+ add back</td><td>Reduced NI but real cash in CFI</td></tr>
+</table>
+
+<h3>The 3 Buckets — What Goes Where</h3>
+
+<h4>CFO — Operations</h4>
+<ul>
+  <li>Net Income (start)</li>
+  <li>Non-cash: Depreciation, Amortization, Impairment, SBC</li>
+  <li>Gains/losses on asset sales (remove)</li>
+  <li>Working capital changes: A/R, Inventory, A/P, Accrued, Prepaid, Taxes Payable, Unearned Revenue</li>
+</ul>
+
+<h4>CFI — Investing</h4>
+<ul>
+  <li>Purchase of PP&E (− out)</li>
+  <li>Sale of PP&E (+ in, at <strong>actual sale price</strong>, not book value)</li>
+  <li>Purchase of Land, Buildings, Investments</li>
+  <li>Loans made / collected</li>
+</ul>
+
+<h4>CFF — Financing</h4>
+<ul>
+  <li>Issuance of stock (+ in)</li>
+  <li>Buy-back of stock (− out)</li>
+  <li>Issuance of bonds / loans (+ in)</li>
+  <li>Repayment of principal (− out)</li>
+  <li>Dividends paid (− out)</li>
+  <li>APIC contributions</li>
+</ul>
+
+<div class="gotcha">
+  <strong>Interest paid?</strong> US GAAP: in CFO. IFRS: choice (CFO or CFF).
+</div>
+
+<h3>Worked Example — Rockefeller Company (from Q-005)</h3>
+
+<h4>CFO Walk</h4>
+
+<table>
+  <tr><th>Item</th><th class="num">Amount</th><th>Sign Logic</th></tr>
+  <tr><td>Net Income</td><td class="num">$250</td><td>Start</td></tr>
+  <tr><td>+ Depreciation</td><td class="num">+132</td><td>Non-cash</td></tr>
+  <tr><td>+ Amortization</td><td class="num">+6</td><td>Non-cash</td></tr>
+  <tr><td>− Gain on sale</td><td class="num">−2</td><td>Cash in CFI</td></tr>
+  <tr><td>− A/R increase ($50)</td><td class="num">−50</td><td>Asset ↑ → Cash ↓</td></tr>
+  <tr><td>+ Supplies decrease ($110)</td><td class="num">+110</td><td>Asset ↓ → Cash ↑</td></tr>
+  <tr><td>− A/P decrease ($40)</td><td class="num">−40</td><td>Liability ↓ → Cash ↓</td></tr>
+  <tr><td>+ Taxes Payable increase ($50)</td><td class="num">+50</td><td>Liability ↑ → Cash ↑</td></tr>
+  <tr><td><strong>Net CFO</strong></td><td class="num"><strong>$456</strong></td><td></td></tr>
+</table>
+
+<h4>CFI Walk</h4>
+
+<table>
+  <tr><td>+ Sale of PP&E (cash)</td><td class="num">+40</td></tr>
+  <tr><td>− Purchase of PP&E</td><td class="num">−600</td></tr>
+  <tr><td>− Purchase of Land</td><td class="num">−100</td></tr>
+  <tr><td><strong>Net CFI</strong></td><td class="num"><strong>($660)</strong></td></tr>
+</table>
+
+<h4>CFF Walk</h4>
+
+<table>
+  <tr><td>+ Issued Common Stock</td><td class="num">+100</td></tr>
+  <tr><td>+ APIC</td><td class="num">+40</td></tr>
+  <tr><td>+ Issued Bonds</td><td class="num">+110</td></tr>
+  <tr><td>− Dividends</td><td class="num">−165</td></tr>
+  <tr><td><strong>Net CFF</strong></td><td class="num"><strong>$185</strong></td></tr>
+</table>
+
+<div class="answer">
+  Net Change = $456 + ($660) + $185 = <strong>($19)</strong><br>
+  Begin $89 + ($19) = <strong>End $70 ✓</strong>
+</div>
+
+<h3>4 Special Calculations Always Tested</h3>
+
+<h4>① Dividend Paid (RE rollforward)</h4>
+<div class="formula">Beginning RE + NI − Dividends = Ending RE</div>
+
+<h4>② Depreciation Expense (when there's a sale)</h4>
+<div class="formula">Beginning A/D + Dep Expense − A/D removed = Ending A/D<br>(A/D removed = Cost − Book Value of sold asset)</div>
+
+<h4>③ PP&E Purchases</h4>
+<div class="formula">Beginning PP&E (cost) + Purchases − Cost of sold = Ending PP&E</div>
+
+<h4>④ Cash Received from Sale</h4>
+<div class="formula">Cash = Book Value + Gain (or − Loss)<br>Goes in CFI as full cash inflow.</div>
+
+<hr class="section-divider">
+
+<h2 id="combined">Combined Key Takeaways (Both Topics)</h2>
+
+<h3>FIFO / LIFO</h3>
+<ol>
+  <li>Purchase entries are <strong>same</strong>. Sale entries differ only in COGS amount.</li>
+  <li>FIFO COGS = oldest cost. LIFO COGS = newest cost. Sales Revenue is identical.</li>
+  <li>Rising prices → LIFO saves tax. Falling prices → FIFO saves tax.</li>
+  <li>LIFO only allowed under US GAAP. IFRS bans it.</li>
+  <li>LIFO Conformity: if LIFO for tax, then LIFO for financials (cannot mix).</li>
+</ol>
+
+<h3>Cash Flow Statement</h3>
+<ol>
+  <li>3 buckets: CFO (operations), CFI (assets), CFF (debt + equity).</li>
+  <li>Indirect method: NI → add non-cash → adjust working capital → CFO.</li>
+  <li>Sign rule: <strong>Assets opposite of cash. Liabilities same as cash.</strong></li>
+  <li>When PP&E is sold: BOTH rollforwards (Cost AND A/D). Full sale cash in CFI; gain removed from CFO.</li>
+  <li>Dividends only in CFF (never on Income Statement). Use RE rollforward.</li>
+  <li>Sanity check: Begin Cash + (CFO + CFI + CFF) = End Cash.</li>
+</ol>
+
+<h3>Memory Tricks</h3>
+<ul>
+  <li>🥛 <strong>FIFO = Milk in fridge</strong> (oldest first)</li>
+  <li>📚 <strong>LIFO = Stack of books</strong> (newest grabbed first)</li>
+  <li>↔️ <strong>Assets and Cash = OPPOSITE</strong> direction in CFO</li>
+  <li>↕️ <strong>Liabilities and Cash = SAME</strong> direction in CFO</li>
+</ul>
+
+<div class="footer">
+  Q-010 · 2026-05-09 · Solved by Kenny · ACBU 2222 Final Review<br>
+  Combined answer to two follow-up questions (FIFO/LIFO journal + Cash Flow deep dive)<br>
+  Repo: KennyB76/newton-study-hub
+</div>
+
+</body>
+</html>

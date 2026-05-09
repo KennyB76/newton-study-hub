@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q-015 — Bond help1: Plant Sale + Bond Issue at Discount</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 860px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+  h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 8px; }
+  h2 { color: #c2185b; margin-top: 35px; }
+  h3 { color: #5d4037; }
+  .source { background: #fff3e0; padding: 10px 15px; border-left: 4px solid #ff9800; font-size: 0.9em; }
+  .correct { background: #e8f5e9; border-left: 5px solid #2e7d32; padding: 12px 18px; margin: 12px 0; border-radius: 6px; }
+  .wrong { background: #ffebee; border-left: 5px solid #c62828; padding: 12px 18px; margin: 12px 0; border-radius: 6px; }
+  .key { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 12px 18px; margin: 18px 0; }
+  .je { font-family: Menlo, Consolas, monospace; background: #fff8e1; padding: 12px 16px; border-radius: 6px; margin: 10px 0; white-space: pre; line-height: 1.5; font-size: 0.95em; }
+  .formula { background: #fff8e1; padding: 10px 15px; border-radius: 6px; font-family: Menlo, monospace; margin: 8px 0; }
+  table { border-collapse: collapse; margin: 12px 0; width: 100%; background: white; }
+  th, td { border: 1px solid #bdbdbd; padding: 8px 12px; text-align: right; }
+  th { background: #eceff1; }
+  td:first-child, th:first-child { text-align: left; }
+  .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #888; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Bond help1 — Plant Sale + Bond Issue at Discount</h1>
+
+<div class="source">
+  <strong>Source:</strong> Trinity_Baek / Questions Board / "Bond help1" (2026-05-09)<br>
+  Trinity 가 손글씨로 2 문제 풀었음 — 검증 + 정정.
+</div>
+
+<h2>Problem 1 — Plant Asset Sale (Kimera Company)</h2>
+
+<div class="key">
+  Kimera Company sold a machine for $8,500 that cost $50,000. Book value at sale = $12,500. Prepare the journal entry.
+</div>
+
+<h3>Trinity 답 검증 ✅ <span style="color:#2e7d32">완벽</span></h3>
+
+<div class="correct">
+  <strong>Trinity 답</strong> = 100% 정확.
+  <ul>
+    <li>Cash $8,500 (받은 현금) ✓</li>
+    <li>Accumulated Depreciation $37,500 (= $50,000 cost − $12,500 book value) ✓</li>
+    <li>Loss on Sale $4,000 (= $12,500 book value − $8,500 cash) ✓</li>
+    <li>Equipment $50,000 (cost 제거) ✓</li>
+  </ul>
+</div>
+
+<h3>Final Journal Entry</h3>
+
+<div class="je">
+Cash                              8,500
+Accumulated Depreciation         37,500
+Loss on Sale of Equipment         4,000
+    Equipment                            50,000
+</div>
+
+<h3>핵심 logic (메모)</h3>
+
+<div class="formula">
+  Step 1: Cash 받은 만큼 ↑<br>
+  Step 2: 그 자산의 Accumulated Depreciation 전부 제거 (= Cost − Book Value)<br>
+  Step 3: 그 자산의 Cost 전부 제거 (Equipment Cr)<br>
+  Step 4: 차액 = Gain (Cash &gt; Book) or Loss (Cash &lt; Book)<br>
+  → 이 경우: Cash $8,500 &lt; Book $12,500 → Loss $4,000
+</div>
+
+<hr>
+
+<h2>Problem 2 — Bond Issue at Discount (West End Corporation)</h2>
+
+<div class="key">
+  On January 1, 2024, West End Corporation issued $500,000, 5%, 5-year bonds dated January 1, 2024, at <strong>96</strong>. The bonds pay semiannual interest on January 1st and July 1st. Prepare entries for issuance and first interest payment.
+</div>
+
+<h3>Trinity 답 검증 — 정정 필요</h3>
+
+<div class="wrong">
+  <strong>Trinity 답 — Issuance:</strong> Cash 500,000 / Bonds Payable 500,000<br>
+  <strong>문제:</strong> Issued at <b>96</b> = bonds were sold at <b>96% of face value</b>. Cash received = $500,000 × 96% = <b>$480,000</b> (NOT $500,000). The $20,000 difference is the <b>Discount on Bonds Payable</b>.
+</div>
+
+<h3>정정된 Issuance Entry</h3>
+
+<div class="je">
+Jan 1, 2024
+Cash                            480,000
+Discount on Bonds Payable        20,000
+    Bonds Payable                       500,000
+        (Issued $500K face at 96 → received $480K, discount $20K)
+</div>
+
+<div class="key">
+  <strong>왜 Discount? (직관)</strong><br>
+  Bond 의 stated rate (5%) 가 market rate 보다 낮으면 — 투자자들이 그 가격에 안 사. 그래서 회사가 face value 보다 싸게 (96%) 팔아야 함. 차액 = Discount = "할인된 부분".
+</div>
+
+<h3>Trinity 답 — Semiannual Interest (Straight-Line 가정)</h3>
+
+<div class="wrong">
+  <strong>Trinity 답:</strong> Interest Expense 12,500 / Cash 12,500<br>
+  <strong>문제:</strong> Cash Interest 는 $12,500 맞아 ($500K × 5% × 6/12). 하지만 <b>Discount 가 매 period 마다 amortize</b> 되어야 함. Interest Expense ≠ Cash Interest 야.
+</div>
+
+<h3>정정된 Semiannual Interest Entry (Straight-Line)</h3>
+
+<div class="formula">
+  Cash Interest = Face × Stated Rate × period<br>
+  = $500,000 × 5% × 6/12 = <strong>$12,500</strong><br><br>
+  Discount Amortization (Straight-Line) = Total Discount ÷ # of periods<br>
+  = $20,000 ÷ 10 periods (5 yr × 2 semi-annual) = <strong>$2,000</strong> per period<br><br>
+  Interest Expense = Cash Interest + Discount Amortization<br>
+  = $12,500 + $2,000 = <strong>$14,500</strong>
+</div>
+
+<div class="je">
+July 1, 2024
+Interest Expense                14,500
+    Discount on Bonds Payable            2,000
+    Cash                                12,500
+        (Cash Int $12,500 + Discount Amort $2,000)
+</div>
+
+<h3>Why Discount Amortization?</h3>
+
+<div class="key">
+  Bond 가 discount 로 팔린 이유 = stated rate 가 너무 낮음. Investor 가 5% 보다 더 받아야 만족. 그래서 회사는 face value 보다 적게 받고 (= $480K), but 5 year 후 face value ($500K) 갚아야 함. 그 차액 ($20K) = "extra interest" 인 셈. 매 period 마다 조금씩 expense 인식 = <b>Discount Amortization</b>.<br><br>
+  결과: Interest Expense (14,500) &gt; Cash Paid (12,500). 차이만큼 Discount account 가 줄어듬 → Carrying Value 가 face value 향해 ↑↑↑ 올라감.
+</div>
+
+<h3>Carrying Value Walk (Straight-Line)</h3>
+
+<table>
+  <tr><th>Period</th><th>Cash Int</th><th>Disc Amort</th><th>Int Exp</th><th>Carrying Value</th></tr>
+  <tr><td>Issue (Jan 1, 2024)</td><td>—</td><td>—</td><td>—</td><td>$480,000</td></tr>
+  <tr><td>1 (Jul 1, 2024)</td><td>$12,500</td><td>$2,000</td><td>$14,500</td><td>$482,000</td></tr>
+  <tr><td>2 (Jan 1, 2025)</td><td>$12,500</td><td>$2,000</td><td>$14,500</td><td>$484,000</td></tr>
+  <tr><td>3</td><td>$12,500</td><td>$2,000</td><td>$14,500</td><td>$486,000</td></tr>
+  <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+  <tr><td>10 (Jan 1, 2029, maturity)</td><td>$12,500</td><td>$2,000</td><td>$14,500</td><td><strong>$500,000</strong></td></tr>
+</table>
+
+<p>CV 가 매 period $2,000 씩 ↑ → maturity 에서 $500,000 (face) 도달. Discount account 는 매 period $2,000 씩 ↓ → 0 도달.</p>
+
+<hr>
+
+<h2>5 Common Mistakes</h2>
+
+<ol>
+  <li><strong>Bond at 96 = $500,000 cash 받은 게 아님.</strong> 96 = 96% of face. Cash = $480,000. Discount = $20,000.</li>
+  <li><strong>Bonds Payable account 는 항상 face value.</strong> Discount/Premium 은 별도 contra account.</li>
+  <li><strong>Cash Interest ≠ Interest Expense.</strong> Cash Int = Face × Stated. Int Exp = Cash Int ± Amortization.</li>
+  <li><strong>Discount → Int Exp &gt; Cash Int</strong> (add discount amort). <strong>Premium → Int Exp &lt; Cash Int</strong> (subtract premium amort).</li>
+  <li><strong>Straight-Line: divide total disc/prem by # of periods.</strong> EIM: use carrying value × market rate. 문제에서 어느 method 인지 확인.</li>
+</ol>
+
+<h2>6 Key Takeaways</h2>
+
+<ol>
+  <li>Plant asset sale: Cash + reverse Acc Depr + reverse Cost. Difference = Gain/Loss.</li>
+  <li>Bond price quoted as % of face. 96 = 96% = $480K on $500K face.</li>
+  <li>Discount on Bonds Payable = contra-liability account. Reduces Bonds Payable on Balance Sheet.</li>
+  <li>Carrying Value = Bonds Payable (face) − Discount + Premium. Walks toward face value over life.</li>
+  <li>Discount: CV ↑ over time. Premium: CV ↓ over time. Both end at face on maturity.</li>
+  <li>Cash Interest is FIXED ($500K × 5% × 6/12 = $12,500). Interest Expense changes (under EIM).</li>
+</ol>
+
+<div class="footer">
+  Q-015 · 2026-05-09 · Solved by Kenny · ACBU 2222 Final Review<br>
+  Trinity 손글씨 답 검증 + 정정 (Plant ✅, Bond ❌→정정)<br>
+  Repo: KennyB76/newton-study-hub
+</div>
+
+</body>
+</html>

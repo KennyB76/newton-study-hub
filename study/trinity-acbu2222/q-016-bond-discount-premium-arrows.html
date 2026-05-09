@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q-016 — Bond Discount + Premium with Arrow Diagrams</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 880px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+  h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 8px; }
+  h2 { color: #c2185b; margin-top: 40px; border-top: 2px solid #c2185b; padding-top: 18px; }
+  h3 { color: #5d4037; }
+  .source { background: #fff3e0; padding: 10px 15px; border-left: 4px solid #ff9800; font-size: 0.9em; }
+  .key { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 12px 18px; margin: 18px 0; }
+  .je { font-family: Menlo, Consolas, monospace; background: #fff8e1; padding: 12px 16px; border-radius: 6px; margin: 10px 0; white-space: pre; line-height: 1.5; font-size: 0.95em; }
+  .formula { background: #fff8e1; padding: 10px 15px; border-radius: 6px; font-family: Menlo, monospace; margin: 8px 0; }
+  table { border-collapse: collapse; margin: 12px 0; width: 100%; background: white; }
+  th, td { border: 1px solid #bdbdbd; padding: 8px 12px; text-align: right; }
+  th { background: #eceff1; }
+  td:first-child, th:first-child { text-align: left; }
+  .arrow-box { background: white; border: 2px solid #1565c0; border-radius: 8px; padding: 20px; margin: 20px 0; font-family: Menlo, monospace; white-space: pre; line-height: 1.6; font-size: 0.95em; }
+  .premium-box { border-color: #c2185b; background: #fce4ec; }
+  .discount-box { border-color: #1565c0; background: #e3f2fd; }
+  .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #888; font-size: 0.9em; }
+  .vs-table th { background: #1565c0; color: white; }
+  .vs-table th.prem { background: #c2185b; }
+</style>
+</head>
+<body>
+
+<h1>Bond Discount + Premium — Arrow Diagrams</h1>
+
+<div class="source">
+  <strong>Source:</strong> Trinity hand-solved 2 bond problems (West End Corp at 96 + at 106). Both verified + corrected with visual arrows.
+</div>
+
+<h2>The 3 Cases — Quick Reference (Trinity 가 채운 칸 ✅)</h2>
+
+<table class="vs-table">
+  <tr><th>Condition</th><th>Bond Price</th><th>Why</th></tr>
+  <tr><td>CR &gt; MR (Stated &gt; Market)</td><td>PREMIUM (sold &gt; face)</td><td>Stated rate is high — investors pay extra</td></tr>
+  <tr><td>CR &lt; MR (Stated &lt; Market)</td><td>DISCOUNT (sold &lt; face)</td><td>Stated rate is low — investors pay less</td></tr>
+  <tr><td>CR = MR</td><td>FACE VALUE</td><td>Rates match — no adjustment</td></tr>
+</table>
+
+<h2>Master Arrow Diagram — Carrying Value Walk</h2>
+
+<div class="arrow-box">
+  CV (Carrying Value) over time:
+
+  Issue                                            Maturity
+    │                                                  │
+    │   ┌─────── PREMIUM (sold at 106) ─────────┐    │
+    │   │                                         │    │
+  $530K ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ↓
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ↓
+                                               ↓
+  $500K ════════════════════════════════════ FACE VALUE ════
+                                               ↑
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ↑
+    │   │                                         │
+    │   └─────── DISCOUNT (sold at 96) ──────────┘
+    │                                                  │
+  $480K ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ↑
+
+  Key:
+    Premium → CV starts HIGH, decreases ↓ → reaches FACE at maturity
+    Discount → CV starts LOW, increases ↑ → reaches FACE at maturity
+    Both end at FACE VALUE on maturity.
+</div>
+
+<h2 style="border-top-color:#1565c0;color:#1565c0">Problem 1 — DISCOUNT (West End at 96)</h2>
+
+<div class="key">
+  $500,000, 5%, 5-year bonds, Jan 1, 2024, at <strong>96</strong>. Semiannual interest Jan 1 + July 1.
+</div>
+
+<h3>Arrow Diagram — Discount</h3>
+
+<div class="arrow-box discount-box">
+  ISSUANCE (Jan 1, 2024)
+
+       Cash $480,000  ←  paid by investors (96% of face)
+                          │
+                          ↓ short by $20K
+       Bonds Payable $500,000  ←  what we promise to repay (face)
+       Discount on B/P  $20,000  ←  contra-liability (the "shortage")
+
+       Carrying Value at issuance = $500,000 - $20,000 = $480,000
+
+  ───────────────────────────────────────────────
+
+  EACH SEMIANNUAL PERIOD (10 total periods):
+
+       Cash Interest = $500K × 5% × 6/12 = $12,500  (FIXED, paid in cash)
+
+       Discount Amort (Straight-Line) = $20,000 / 10 = $2,000
+
+       Interest Expense = $12,500 + $2,000 = $14,500
+                                  ↑
+                         (more than cash paid, because
+                          discount is being "expensed up")
+
+       Carrying Value walks ↑↑↑ toward $500,000
+
+  ───────────────────────────────────────────────
+
+  AT MATURITY (Jan 1, 2029):
+
+       CV = $500,000 (= face)
+       Discount on B/P = $0 (fully amortized)
+
+       Cash         500,000
+           Bonds Payable     500,000   ← repay face
+</div>
+
+<h3>Journal Entries — Discount</h3>
+
+<div class="je">
+Jan 1, 2024 — Issuance
+Cash                          480,000
+Discount on Bonds Payable      20,000
+    Bonds Payable                     500,000
+
+July 1, 2024 — Each semiannual interest
+Interest Expense               14,500
+    Discount on Bonds Payable          2,000
+    Cash                              12,500
+</div>
+
+<h3>Carrying Value Table — Discount</h3>
+
+<table>
+  <tr><th>Period</th><th>Cash Int</th><th>Disc Amort</th><th>Int Exp</th><th>Disc Bal</th><th>Carrying Value</th></tr>
+  <tr><td>Issue</td><td>—</td><td>—</td><td>—</td><td>$20,000</td><td>$480,000</td></tr>
+  <tr><td>1</td><td>$12,500</td><td>$2,000</td><td>$14,500</td><td>$18,000</td><td>$482,000 ↑</td></tr>
+  <tr><td>2</td><td>$12,500</td><td>$2,000</td><td>$14,500</td><td>$16,000</td><td>$484,000 ↑</td></tr>
+  <tr><td>3</td><td>$12,500</td><td>$2,000</td><td>$14,500</td><td>$14,000</td><td>$486,000 ↑</td></tr>
+  <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+  <tr><td>10 (maturity)</td><td>$12,500</td><td>$2,000</td><td>$14,500</td><td>$0</td><td><strong>$500,000</strong></td></tr>
+</table>
+
+<hr>
+
+<h2 style="border-top-color:#c2185b">Problem 2 — PREMIUM (West End at 106)</h2>
+
+<div class="key">
+  $500,000, 5%, 5-year bonds, Jan 1, 2024, at <strong>106</strong>. Semiannual interest. <br>
+  ⚠️ Trinity 답 검증 필요: issued at 106 = 106% × $500K = $530K cash (NOT $500K).
+</div>
+
+<h3>Arrow Diagram — Premium</h3>
+
+<div class="arrow-box premium-box">
+  ISSUANCE (Jan 1, 2024)
+
+       Cash $530,000  ←  paid by investors (106% of face)
+                          │
+                          ↓ extra $30K
+       Bonds Payable $500,000  ←  what we promise to repay (face)
+       Premium on B/P  $30,000  ←  liability addition ("extra premium received")
+
+       Carrying Value at issuance = $500,000 + $30,000 = $530,000
+
+  ───────────────────────────────────────────────
+
+  EACH SEMIANNUAL PERIOD (10 total periods):
+
+       Cash Interest = $500K × 5% × 6/12 = $12,500  (FIXED)
+
+       Premium Amort (Straight-Line) = $30,000 / 10 = $3,000
+
+       Interest Expense = $12,500 - $3,000 = $9,500
+                                  ↓
+                         (LESS than cash paid, because
+                          premium is being "credited back")
+
+       Carrying Value walks ↓↓↓ toward $500,000
+
+  ───────────────────────────────────────────────
+
+  AT MATURITY (Jan 1, 2029):
+
+       CV = $500,000 (= face)
+       Premium on B/P = $0 (fully amortized)
+
+       Cash         500,000
+           Bonds Payable     500,000   ← repay face
+</div>
+
+<h3>Journal Entries — Premium</h3>
+
+<div class="je">
+Jan 1, 2024 — Issuance (CORRECTED from Trinity)
+Cash                          530,000
+    Bonds Payable                     500,000
+    Premium on Bonds Payable           30,000
+
+June 30, 2024 — Interest Accrual (CORRECTED)
+Interest Expense                9,500
+Premium on Bonds Payable        3,000
+    Interest Payable                  12,500
+
+July 1, 2024 — Cash Interest Payment (Trinity 답 ✅ 정답)
+Interest Payable               12,500
+    Cash                              12,500
+</div>
+
+<div class="key">
+  <strong>Trinity 가 한 거:</strong> Interest Pay 12,500 / Cash 12,500 — 이건 <em>payment</em> entry 로 정답이야!<br>
+  단, 6월 30일 accrual entry 에서 Premium 처리 빠진 게 문제. 한 entry 로 합쳐도 됨:<br>
+  Jul 1 합친 entry:<br>
+  &nbsp;&nbsp;Interest Expense 9,500 / Premium B/P 3,000 / Cash 12,500
+</div>
+
+<h3>Carrying Value Table — Premium</h3>
+
+<table>
+  <tr><th>Period</th><th>Cash Int</th><th>Prem Amort</th><th>Int Exp</th><th>Prem Bal</th><th>Carrying Value</th></tr>
+  <tr><td>Issue</td><td>—</td><td>—</td><td>—</td><td>$30,000</td><td>$530,000</td></tr>
+  <tr><td>1</td><td>$12,500</td><td>$3,000</td><td>$9,500</td><td>$27,000</td><td>$527,000 ↓</td></tr>
+  <tr><td>2</td><td>$12,500</td><td>$3,000</td><td>$9,500</td><td>$24,000</td><td>$524,000 ↓</td></tr>
+  <tr><td>3</td><td>$12,500</td><td>$3,000</td><td>$9,500</td><td>$21,000</td><td>$521,000 ↓</td></tr>
+  <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+  <tr><td>10 (maturity)</td><td>$12,500</td><td>$3,000</td><td>$9,500</td><td>$0</td><td><strong>$500,000</strong></td></tr>
+</table>
+
+<hr>
+
+<h2>Side-by-Side Compare — Discount vs Premium</h2>
+
+<table>
+  <tr><th></th><th>Discount (96)</th><th>Premium (106)</th></tr>
+  <tr><td>Cash received at issue</td><td>$480,000</td><td>$530,000</td></tr>
+  <tr><td>Face value</td><td>$500,000</td><td>$500,000</td></tr>
+  <tr><td>Discount/Premium balance</td><td>$20,000 (Discount)</td><td>$30,000 (Premium)</td></tr>
+  <tr><td>Carrying Value at issue</td><td>$480,000</td><td>$530,000</td></tr>
+  <tr><td>Cash Interest per period</td><td>$12,500 (same!)</td><td>$12,500 (same!)</td></tr>
+  <tr><td>Amort per period (S/L)</td><td>$2,000 (added)</td><td>$3,000 (subtracted)</td></tr>
+  <tr><td>Interest Expense per period</td><td>$14,500 (&gt; cash)</td><td>$9,500 (&lt; cash)</td></tr>
+  <tr><td>CV direction</td><td>↑↑↑ (rises to face)</td><td>↓↓↓ (drops to face)</td></tr>
+  <tr><td>CV at maturity</td><td>$500,000</td><td>$500,000</td></tr>
+</table>
+
+<h2>5 Common Mistakes</h2>
+
+<ol>
+  <li><strong>"At 96" or "at 106" 의미 놓침</strong>. 항상 % of face. 96 = $480K, 106 = $530K on $500K face.</li>
+  <li><strong>Bonds Payable 에 직접 더하거나 빼지 X</strong>. Bonds Pay 는 항상 face value. Discount/Premium 은 별도 contra account.</li>
+  <li><strong>Cash Interest = Interest Expense 로 잘못 등록</strong>. Discount 면 Int Exp &gt; Cash. Premium 면 Int Exp &lt; Cash.</li>
+  <li><strong>Premium amortization 방향 헷갈림</strong>. Premium 은 Cr balance → Dr 로 amortize (감소). Int Exp 에서 빼는 거.</li>
+  <li><strong>Issuance entry 에서 cash 도 face value 로 적기</strong>. 항상 actual cash received 로 적어. Issue date 가격에 따라 다름.</li>
+</ol>
+
+<h2>6 Key Takeaways</h2>
+
+<ol>
+  <li>Bond price = % of face. 96 = 96% = discount. 106 = 106% = premium.</li>
+  <li>Bonds Payable always = face. Discount/Premium = contra account.</li>
+  <li>Cash Interest is FIXED = face × stated rate × period. Same regardless of price.</li>
+  <li>Discount: Int Exp &gt; Cash Int (add disc amort). Premium: Int Exp &lt; Cash Int (subtract prem amort).</li>
+  <li>Carrying Value walks toward face value. Discount ↑ rising. Premium ↓ falling. Both end at face.</li>
+  <li>Straight-Line: total disc/prem ÷ # periods. EIM: CV × market rate (more accurate but harder).</li>
+</ol>
+
+<div class="footer">
+  Q-016 · 2026-05-09 · Solved by Kenny · ACBU 2222 Final Review<br>
+  Two bond problems with arrow diagrams + side-by-side comparison + corrections to Trinity's hand-solved answers<br>
+  Repo: KennyB76/newton-study-hub
+</div>
+
+</body>
+</html>

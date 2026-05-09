@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q-005 — Cash Flow Statement, Explained Like Middle School</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 820px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+  h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 8px; }
+  h2 { color: #c2185b; margin-top: 40px; }
+  h3 { color: #5d4037; margin-top: 25px; }
+  .source { background: #fff3e0; padding: 10px 15px; border-left: 4px solid #ff9800; font-size: 0.9em; }
+  .key { background: #e3f2fd; padding: 12px 18px; border-left: 4px solid #1565c0; margin: 18px 0; }
+  .gotcha { background: #ffebee; padding: 12px 18px; border-left: 4px solid #c62828; margin: 18px 0; }
+  .answer { background: #e8f5e9; padding: 12px 18px; border-left: 4px solid #2e7d32; margin: 18px 0; font-weight: 500; }
+  table { border-collapse: collapse; margin: 15px 0; width: 100%; background: white; }
+  th, td { border: 1px solid #bdbdbd; padding: 8px 12px; text-align: right; }
+  th { background: #eceff1; }
+  td:first-child, th:first-child { text-align: left; }
+  .step { background: white; border: 2px solid #1565c0; border-radius: 8px; padding: 15px 22px; margin: 20px 0; }
+  .step-num { display: inline-block; background: #1565c0; color: white; padding: 4px 12px; border-radius: 50%; margin-right: 8px; font-weight: bold; }
+  code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-family: Menlo, monospace; }
+  .formula { background: #fff8e1; padding: 10px 15px; border-radius: 6px; font-family: Menlo, monospace; margin: 10px 0; }
+  .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #888; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Cash Flow Statement — Explained Like You're in Middle School</h1>
+
+<div class="source">
+  <strong>Source:</strong> Trinity_Baek / Questions Board / "Explain to me like im in middle school" (2026-05-09)<br>
+  <strong>Topic:</strong> Cash Flow Analysis (Rockefeller Company) — CFO + CFI + CFF + Depreciation when there's a sale
+</div>
+
+<h2>The Big Idea (1 sentence)</h2>
+<p>The Cash Flow Statement is a <strong>diary of where cash actually came in and went out</strong> during the year. The Income Statement says "we earned 250K," but the Cash Flow Statement says "yes — but here's exactly what happened to the actual money."</p>
+
+<h2>3 Buckets of Cash</h2>
+
+<div class="step">
+  <span class="step-num">1</span> <strong>CFO — Cash Flow from Operations</strong><br>
+  → Money from the <em>day-to-day business</em>. Selling stuff, paying bills, paying taxes.
+</div>
+
+<div class="step">
+  <span class="step-num">2</span> <strong>CFI — Cash Flow from Investing</strong><br>
+  → Money from <em>big purchases or sales</em>. Buying a building, selling a truck, buying land.
+</div>
+
+<div class="step">
+  <span class="step-num">3</span> <strong>CFF — Cash Flow from Financing</strong><br>
+  → Money from <em>banks, bondholders, shareholders</em>. Borrowing, paying back loans, issuing stock, paying dividends.
+</div>
+
+<p><strong>The 3 buckets must add up to the change in Cash.</strong> Beginning Cash + (CFO + CFI + CFF) = Ending Cash.</p>
+
+<h2>Question 1 — How Much Dividend Was Paid?</h2>
+
+<p>Imagine your savings account. <strong>Beginning balance + deposits − withdrawals = Ending balance</strong>. Same logic for Retained Earnings.</p>
+
+<div class="formula">
+  Beginning RE + Net Income − Dividends = Ending RE<br>
+  $300K + $250K − Dividends = $285K
+</div>
+
+<div class="answer">
+  <strong>Dividends Paid = $265K</strong>
+</div>
+
+<h2>Question 2 — Book Value & Gain on Sale of PP&E</h2>
+
+<p>The company sold a PP&E that originally <strong>cost $100K</strong> for <strong>$40K cash</strong>. The problem says the sale was <strong>$2K above book value</strong>.</p>
+
+<div class="formula">
+  Sale Price = Book Value + Gain<br>
+  $40K = Book Value + $2K<br>
+  → <strong>Book Value = $38K</strong>
+</div>
+
+<p>If the original Cost was $100K and the Book Value at sale was $38K, then the Accumulated Depreciation that piled up on this asset was:</p>
+
+<div class="formula">
+  Accumulated Depreciation on sold asset = Cost − Book Value = $100K − $38K = <strong>$62K</strong>
+</div>
+
+<div class="answer">
+  <strong>Gain on sale = $2K</strong> (small win — sold for slightly more than the depreciated value)
+</div>
+
+<h2>Question 3 — The Big One: Depreciation Expense</h2>
+
+<div class="gotcha">
+  <strong>Why this is tricky:</strong> Normally Depreciation Expense = change in Accumulated Depreciation account. But <strong>when an asset was sold during the year, that simple rule breaks</strong> — because the sold asset's accumulated depreciation also gets removed from the account.
+</div>
+
+<p>You have to do a <strong>T-account rollforward</strong> for Accumulated Depreciation:</p>
+
+<div class="formula">
+  Beginning A/D + Depreciation Expense (this year) − A/D removed (for sold asset) = Ending A/D<br>
+  $200K + X − $62K = $270K<br>
+  → <strong>X = $132K</strong>
+</div>
+
+<div class="answer">
+  <strong>Depreciation Expense = $132K</strong>
+</div>
+
+<h3>Why Both Rollforwards Matter</h3>
+
+<table>
+  <tr><th>PP&E (Cost) Rollforward</th><th>Amount</th></tr>
+  <tr><td>Beginning PP&E</td><td>$700K</td></tr>
+  <tr><td>+ Purchase</td><td>$600K</td></tr>
+  <tr><td>− Cost of Sold Asset</td><td>($100K)</td></tr>
+  <tr><td><strong>= Ending PP&E</strong></td><td><strong>$1,200K ✓</strong></td></tr>
+</table>
+
+<table>
+  <tr><th>Accumulated Depreciation Rollforward</th><th>Amount</th></tr>
+  <tr><td>Beginning A/D</td><td>$200K</td></tr>
+  <tr><td>+ Depreciation Expense (X)</td><td>?</td></tr>
+  <tr><td>− A/D on Sold Asset</td><td>($62K)</td></tr>
+  <tr><td><strong>= Ending A/D ($270K)</strong></td><td><strong>X = $132K</strong></td></tr>
+</table>
+
+<h2>Question 4 — Putting It All Together: Net Cash Flow</h2>
+
+<h3>CFO — Operations (Indirect Method)</h3>
+<table>
+  <tr><th>Item</th><th>Amount</th><th>Why</th></tr>
+  <tr><td>Net Income</td><td>$250K</td><td>Starting point</td></tr>
+  <tr><td>+ Depreciation</td><td>$132K</td><td>Non-cash, add back</td></tr>
+  <tr><td>+ Amortization</td><td>$6K</td><td>Non-cash, add back</td></tr>
+  <tr><td>− Gain on Sale</td><td>($2K)</td><td>Already in NI; real cash is in CFI</td></tr>
+  <tr><td>− A/R Increase</td><td>($50K)</td><td>Customers owe more = less cash</td></tr>
+  <tr><td>+ Supplies Decrease</td><td>$110K</td><td>Used inventory, didn't pay cash</td></tr>
+  <tr><td>− A/P Decrease</td><td>($40K)</td><td>Paid down debts = cash out</td></tr>
+  <tr><td>+ Taxes Payable Increase</td><td>$50K</td><td>Owe more taxes = held onto cash</td></tr>
+  <tr><td><strong>Net CFO</strong></td><td><strong>$456K</strong></td><td></td></tr>
+</table>
+
+<h3>CFI — Investing</h3>
+<table>
+  <tr><td>PP&E Sale</td><td>$40K</td></tr>
+  <tr><td>PP&E Purchase</td><td>($600K)</td></tr>
+  <tr><td>Land Purchase</td><td>($100K)</td></tr>
+  <tr><td><strong>Net CFI</strong></td><td><strong>($660K)</strong></td></tr>
+</table>
+
+<h3>CFF — Financing</h3>
+<table>
+  <tr><td>APIC Increase</td><td>$40K</td></tr>
+  <tr><td>Common Stock Issued</td><td>$100K</td></tr>
+  <tr><td>Bonds Payable Issued</td><td>$110K</td></tr>
+  <tr><td>Dividends Paid</td><td>($165K)</td></tr>
+  <tr><td><strong>Net CFF</strong></td><td><strong>$185K</strong></td></tr>
+</table>
+
+<div class="answer">
+  <strong>Net Change in Cash</strong> = $456K + ($660K) + $185K = <strong>($19K)</strong><br>
+  Beginning Cash $89K + ($19K) = <strong>Ending Cash $70K ✓</strong>
+</div>
+
+<h2>5 Common Mistakes</h2>
+
+<ol>
+  <li><strong>Forgetting that Gain on Sale needs to be subtracted from CFO.</strong> The gain is already in Net Income, but the cash from the sale shows up in CFI. If you don't subtract, you'd be double-counting.</li>
+  <li><strong>Treating Depreciation = ΔAccumulated Depreciation when there's a sale.</strong> The sold asset's A/D gets removed too — so the simple formula breaks. Always do a T-account rollforward.</li>
+  <li><strong>Confusing direction of working capital changes.</strong> Increase in asset (A/R up) = cash OUT. Increase in liability (A/P up) = cash IN.</li>
+  <li><strong>Mixing PP&E Cost with Net Book Value.</strong> The PP&E rollforward uses <em>Cost</em> ($100K removed), not <em>Book Value</em> ($38K).</li>
+  <li><strong>Forgetting Dividend = RE rollforward.</strong> Don't try to find dividends from the cash account directly — always do BB + NI − Div = EB.</li>
+</ol>
+
+<h2>6 Key Takeaways</h2>
+
+<ol>
+  <li>The Cash Flow Statement <strong>reconciles Net Income to actual cash</strong>. They are not the same thing.</li>
+  <li>3 sections: <strong>Operations (day-to-day), Investing (big assets), Financing (debt + equity)</strong>.</li>
+  <li>Indirect Method for CFO: <strong>Start with NI → add back non-cash → adjust for working capital changes</strong>.</li>
+  <li>Non-cash items to add back: <strong>Depreciation, Amortization</strong>. Subtract gains (loss = add).</li>
+  <li>When PP&E is sold, do <strong>both rollforwards</strong> (PP&E cost AND Accumulated Depreciation) to find missing values.</li>
+  <li>Sanity check: <strong>Beginning Cash + (CFO + CFI + CFF) = Ending Cash</strong>. If this doesn't balance, something is wrong.</li>
+</ol>
+
+<h2>Quick Mental Model</h2>
+
+<p>Think of the company as a person with 3 wallets:</p>
+<ul>
+  <li><strong>Wallet 1 — Job money (CFO)</strong>: salary, bills, groceries</li>
+  <li><strong>Wallet 2 — Big stuff (CFI)</strong>: bought a car, sold an old TV</li>
+  <li><strong>Wallet 3 — Bank stuff (CFF)</strong>: took a loan, paid loan, gave parents an allowance</li>
+</ul>
+<p>End of year, count what's left in Wallet 1 + 2 + 3 vs what you started with. That's your Cash Flow Statement.</p>
+
+<div class="footer">
+  Q-005 · 2026-05-09 · Solved by Kenny · ACBU 2222 Final Review<br>
+  Source: Trinity_Baek / Questions Board / "Explain to me like im in middle school"<br>
+  Repo: KennyB76/newton-study-hub
+</div>
+
+</body>
+</html>

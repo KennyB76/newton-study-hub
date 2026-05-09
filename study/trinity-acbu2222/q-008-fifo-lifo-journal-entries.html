@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q-008 — FIFO/LIFO Journal Entries + When to Use Which</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 860px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+  h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 8px; }
+  h2 { color: #c2185b; margin-top: 40px; }
+  h3 { color: #5d4037; margin-top: 25px; }
+  .source { background: #fff3e0; padding: 10px 15px; border-left: 4px solid #ff9800; font-size: 0.9em; }
+  .key { background: #e3f2fd; padding: 12px 18px; border-left: 4px solid #1565c0; margin: 18px 0; }
+  .gotcha { background: #ffebee; padding: 12px 18px; border-left: 4px solid #c62828; margin: 18px 0; }
+  .answer { background: #e8f5e9; padding: 12px 18px; border-left: 4px solid #2e7d32; margin: 18px 0; font-weight: 500; }
+  table { border-collapse: collapse; margin: 15px 0; width: 100%; background: white; }
+  th, td { border: 1px solid #bdbdbd; padding: 8px 12px; }
+  th { background: #eceff1; }
+  .je { font-family: Menlo, Consolas, monospace; background: #fff8e1; padding: 12px 16px; border-radius: 6px; margin: 10px 0; white-space: pre; line-height: 1.4; }
+  .vs { display: flex; gap: 15px; margin: 20px 0; }
+  .vs > div { flex: 1; padding: 18px; border-radius: 8px; }
+  .fifo { background: #e3f2fd; border: 2px solid #1565c0; }
+  .lifo { background: #fce4ec; border: 2px solid #c2185b; }
+  .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #888; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>FIFO / LIFO — Journal Entries + When to Use Which</h1>
+
+<div class="source">
+  <strong>Source:</strong> Follow-up to Q-007 — "show journal entries and when which case is better" (2026-05-09)
+</div>
+
+<h2>Setup — Same Skateboard Example</h2>
+
+<table>
+  <tr><th>Date</th><th>Action</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+  <tr><td>Jan 15</td><td>Purchase</td><td>10</td><td>$50</td><td>$500</td></tr>
+  <tr><td>Jun 10</td><td>Purchase</td><td>10</td><td>$60</td><td>$600</td></tr>
+  <tr><td>Nov 20</td><td>Purchase</td><td>10</td><td>$70</td><td>$700</td></tr>
+  <tr><td>Dec 5</td><td><strong>Sale</strong></td><td><strong>20</strong></td><td>$100</td><td><strong>$2,000</strong></td></tr>
+</table>
+
+<h2>Step 1 — Purchase Journal Entries (SAME under both methods)</h2>
+
+<p>The purchase entries don't depend on FIFO vs LIFO. You record the actual cash spent and the inventory bought. <strong>Method choice only matters when you SELL.</strong></p>
+
+<div class="je">
+Jan 15  Inventory                     500
+            Cash (or A/P)                 500
+        (To record purchase of 10 units @ $50)
+
+Jun 10  Inventory                     600
+            Cash (or A/P)                 600
+        (To record purchase of 10 units @ $60)
+
+Nov 20  Inventory                     700
+            Cash (or A/P)                 700
+        (To record purchase of 10 units @ $70)
+</div>
+
+<p>After all purchases: Inventory T-account has <strong>$1,800</strong> ($500 + $600 + $700).</p>
+
+<h2>Step 2 — Sale Entries (DIFFERENT under FIFO vs LIFO)</h2>
+
+<p>Every sale has <strong>two journal entries</strong>:</p>
+<ol>
+  <li><strong>Sales entry</strong> — record what the customer paid (revenue + cash). <em>Same under both methods.</em></li>
+  <li><strong>COGS entry</strong> — move cost of sold goods from Inventory to COGS. <em>Different under FIFO vs LIFO.</em></li>
+</ol>
+
+<h3>(a) Sales Entry — same for both</h3>
+
+<div class="je">
+Dec 5   Cash (or A/R)               2,000
+            Sales Revenue                2,000
+        (To record sale of 20 units @ $100)
+</div>
+
+<h3>(b) COGS Entry — Under FIFO</h3>
+
+<p>Sold first = oldest. So 10 units from Jan ($50) + 10 units from Jun ($60) = $1,100.</p>
+
+<div class="je">
+Dec 5   Cost of Goods Sold          1,100
+            Inventory                    1,100
+        (FIFO: 10×$50 + 10×$60)
+</div>
+
+<p>Inventory remaining = $700 (the 10 from Nov @ $70).</p>
+
+<h3>(b) COGS Entry — Under LIFO</h3>
+
+<p>Sold first = newest. So 10 units from Nov ($70) + 10 units from Jun ($60) = $1,300.</p>
+
+<div class="je">
+Dec 5   Cost of Goods Sold          1,300
+            Inventory                    1,300
+        (LIFO: 10×$70 + 10×$60)
+</div>
+
+<p>Inventory remaining = $500 (the 10 from Jan @ $50).</p>
+
+<h2>Step 3 — Side-by-Side Impact</h2>
+
+<table>
+  <tr><th></th><th>FIFO</th><th>LIFO</th><th>Difference</th></tr>
+  <tr><td>Sales Revenue</td><td>$2,000</td><td>$2,000</td><td>0 (same)</td></tr>
+  <tr><td>COGS</td><td>$1,100</td><td>$1,300</td><td>$200 higher under LIFO</td></tr>
+  <tr><td><strong>Gross Profit</strong></td><td><strong>$900</strong></td><td><strong>$700</strong></td><td>$200 lower under LIFO</td></tr>
+  <tr><td>Tax (assume 25%)</td><td>$225</td><td>$175</td><td>$50 lower under LIFO</td></tr>
+  <tr><td><strong>Net Income</strong></td><td><strong>$675</strong></td><td><strong>$525</strong></td><td>$150 lower under LIFO</td></tr>
+  <tr><td>Ending Inventory (Balance Sheet)</td><td>$700</td><td>$500</td><td>$200 lower under LIFO</td></tr>
+</table>
+
+<h2>When Is Each Method Better?</h2>
+
+<div class="vs">
+  <div class="fifo">
+    <h3>✅ FIFO is BETTER when…</h3>
+    <ul>
+      <li><strong>Prices are FALLING</strong> — FIFO gives lower COGS in falling-price environments (because newer cheaper costs stay in inventory, older expensive costs go to COGS first... wait, opposite — when prices fall, oldest cost is HIGHER, so FIFO COGS is HIGHER, NI is LOWER, tax is LOWER. <em>So in falling prices, FIFO actually saves tax!</em>)</li>
+      <li><strong>Showing strong financials matters</strong> — investors, lenders, IPO companies want higher reported earnings</li>
+      <li><strong>International (IFRS) companies</strong> — IFRS bans LIFO, so FIFO is the only option globally</li>
+      <li><strong>Perishable goods</strong> — milk, drugs, food. Even if accounting method is a choice, FIFO matches physical reality</li>
+      <li><strong>Simplicity wanted</strong> — FIFO is easier to explain and audit. No LIFO Reserve disclosures needed</li>
+    </ul>
+  </div>
+  <div class="lifo">
+    <h3>✅ LIFO is BETTER when…</h3>
+    <ul>
+      <li><strong>Prices are RISING (most common case)</strong> — LIFO gives higher COGS, lower Net Income, <strong>lower TAX</strong>. The main reason US companies pick LIFO is the tax savings.</li>
+      <li><strong>Strong cash flow priority</strong> — lower tax means more cash retained in the business</li>
+      <li><strong>Industries with persistent inflation</strong> — oil, metals, chemicals, retail</li>
+      <li><strong>Stockpile-style inventory</strong> — coal piles, gravel, oil tanks where physical newest goes first matches reality</li>
+      <li><strong>US-only operations</strong> — only US GAAP allows LIFO. If you'll never need IFRS reporting, LIFO is on the table</li>
+    </ul>
+  </div>
+</div>
+
+<h2>The Tax Catch — LIFO Conformity Rule</h2>
+
+<div class="gotcha">
+  <strong>If you use LIFO for tax, you MUST use LIFO for financial reporting too.</strong> The IRS won't let you have it both ways. So companies face a tradeoff:
+  <ul>
+    <li>Use LIFO → save tax, but report lower Net Income to investors</li>
+    <li>Use FIFO → higher reported NI to investors, but pay more tax</li>
+  </ul>
+  Most large US companies still pick LIFO because the tax savings outweigh the lower reported earnings.
+</div>
+
+<h2>Decision Framework — Quick Pick</h2>
+
+<table>
+  <tr><th>Situation</th><th>Better Choice</th><th>Why</th></tr>
+  <tr><td>US company, rising prices, want low tax</td><td><strong>LIFO</strong></td><td>Higher COGS = lower tax</td></tr>
+  <tr><td>International company (IFRS)</td><td><strong>FIFO</strong></td><td>LIFO not allowed</td></tr>
+  <tr><td>Falling prices</td><td><strong>FIFO</strong></td><td>Higher COGS in falling prices = lower tax</td></tr>
+  <tr><td>Perishable goods (food, drugs)</td><td><strong>FIFO</strong></td><td>Matches physical flow</td></tr>
+  <tr><td>Going public / raising debt</td><td><strong>FIFO</strong></td><td>Higher reported NI looks better</td></tr>
+  <tr><td>Tech/IT with deflation (computers)</td><td><strong>FIFO</strong></td><td>In deflation, FIFO COGS is higher = tax saving</td></tr>
+  <tr><td>Oil / commodities, rising prices</td><td><strong>LIFO</strong></td><td>Tax savings dominate</td></tr>
+</table>
+
+<h2>5 Common Mistakes</h2>
+
+<ol>
+  <li><strong>Forgetting two entries per sale.</strong> Every sale = (1) Cash/AR ↑ Sales Revenue ↑, (2) COGS ↑ Inventory ↓. Both required.</li>
+  <li><strong>Mixing up "better" intuition.</strong> "LIFO saves tax" only when prices are RISING. In falling prices, FIFO saves tax.</li>
+  <li><strong>Forgetting LIFO Conformity Rule.</strong> Can't pick LIFO for tax and FIFO for financials. Pick one for both.</li>
+  <li><strong>Thinking method affects Sales Revenue.</strong> It doesn't. Customer paid the same regardless of which units came off the shelf in your books.</li>
+  <li><strong>Forgetting LIFO Reserve disclosure.</strong> If using LIFO, you must show the difference (Inventory at FIFO − Inventory at LIFO) in the footnotes. Analysts often add it back to get a "FIFO-equivalent" balance sheet.</li>
+</ol>
+
+<h2>6 Key Takeaways</h2>
+
+<ol>
+  <li>Purchase entries are the same under both methods. Sale entries differ only in the COGS amount.</li>
+  <li>FIFO COGS = oldest cost. LIFO COGS = newest cost. Sales Revenue is identical.</li>
+  <li>Rising prices → LIFO saves tax. Falling prices → FIFO saves tax. Method matches direction.</li>
+  <li>LIFO is only allowed under US GAAP. IFRS bans it everywhere else.</li>
+  <li>LIFO Conformity Rule: if LIFO for tax, then LIFO for financial statements (cannot mix).</li>
+  <li>The "better" method depends on price direction + tax priority + reporting context. There's no universal winner.</li>
+</ol>
+
+<div class="footer">
+  Q-008 · 2026-05-09 · Solved by Kenny · ACBU 2222 Final Review<br>
+  Follow-up to Q-007 — Trinity asked for journal entries + when each is better<br>
+  Repo: KennyB76/newton-study-hub
+</div>
+
+</body>
+</html>

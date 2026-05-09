@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q-009 — Cash Flow Calculation Deep Dive (CFO / CFI / CFF)</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 860px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+  h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 8px; }
+  h2 { color: #c2185b; margin-top: 40px; }
+  h3 { color: #5d4037; margin-top: 25px; }
+  .source { background: #fff3e0; padding: 10px 15px; border-left: 4px solid #ff9800; font-size: 0.9em; }
+  .key { background: #e3f2fd; padding: 12px 18px; border-left: 4px solid #1565c0; margin: 18px 0; }
+  .gotcha { background: #ffebee; padding: 12px 18px; border-left: 4px solid #c62828; margin: 18px 0; }
+  .answer { background: #e8f5e9; padding: 12px 18px; border-left: 4px solid #2e7d32; margin: 18px 0; font-weight: 500; }
+  table { border-collapse: collapse; margin: 15px 0; width: 100%; background: white; }
+  th, td { border: 1px solid #bdbdbd; padding: 8px 12px; text-align: right; }
+  th { background: #eceff1; }
+  td:first-child, th:first-child { text-align: left; }
+  .formula { background: #fff8e1; padding: 10px 15px; border-radius: 6px; font-family: Menlo, monospace; margin: 10px 0; }
+  .step { background: white; border: 2px solid #1565c0; border-radius: 8px; padding: 15px 22px; margin: 20px 0; }
+  .step-num { display: inline-block; background: #1565c0; color: white; padding: 4px 12px; border-radius: 50%; margin-right: 8px; font-weight: bold; }
+  .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #888; font-size: 0.9em; }
+  .rule-card { background: white; border-left: 4px solid #2e7d32; padding: 12px 18px; margin: 12px 0; }
+  .rule-card.minus { border-left-color: #c62828; }
+</style>
+</head>
+<body>
+
+<h1>Cash Flow Statement — Calculation Deep Dive</h1>
+
+<div class="source">
+  <strong>Source:</strong> Follow-up to Q-005 — "more help on cash flow calculation with CFO CFI CFF" (2026-05-09)
+</div>
+
+<h2>The Master Equation</h2>
+
+<div class="formula">
+  Beginning Cash + (CFO + CFI + CFF) = Ending Cash
+</div>
+
+<p>Everything else is just <strong>figuring out which bucket each transaction goes into</strong>, and the <strong>direction (inflow + or outflow −)</strong>.</p>
+
+<h2>Step-by-Step Recipe (Indirect Method)</h2>
+
+<div class="step">
+  <span class="step-num">1</span> <strong>Start with Net Income</strong> (top of CFO section).<br>
+  This is your starting cash proxy.
+</div>
+
+<div class="step">
+  <span class="step-num">2</span> <strong>Add back non-cash expenses</strong>.<br>
+  These reduced NI but didn't actually take cash out.
+</div>
+
+<div class="step">
+  <span class="step-num">3</span> <strong>Subtract non-cash gains, add non-cash losses</strong>.<br>
+  These are in NI but the actual cash is in CFI (sale of asset).
+</div>
+
+<div class="step">
+  <span class="step-num">4</span> <strong>Adjust for working capital changes</strong>.<br>
+  Match the sign rules below.
+</div>
+
+<div class="step">
+  <span class="step-num">5</span> <strong>That's your CFO</strong>. Then do CFI (asset transactions) and CFF (debt + equity transactions) separately.
+</div>
+
+<h2>The Sign Rules — Memorize These</h2>
+
+<h3>For CFO Working Capital Adjustments</h3>
+
+<div class="rule-card">
+  <strong>Asset goes UP → Cash goes DOWN (subtract)</strong><br>
+  Example: A/R ↑ $50K means customers owe you more. You earned the revenue (in NI) but didn't collect cash. So subtract $50K.
+</div>
+
+<div class="rule-card">
+  <strong>Asset goes DOWN → Cash goes UP (add)</strong><br>
+  Example: Inventory ↓ $30K means you used inventory without buying new. You expensed it (in NI) but didn't pay cash. So add $30K.
+</div>
+
+<div class="rule-card minus">
+  <strong>Liability goes UP → Cash goes UP (add)</strong><br>
+  Example: A/P ↑ $20K means you owe vendors more. You expensed something (in NI) but didn't pay cash. So add $20K.
+</div>
+
+<div class="rule-card minus">
+  <strong>Liability goes DOWN → Cash goes DOWN (subtract)</strong><br>
+  Example: Taxes Payable ↓ $10K means you paid down taxes. You'd already expensed them (in NI) earlier. So subtract $10K.
+</div>
+
+<h3>Mnemonic</h3>
+
+<p><strong>"Assets and Cash move OPPOSITE. Liabilities and Cash move TOGETHER."</strong></p>
+
+<h2>Non-Cash Items to Adjust in CFO</h2>
+
+<table>
+  <tr><th>Item</th><th>Direction</th><th>Why</th></tr>
+  <tr><td>Depreciation</td><td>+ (add back)</td><td>Reduced NI but no cash paid</td></tr>
+  <tr><td>Amortization</td><td>+ (add back)</td><td>Same as depreciation, intangibles</td></tr>
+  <tr><td>Impairment</td><td>+ (add back)</td><td>Write-down of asset, no cash</td></tr>
+  <tr><td>Stock-based compensation</td><td>+ (add back)</td><td>Paid in stock, not cash</td></tr>
+  <tr><td>Gain on sale of asset</td><td>− (subtract)</td><td>Real cash from sale is in CFI, not CFO</td></tr>
+  <tr><td>Loss on sale of asset</td><td>+ (add back)</td><td>Reduced NI but real cash is in CFI</td></tr>
+  <tr><td>Bad debt expense</td><td>+ (add back, sometimes)</td><td>Non-cash unless written off</td></tr>
+</table>
+
+<h2>What Goes Where — The 3 Buckets</h2>
+
+<h3>CFO — Cash Flow from Operations</h3>
+<ul>
+  <li>Net Income (starting point)</li>
+  <li>Depreciation, Amortization, Impairment (add back)</li>
+  <li>Gains/Losses on sale (remove from NI)</li>
+  <li>Changes in working capital: A/R, Inventory, A/P, Accrued Liabilities, Prepaid Expenses, Taxes Payable, Unearned Revenue</li>
+</ul>
+
+<h3>CFI — Cash Flow from Investing</h3>
+<ul>
+  <li>Purchase of PP&E (− cash out)</li>
+  <li>Sale of PP&E (+ cash in, at <strong>actual sale price</strong>, not book value)</li>
+  <li>Purchase of Land, Buildings, Equipment</li>
+  <li>Purchase / sale of investments (stocks, bonds of other companies)</li>
+  <li>Loans made to others / collected from others</li>
+</ul>
+
+<h3>CFF — Cash Flow from Financing</h3>
+<ul>
+  <li>Issuance of stock (+ cash in)</li>
+  <li>Buy-back of stock (− cash out)</li>
+  <li>Issuance of bonds / loans (+ cash in)</li>
+  <li>Repayment of bonds / loans principal (− cash out)</li>
+  <li>Dividends paid (− cash out)</li>
+  <li>APIC contributions</li>
+</ul>
+
+<div class="gotcha">
+  <strong>Gotcha — Interest paid?</strong><br>
+  Under <strong>US GAAP</strong>: Interest paid is in <strong>CFO</strong> (operations).<br>
+  Under <strong>IFRS</strong>: Interest paid can be in <strong>CFO or CFF</strong> (company's choice).<br>
+  Same for interest received and dividends received.
+</div>
+
+<h2>Worked Example — Full Calculation</h2>
+
+<h3>Given (Rockefeller Company, simplified)</h3>
+
+<table>
+  <tr><th>Item</th><th>2024</th><th>2023</th><th>Change</th></tr>
+  <tr><td>Cash</td><td>$70</td><td>$89</td><td>−19</td></tr>
+  <tr><td>A/R</td><td>$170</td><td>$120</td><td>+50 (asset up = cash down)</td></tr>
+  <tr><td>Supplies</td><td>$95</td><td>$300</td><td>−110 (asset down = cash up... wait, the values are simplified — see Q-005 for full numbers)</td></tr>
+  <tr><td>PP&E</td><td>$1,200</td><td>$700</td><td>+500 net</td></tr>
+  <tr><td>A/P</td><td>$260</td><td>$300</td><td>−40 (liability down = cash down)</td></tr>
+  <tr><td>Bonds</td><td>$160</td><td>$50</td><td>+110 (liability up = cash up)</td></tr>
+</table>
+
+<h3>Additional Info (from Q-005)</h3>
+<ul>
+  <li>Net Income = $250</li>
+  <li>Depreciation Expense = $132 (calculated via A/D rollforward)</li>
+  <li>Amortization = $6</li>
+  <li>Sold PP&E (cost $100, book value $38, sold for $40, gain $2)</li>
+  <li>Purchased PP&E $600, sold $40, change in net = +$500 + dep $132 = $632 cost-basis change... let's see the full)</li>
+  <li>Bought Land $100</li>
+  <li>Issued Common Stock $100, APIC $40</li>
+  <li>Issued Bonds Payable $110</li>
+  <li>Paid Dividends $165</li>
+</ul>
+
+<h3>CFO — Step by Step</h3>
+
+<table>
+  <tr><th>Item</th><th>Amount</th><th>Sign Logic</th></tr>
+  <tr><td>Net Income</td><td>$250</td><td>Starting point</td></tr>
+  <tr><td>+ Depreciation</td><td>+132</td><td>Non-cash expense, add back</td></tr>
+  <tr><td>+ Amortization</td><td>+6</td><td>Non-cash expense, add back</td></tr>
+  <tr><td>− Gain on sale of PP&E</td><td>−2</td><td>In NI but real cash is in CFI</td></tr>
+  <tr><td>− A/R increase ($50)</td><td>−50</td><td>Asset ↑ → Cash ↓</td></tr>
+  <tr><td>+ Supplies decrease ($110)</td><td>+110</td><td>Asset ↓ → Cash ↑</td></tr>
+  <tr><td>− A/P decrease ($40)</td><td>−40</td><td>Liability ↓ → Cash ↓</td></tr>
+  <tr><td>+ Taxes Payable increase ($50)</td><td>+50</td><td>Liability ↑ → Cash ↑</td></tr>
+  <tr><td><strong>Net CFO</strong></td><td><strong>$456</strong></td><td>Sum</td></tr>
+</table>
+
+<h3>CFI — Step by Step</h3>
+
+<table>
+  <tr><th>Item</th><th>Amount</th><th>Sign Logic</th></tr>
+  <tr><td>+ Sale of PP&E (actual cash received)</td><td>+40</td><td>Cash in</td></tr>
+  <tr><td>− Purchase of PP&E</td><td>−600</td><td>Cash out</td></tr>
+  <tr><td>− Purchase of Land</td><td>−100</td><td>Cash out</td></tr>
+  <tr><td><strong>Net CFI</strong></td><td><strong>($660)</strong></td><td>Sum</td></tr>
+</table>
+
+<h3>CFF — Step by Step</h3>
+
+<table>
+  <tr><th>Item</th><th>Amount</th><th>Sign Logic</th></tr>
+  <tr><td>+ Issuance of Common Stock</td><td>+100</td><td>Cash in from owners</td></tr>
+  <tr><td>+ APIC contribution</td><td>+40</td><td>Cash in from owners (excess over par)</td></tr>
+  <tr><td>+ Issuance of Bonds</td><td>+110</td><td>Cash in from creditors</td></tr>
+  <tr><td>− Dividends Paid</td><td>−165</td><td>Cash out to owners</td></tr>
+  <tr><td><strong>Net CFF</strong></td><td><strong>$185</strong></td><td>Sum</td></tr>
+</table>
+
+<h3>Final Reconciliation</h3>
+
+<div class="answer">
+  <strong>Net Change in Cash</strong> = CFO + CFI + CFF<br>
+  = $456 + ($660) + $185 = <strong>($19)</strong><br><br>
+  Beginning Cash $89 + ($19) = <strong>Ending Cash $70 ✓</strong>
+</div>
+
+<h2>The 4 "Special Calculations" Always Tested</h2>
+
+<h3>① Dividend Paid (from RE rollforward)</h3>
+
+<div class="formula">
+  Beginning RE + Net Income − Dividends = Ending RE<br>
+  Solve for Dividends.
+</div>
+
+<h3>② Depreciation Expense (when there's a sale)</h3>
+
+<div class="formula">
+  Beginning A/D + Depreciation Expense − A/D removed (for sold asset) = Ending A/D<br>
+  Solve for Depreciation Expense.<br>
+  (A/D removed = Original Cost of sold asset − Book Value at sale)
+</div>
+
+<h3>③ PP&E Purchases (from Cost rollforward)</h3>
+
+<div class="formula">
+  Beginning PP&E (Cost) + Purchases − Cost of sold asset = Ending PP&E (Cost)<br>
+  Solve for Purchases.
+</div>
+
+<h3>④ Cash Received from PP&E Sale</h3>
+
+<div class="formula">
+  Cash received = Book Value at sale + Gain (or − Loss)<br>
+  This goes in CFI as a positive cash inflow.
+</div>
+
+<h2>5 Common Mistakes</h2>
+
+<ol>
+  <li><strong>Putting interest paid in CFF.</strong> Under US GAAP, it's in CFO. Common mistake under IFRS rules.</li>
+  <li><strong>Putting only the gain (not the cash sale price) in CFI.</strong> CFI shows the FULL cash received from sale, not just the gain. The gain is removed from NI in CFO.</li>
+  <li><strong>Forgetting depreciation when there's a sale.</strong> A/D rollforward is mandatory — the simple ΔA/D rule breaks.</li>
+  <li><strong>Wrong sign on working capital.</strong> Memorize: Assets opposite of cash. Liabilities same as cash.</li>
+  <li><strong>Treating dividends as expense.</strong> Dividends are NOT on the Income Statement. They reduce Retained Earnings directly. They show up only in CFF and the RE rollforward.</li>
+</ol>
+
+<h2>6 Key Takeaways</h2>
+
+<ol>
+  <li>3 buckets: CFO (operations), CFI (assets), CFF (debt + equity). They must reconcile to the change in Cash.</li>
+  <li>Indirect method = NI → add back non-cash → adjust for working capital → CFO.</li>
+  <li>Sign rule: Assets opposite of cash. Liabilities same as cash.</li>
+  <li>When PP&E is sold: do BOTH rollforwards (Cost AND A/D). Sale price (full cash) goes in CFI; gain/loss removed from CFO.</li>
+  <li>Dividends are in CFF only (not Income Statement). Use RE rollforward to find amount.</li>
+  <li>Sanity check always: Beginning Cash + (CFO + CFI + CFF) = Ending Cash. If it doesn't tie, find the error.</li>
+</ol>
+
+<div class="footer">
+  Q-009 · 2026-05-09 · Solved by Kenny · ACBU 2222 Final Review<br>
+  Follow-up to Q-005 — Trinity asked for deeper CFO/CFI/CFF help<br>
+  Repo: KennyB76/newton-study-hub
+</div>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q-011 — Inventory Cost Flow Practice (FIFO / LIFO / Average) — 5 Problems</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 880px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+  h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 8px; }
+  h2 { color: #c2185b; margin-top: 35px; }
+  h3 { color: #5d4037; }
+  .source { background: #fff3e0; padding: 10px 15px; border-left: 4px solid #ff9800; font-size: 0.9em; }
+  .problem { background: white; border: 2px solid #1565c0; border-radius: 8px; padding: 20px 25px; margin: 25px 0; }
+  .problem-num { display: inline-block; background: #1565c0; color: white; padding: 4px 14px; border-radius: 18px; font-weight: bold; margin-right: 8px; }
+  .answer { background: #e8f5e9; border-left: 5px solid #2e7d32; padding: 15px 20px; margin: 12px 0; border-radius: 6px; }
+  .answer summary { font-weight: bold; cursor: pointer; color: #2e7d32; padding: 5px 0; }
+  .answer[open] summary { margin-bottom: 12px; }
+  .gotcha { background: #ffebee; padding: 10px 15px; border-left: 4px solid #c62828; margin: 12px 0; font-size: 0.95em; }
+  table { border-collapse: collapse; margin: 12px 0; width: 100%; background: white; }
+  th, td { border: 1px solid #bdbdbd; padding: 8px 12px; }
+  th { background: #eceff1; }
+  td.num, th.num { text-align: right; }
+  .formula { background: #fff8e1; padding: 10px 15px; border-radius: 6px; font-family: Menlo, monospace; margin: 8px 0; }
+  .je { font-family: Menlo, Consolas, monospace; background: #fff8e1; padding: 10px 14px; border-radius: 6px; margin: 8px 0; white-space: pre; line-height: 1.4; font-size: 0.88em; }
+  .tip { background: #e3f2fd; padding: 8px 14px; border-radius: 4px; font-size: 0.9em; color: #1565c0; }
+  .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #888; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Inventory Cost Flow Practice — 5 Problems</h1>
+
+<div class="source">
+  <strong>Topic:</strong> FIFO / LIFO / Weighted Average / Specific Identification — Practice with Answer Key<br>
+  <strong>Instruction:</strong> Try each problem first. Click "Show Answer" to check. Answers include common-mistake warnings.
+</div>
+
+<h2 class="tip">💡 Tip — Read carefully whether prices are RISING or FALLING. The "better method" intuition flips.</h2>
+
+<!-- ===== PROBLEM 1 ===== -->
+<div class="problem">
+<h3><span class="problem-num">Q1</span> Basic FIFO vs LIFO COGS Calculation (Rising Prices)</h3>
+
+<p>Bluebird Co. had the following inventory transactions:</p>
+
+<table>
+  <tr><th>Date</th><th>Action</th><th class="num">Qty</th><th class="num">Unit Cost</th></tr>
+  <tr><td>Jan 1</td><td>Beginning Inventory</td><td class="num">100</td><td class="num">$8</td></tr>
+  <tr><td>Mar 5</td><td>Purchase</td><td class="num">200</td><td class="num">$10</td></tr>
+  <tr><td>Aug 12</td><td>Purchase</td><td class="num">150</td><td class="num">$12</td></tr>
+  <tr><td>Dec 31</td><td>Sold during the year</td><td class="num">300</td><td>—</td></tr>
+</table>
+
+<p><strong>Compute COGS and Ending Inventory under (a) FIFO, (b) LIFO, (c) Weighted Average.</strong></p>
+
+<details class="answer">
+<summary>▶ Show Answer</summary>
+
+<p><strong>Total units available</strong> = 100 + 200 + 150 = 450. Sold 300, so <strong>ending units = 150</strong>.</p>
+<p><strong>Total cost available</strong> = (100×$8) + (200×$10) + (150×$12) = $800 + $2,000 + $1,800 = $4,600.</p>
+
+<h4>(a) FIFO — oldest goes to COGS</h4>
+<div class="formula">
+  Sold first = 100 @ $8 + 200 @ $10 = $800 + $2,000 = <strong>COGS $2,800</strong><br>
+  Ending Inv = 150 left @ $12 = <strong>$1,800</strong>
+</div>
+
+<h4>(b) LIFO — newest goes to COGS</h4>
+<div class="formula">
+  Sold first = 150 @ $12 + 150 @ $10 = $1,800 + $1,500 = <strong>COGS $3,300</strong><br>
+  Ending Inv = 50 left @ $10 + 100 @ $8 = $500 + $800 = <strong>$1,300</strong>
+</div>
+
+<h4>(c) Weighted Average</h4>
+<div class="formula">
+  Avg cost = $4,600 / 450 = <strong>$10.222 per unit</strong><br>
+  COGS = 300 × $10.222 = <strong>$3,067 (rounded)</strong><br>
+  Ending Inv = 150 × $10.222 = <strong>$1,533 (rounded)</strong>
+</div>
+
+<div class="gotcha"><strong>Common Mistake:</strong> Forgetting Beginning Inventory! Many students treat the year as if only purchases existed. Always include BB Inv in available units and cost.</div>
+</details>
+</div>
+
+<!-- ===== PROBLEM 2 ===== -->
+<div class="problem">
+<h3><span class="problem-num">Q2</span> Journal Entries — Both FIFO and LIFO</h3>
+
+<p>Skyline Corp made the following 2 transactions:</p>
+<ol>
+  <li>Mar 1: Bought 50 widgets at $20 each on account.</li>
+  <li>Mar 15: Sold 30 widgets for $50 each, cash. Beginning Inventory was 20 widgets at $15 each.</li>
+</ol>
+
+<p><strong>Show ALL journal entries on Mar 15 under (a) FIFO and (b) LIFO.</strong></p>
+
+<details class="answer">
+<summary>▶ Show Answer</summary>
+
+<h4>Mar 1 — Purchase entry (same under both)</h4>
+<div class="je">
+Mar 1   Inventory                    1,000
+            Accounts Payable             1,000
+        (50 widgets × $20)
+</div>
+
+<h4>Mar 15 — Sales entry (same under both)</h4>
+<div class="je">
+Mar 15  Cash                         1,500
+            Sales Revenue                1,500
+        (30 widgets × $50)
+</div>
+
+<h4>Mar 15 — COGS entry under FIFO</h4>
+<p>Sold first = 20 @ $15 (BB) + 10 @ $20 (Mar 1) = $300 + $200 = $500</p>
+<div class="je">
+Mar 15  Cost of Goods Sold             500
+            Inventory                      500
+        (FIFO: 20 × $15 + 10 × $20)
+</div>
+
+<h4>Mar 15 — COGS entry under LIFO</h4>
+<p>Sold first = 30 @ $20 (Mar 1, all newest) = $600</p>
+<div class="je">
+Mar 15  Cost of Goods Sold             600
+            Inventory                      600
+        (LIFO: 30 × $20)
+</div>
+
+<div class="gotcha"><strong>Common Mistake:</strong> Forgetting that EVERY sale needs TWO entries — (1) Cash/AR + Sales Revenue, (2) COGS + Inventory. Many students only write one.</div>
+</details>
+</div>
+
+<!-- ===== PROBLEM 3 ===== -->
+<div class="problem">
+<h3><span class="problem-num">Q3</span> Falling Prices — Which Method Saves Tax?</h3>
+
+<p>TechWidget Inc. (US-based) experienced FALLING prices in the computer chip market this year:</p>
+
+<table>
+  <tr><th>Date</th><th>Action</th><th class="num">Qty</th><th class="num">Unit Cost</th></tr>
+  <tr><td>Jan</td><td>Purchase</td><td class="num">100</td><td class="num">$50</td></tr>
+  <tr><td>Jul</td><td>Purchase</td><td class="num">100</td><td class="num">$40</td></tr>
+  <tr><td>Nov</td><td>Purchase</td><td class="num">100</td><td class="num">$30</td></tr>
+</table>
+
+<p>Sold 200 units at $80 each. Tax rate 25%.</p>
+
+<p><strong>Compute COGS, NI, and Tax under FIFO and LIFO. Which method saves tax in falling prices?</strong></p>
+
+<details class="answer">
+<summary>▶ Show Answer</summary>
+
+<p>Sales Revenue = 200 × $80 = $16,000.</p>
+
+<h4>FIFO (oldest, $50 + $40)</h4>
+<div class="formula">
+  COGS = 100 × $50 + 100 × $40 = <strong>$9,000</strong><br>
+  Gross Profit = $16,000 − $9,000 = $7,000<br>
+  Tax = $7,000 × 25% = <strong>$1,750</strong>
+</div>
+
+<h4>LIFO (newest, $30 + $40)</h4>
+<div class="formula">
+  COGS = 100 × $30 + 100 × $40 = <strong>$7,000</strong><br>
+  Gross Profit = $16,000 − $7,000 = $9,000<br>
+  Tax = $9,000 × 25% = <strong>$2,250</strong>
+</div>
+
+<p><strong>Conclusion:</strong> In FALLING prices, FIFO has higher COGS → lower NI → <strong>FIFO saves tax</strong>. The intuition flips from rising-price scenarios.</p>
+
+<div class="gotcha"><strong>Common Mistake (this is the trap):</strong> Memorizing "LIFO saves tax" without the price-direction qualifier. LIFO only saves tax when prices RISE. In falling prices, FIFO is better for tax. Tech and consumer electronics companies often face deflation and pick FIFO accordingly.</div>
+</details>
+</div>
+
+<!-- ===== PROBLEM 4 ===== -->
+<div class="problem">
+<h3><span class="problem-num">Q4</span> Moving Average (Perpetual)</h3>
+
+<p>HappyMart uses Perpetual Moving Average. Transactions in chronological order:</p>
+
+<table>
+  <tr><th>Date</th><th>Action</th><th class="num">Qty</th><th class="num">Unit Cost</th></tr>
+  <tr><td>Apr 1</td><td>Beginning Inv</td><td class="num">10</td><td class="num">$50</td></tr>
+  <tr><td>Apr 5</td><td>Purchase</td><td class="num">10</td><td class="num">$60</td></tr>
+  <tr><td>Apr 10</td><td>Sale</td><td class="num">8</td><td>—</td></tr>
+  <tr><td>Apr 15</td><td>Purchase</td><td class="num">10</td><td class="num">$70</td></tr>
+  <tr><td>Apr 20</td><td>Sale</td><td class="num">10</td><td>—</td></tr>
+</table>
+
+<p><strong>Compute (a) the average cost AT EACH POINT, (b) total COGS for April, and (c) Ending Inventory $.</strong></p>
+
+<details class="answer">
+<summary>▶ Show Answer</summary>
+
+<h4>(a) Average cost at each point</h4>
+<div class="formula">
+  After Apr 1 (BB): 10 units × $50 = $500. <strong>Avg = $50</strong>.<br>
+  After Apr 5 (purchase): 10 + 10 = 20 units. Cost = $500 + $600 = $1,100. <strong>Avg = $55</strong>.<br>
+  After Apr 10 (sold 8): 12 units left. Cost = 12 × $55 = $660. <strong>Avg still $55</strong>.<br>
+  After Apr 15 (purchase): 12 + 10 = 22 units. Cost = $660 + $700 = $1,360. <strong>Avg = $61.82</strong>.<br>
+  After Apr 20 (sold 10): 12 units left. <strong>Avg still $61.82</strong>.
+</div>
+
+<h4>(b) Total COGS</h4>
+<div class="formula">
+  Apr 10 sale: 8 × $55 = <strong>$440</strong><br>
+  Apr 20 sale: 10 × $61.82 = <strong>$618.20</strong><br>
+  Total COGS = <strong>$1,058.20</strong>
+</div>
+
+<h4>(c) Ending Inventory</h4>
+<div class="formula">
+  12 units × $61.82 = <strong>$741.80</strong>
+</div>
+
+<p>Sanity check: BB + Purchases − COGS = End Inv → $500 + $600 + $700 − $1,058.20 = $741.80 ✓</p>
+
+<div class="gotcha"><strong>Common Mistake:</strong> Recomputing the average AFTER A SALE. Sales don't change the average — only purchases do. The average gets re-set when new units come IN.</div>
+</details>
+</div>
+
+<!-- ===== PROBLEM 5 ===== -->
+<div class="problem">
+<h3><span class="problem-num">Q5</span> Method Choice — Which One Should Each Company Pick?</h3>
+
+<p>Match each company below with its best inventory method (FIFO / LIFO / Average / Specific ID). Justify each in 1 sentence.</p>
+
+<ol>
+  <li><strong>Kroger</strong> — US grocery chain, perishable food, prices generally rising.</li>
+  <li><strong>Tesla Energy</strong> — global lithium battery manufacturer reporting under IFRS, prices have been falling steadily.</li>
+  <li><strong>ExxonMobil</strong> — US oil major, commingled crude oil tanks, persistent inflation in commodity prices.</li>
+  <li><strong>Sotheby's Auction House</strong> — sells unique paintings and vintage cars, each item priced individually.</li>
+  <li><strong>SK Hynix (Korea)</strong> — semiconductor memory, IFRS reporter, prices fluctuate widely month to month.</li>
+</ol>
+
+<details class="answer">
+<summary>▶ Show Answer</summary>
+
+<ol>
+  <li><strong>Kroger → FIFO</strong>. Perishable food MUST physically rotate (oldest milk first), so FIFO matches reality. Even though LIFO would save tax in rising prices, food spoilage and customer-safety regulations dominate the choice.</li>
+  <li><strong>Tesla Energy → FIFO (or Average)</strong>. IFRS bans LIFO. Falling prices mean FIFO has higher COGS and thus saves tax (the opposite of rising prices intuition). Average is also fine and smooths volatility.</li>
+  <li><strong>ExxonMobil → LIFO</strong>. US GAAP allows LIFO. Rising commodity prices mean LIFO gives higher COGS, lower NI, lower tax — major savings. Crude oil is also commingled, so the physical flow argument doesn't restrict choice.</li>
+  <li><strong>Sotheby's → Specific Identification</strong>. Each item is unique and high-value. You can (and must) track each item's actual cost. FIFO/LIFO/Average wouldn't make sense for one-of-a-kind goods.</li>
+  <li><strong>SK Hynix → Average (Weighted)</strong>. IFRS bans LIFO. Volatile prices mean Average smooths COGS swings month-to-month, giving steadier reported earnings. Also matches the commingled nature of memory chip inventory.</li>
+</ol>
+
+<div class="gotcha"><strong>Common Mistake:</strong> Picking LIFO for an IFRS company. IFRS bans LIFO globally. If a company reports under IFRS (most non-US public companies), the only choices are FIFO, Average, or Specific ID.</div>
+</details>
+</div>
+
+<h2>5 Things to Watch For (Common Mistakes)</h2>
+<ol>
+  <li><strong>Forgetting Beginning Inventory</strong> in available units and cost.</li>
+  <li><strong>Writing only the Sales entry without the COGS entry</strong>. Each sale = 2 journal entries.</li>
+  <li><strong>Memorizing "LIFO saves tax" without the rising-price condition</strong>. In falling prices, FIFO saves tax.</li>
+  <li><strong>Recomputing the average after a sale in Moving Average</strong>. The average only changes when new units come IN.</li>
+  <li><strong>Using LIFO for an IFRS company</strong>. LIFO is only allowed under US GAAP.</li>
+</ol>
+
+<h2>6 Key Takeaways</h2>
+<ol>
+  <li>Total Cost Available = Beginning Inv + Purchases. Total Units Available = same logic.</li>
+  <li>FIFO COGS = oldest. LIFO COGS = newest. Average = blended.</li>
+  <li>Sales Revenue is identical across all methods — only COGS and Ending Inventory differ.</li>
+  <li>Rising prices: FIFO higher NI, LIFO lower NI (tax saving). Falling prices: opposite.</li>
+  <li>Two variants of Average: Periodic (calc once at end) vs Perpetual (recalc each purchase).</li>
+  <li>Method must match the regulatory environment: US GAAP allows all 4. IFRS bans LIFO.</li>
+</ol>
+
+<div class="footer">
+  Q-011 · 2026-05-09 · Solved by Kenny · ACBU 2222 Final Practice<br>
+  Inventory Cost Flow Practice — 5 problems with answer keys + common-mistake warnings<br>
+  Repo: KennyB76/newton-study-hub
+</div>
+
+</body>
+</html>

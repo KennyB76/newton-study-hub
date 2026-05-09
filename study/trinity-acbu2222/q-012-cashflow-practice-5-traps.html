@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q-012 — Cash Flow Statement Practice — 5 Problems on Common Traps</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 880px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+  h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 8px; }
+  h2 { color: #c2185b; margin-top: 35px; }
+  h3 { color: #5d4037; }
+  .source { background: #fff3e0; padding: 10px 15px; border-left: 4px solid #ff9800; font-size: 0.9em; }
+  .problem { background: white; border: 2px solid #1565c0; border-radius: 8px; padding: 20px 25px; margin: 25px 0; }
+  .problem-num { display: inline-block; background: #1565c0; color: white; padding: 4px 14px; border-radius: 18px; font-weight: bold; margin-right: 8px; }
+  .answer { background: #e8f5e9; border-left: 5px solid #2e7d32; padding: 15px 20px; margin: 12px 0; border-radius: 6px; }
+  .answer summary { font-weight: bold; cursor: pointer; color: #2e7d32; padding: 5px 0; }
+  .answer[open] summary { margin-bottom: 12px; }
+  .gotcha { background: #ffebee; padding: 10px 15px; border-left: 4px solid #c62828; margin: 12px 0; font-size: 0.95em; }
+  table { border-collapse: collapse; margin: 12px 0; width: 100%; background: white; }
+  th, td { border: 1px solid #bdbdbd; padding: 8px 12px; }
+  th { background: #eceff1; }
+  td.num, th.num { text-align: right; }
+  .formula { background: #fff8e1; padding: 10px 15px; border-radius: 6px; font-family: Menlo, monospace; margin: 8px 0; }
+  .tip { background: #e3f2fd; padding: 8px 14px; border-radius: 4px; font-size: 0.9em; color: #1565c0; }
+  .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #888; font-size: 0.9em; }
+  .trap-tag { display: inline-block; background: #c62828; color: white; padding: 2px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>Cash Flow Statement Practice — 5 Trap Problems</h1>
+
+<div class="source">
+  <strong>Topic:</strong> Cash Flow Statement (CFO / CFI / CFF) — Critical concepts + Common mistakes<br>
+  <strong>Instruction:</strong> Each problem targets a specific exam trap. Try first, then click "Show Answer" to verify.
+</div>
+
+<h2 class="tip">💡 The Sign Rule (memorize before starting): Assets and Cash move OPPOSITE. Liabilities and Cash move TOGETHER.</h2>
+
+<!-- ===== PROBLEM 1 ===== -->
+<div class="problem">
+<h3><span class="problem-num">Q1</span> Working Capital Direction <span class="trap-tag">TRAP: sign confusion</span></h3>
+
+<p>For each item, indicate (1) which CFO direction (+ add or − subtract) and (2) why.</p>
+
+<ol type="a">
+  <li>Accounts Receivable increased by $30,000 during the year.</li>
+  <li>Inventory decreased by $20,000.</li>
+  <li>Accounts Payable decreased by $15,000.</li>
+  <li>Accrued Liabilities (e.g., wages) increased by $10,000.</li>
+  <li>Prepaid Insurance increased by $8,000.</li>
+</ol>
+
+<details class="answer">
+<summary>▶ Show Answer</summary>
+<table>
+  <tr><th>Item</th><th>Direction</th><th>Why</th></tr>
+  <tr><td>(a) A/R ↑ $30K</td><td><strong>− subtract</strong></td><td>Asset ↑ → Cash ↓. Customers owe more = less cash collected.</td></tr>
+  <tr><td>(b) Inventory ↓ $20K</td><td><strong>+ add</strong></td><td>Asset ↓ → Cash ↑. Used up inventory without buying new = expensed without cash.</td></tr>
+  <tr><td>(c) A/P ↓ $15K</td><td><strong>− subtract</strong></td><td>Liability ↓ → Cash ↓. Paid down vendors = cash out.</td></tr>
+  <tr><td>(d) Accrued Liab ↑ $10K</td><td><strong>+ add</strong></td><td>Liability ↑ → Cash ↑. Owe more wages but didn't pay yet = cash retained.</td></tr>
+  <tr><td>(e) Prepaid Insurance ↑ $8K</td><td><strong>− subtract</strong></td><td>Asset ↑ → Cash ↓. Paid insurance in advance = cash out.</td></tr>
+</table>
+<div class="gotcha"><strong>Common Mistake:</strong> Reversing the sign for Liabilities. Some students intuitively think "liability went down means I have less debt, so this is good — add". WRONG. Less debt means I PAID it = cash out = subtract.</div>
+</details>
+</div>
+
+<!-- ===== PROBLEM 2 ===== -->
+<div class="problem">
+<h3><span class="problem-num">Q2</span> Gain on Sale Trap <span class="trap-tag">TRAP: double counting</span></h3>
+
+<p>Mountain Co. sold equipment with original cost $200,000 and accumulated depreciation $150,000 for $80,000 cash. Net Income for the year was $500,000.</p>
+
+<p><strong>(a) What is the gain on sale? (b) How does this affect CFO and CFI?</strong></p>
+
+<details class="answer">
+<summary>▶ Show Answer</summary>
+
+<h4>(a) Gain calculation</h4>
+<div class="formula">
+  Book Value = Cost − Accum. Depr = $200,000 − $150,000 = $50,000<br>
+  Gain = Sale Price − Book Value = $80,000 − $50,000 = <strong>$30,000</strong>
+</div>
+
+<h4>(b) CFO and CFI treatment</h4>
+<p><strong>CFO Section:</strong></p>
+<div class="formula">
+  Net Income            $500,000<br>
+  − Gain on sale         ($30,000)  ← REMOVE the gain<br>
+  ...other adjustments...
+</div>
+<p><em>Why subtract the gain?</em> The $30,000 gain is already included in NI. But the actual cash received ($80,000) goes in CFI. If we kept the gain in CFO and put $80,000 in CFI, we'd double-count by $30,000.</p>
+
+<p><strong>CFI Section:</strong></p>
+<div class="formula">
+  + Sale of Equipment    $80,000  ← FULL CASH (not just the gain)
+</div>
+
+<div class="gotcha"><strong>The trap:</strong> Many students put only $30,000 (the gain) in CFI. WRONG. CFI shows the full cash received from sale = $80,000. The gain is removed from CFO so it doesn't appear twice.</div>
+<div class="gotcha"><strong>Mirror trap:</strong> If there had been a LOSS instead, you would ADD the loss back in CFO (because the loss is in NI but real cash is in CFI). Same logic, opposite sign.</div>
+</details>
+</div>
+
+<!-- ===== PROBLEM 3 ===== -->
+<div class="problem">
+<h3><span class="problem-num">Q3</span> Depreciation with PP&E Sale <span class="trap-tag">TRAP: simple ΔA/D rule breaks</span></h3>
+
+<p>Riverside Corp. has the following PP&E and Accumulated Depreciation balances:</p>
+<table>
+  <tr><th></th><th class="num">Beginning</th><th class="num">Ending</th></tr>
+  <tr><td>PP&E (cost)</td><td class="num">$800,000</td><td class="num">$1,100,000</td></tr>
+  <tr><td>Accumulated Depreciation</td><td class="num">$300,000</td><td class="num">$340,000</td></tr>
+</table>
+
+<p>During the year, Riverside sold equipment that originally cost $50,000 (accumulated depreciation on it = $35,000) for $20,000 cash. They also bought new PP&E.</p>
+
+<p><strong>(a) How much was Depreciation Expense for the year? (b) How much PP&E did they purchase?</strong></p>
+
+<details class="answer">
+<summary>▶ Show Answer</summary>
+
+<h4>(a) Depreciation Expense — A/D Rollforward</h4>
+
+<div class="formula">
+  Beginning A/D + Dep Expense − A/D removed (sold asset) = Ending A/D<br>
+  $300,000 + X − $35,000 = $340,000<br>
+  → X = $340,000 − $300,000 + $35,000 = <strong>$75,000</strong>
+</div>
+
+<h4>(b) PP&E Purchases — Cost Rollforward</h4>
+
+<div class="formula">
+  Beginning PP&E + Purchases − Cost of Sold = Ending PP&E<br>
+  $800,000 + Y − $50,000 = $1,100,000<br>
+  → Y = $1,100,000 − $800,000 + $50,000 = <strong>$350,000</strong>
+</div>
+
+<p><strong>Sanity check:</strong> Book Value of sold asset = $50,000 − $35,000 = $15,000. Sold for $20,000 → gain $5,000 (would appear in NI and need to be subtracted in CFO).</p>
+
+<div class="gotcha"><strong>The trap:</strong> If you naively compute Depreciation = Ending A/D − Beginning A/D = $40,000, you're WRONG. That ignores the $35,000 A/D that was REMOVED when the equipment was sold. Always do the rollforward when there's a sale.</div>
+<div class="gotcha"><strong>Same trap for PP&E:</strong> Net change ($300K) is NOT the purchase amount because $50K was sold. Purchase = $300K change + $50K sold = $350K.</div>
+</details>
+</div>
+
+<!-- ===== PROBLEM 4 ===== -->
+<div class="problem">
+<h3><span class="problem-num">Q4</span> Bucket Classification <span class="trap-tag">TRAP: which bucket?</span></h3>
+
+<p>Classify each transaction as CFO / CFI / CFF, with sign (+ inflow or − outflow). Use US GAAP rules.</p>
+
+<ol type="a">
+  <li>Paid $50,000 cash dividends to shareholders.</li>
+  <li>Received $30,000 interest income on company's bond investments.</li>
+  <li>Paid $20,000 interest expense on outstanding bonds.</li>
+  <li>Issued $500,000 of new common stock for cash.</li>
+  <li>Bought back $80,000 of treasury stock.</li>
+  <li>Received $100,000 from sale of investment in another company.</li>
+  <li>Made a $200,000 long-term loan TO another company.</li>
+  <li>Paid $30,000 to retire bonds at maturity.</li>
+</ol>
+
+<details class="answer">
+<summary>▶ Show Answer</summary>
+<table>
+  <tr><th>Item</th><th>Bucket</th><th>Sign</th><th>Note</th></tr>
+  <tr><td>(a) Dividends paid</td><td><strong>CFF</strong></td><td>− $50K</td><td>Always CFF. Never on Income Statement.</td></tr>
+  <tr><td>(b) Interest income received</td><td><strong>CFO</strong></td><td>+ $30K</td><td>US GAAP: CFO. (IFRS allows CFI choice.)</td></tr>
+  <tr><td>(c) Interest expense paid</td><td><strong>CFO</strong></td><td>− $20K</td><td>US GAAP: CFO. (IFRS allows CFF choice.)</td></tr>
+  <tr><td>(d) Issued common stock</td><td><strong>CFF</strong></td><td>+ $500K</td><td>Cash from owners.</td></tr>
+  <tr><td>(e) Bought treasury stock</td><td><strong>CFF</strong></td><td>− $80K</td><td>Cash to owners (reverse).</td></tr>
+  <tr><td>(f) Sold investment in another co.</td><td><strong>CFI</strong></td><td>+ $100K</td><td>Investment activity.</td></tr>
+  <tr><td>(g) Made loan to another co.</td><td><strong>CFI</strong></td><td>− $200K</td><td>Lending IS investing.</td></tr>
+  <tr><td>(h) Retired bonds</td><td><strong>CFF</strong></td><td>− $30K</td><td>Repayment of principal.</td></tr>
+</table>
+
+<div class="gotcha"><strong>Trap 1:</strong> Putting dividends in CFO. Dividends are NEVER on the Income Statement and ALWAYS in CFF. They reduce Retained Earnings directly.</div>
+<div class="gotcha"><strong>Trap 2:</strong> Putting interest paid in CFF (because it relates to debt). Under US GAAP, interest paid is in CFO. Under IFRS, it's a choice. Know which framework you're under.</div>
+<div class="gotcha"><strong>Trap 3:</strong> Confusing loan issuance vs loan to others. Issuing OWN bonds = CFF (you're financing yourself). Lending TO others = CFI (you're investing).</div>
+</details>
+</div>
+
+<!-- ===== PROBLEM 5 ===== -->
+<div class="problem">
+<h3><span class="problem-num">Q5</span> Full CFS Reconciliation <span class="trap-tag">TRAP: integrating everything</span></h3>
+
+<p>BlueGrass Inc. provided the following information for 2026:</p>
+
+<ul>
+  <li>Net Income: $400,000</li>
+  <li>Depreciation Expense: $90,000</li>
+  <li>Loss on sale of equipment: $5,000 (sold equipment with book value $25,000 for $20,000 cash)</li>
+  <li>A/R increased by $40,000</li>
+  <li>Inventory increased by $25,000</li>
+  <li>A/P decreased by $15,000</li>
+  <li>Issued bonds for $200,000 cash</li>
+  <li>Purchased PP&E for $350,000 cash</li>
+  <li>Paid dividends of $80,000</li>
+  <li>Beginning Cash: $50,000</li>
+</ul>
+
+<p><strong>Compute Net CFO, Net CFI, Net CFF, and Ending Cash.</strong></p>
+
+<details class="answer">
+<summary>▶ Show Answer</summary>
+
+<h4>CFO</h4>
+<table>
+  <tr><th>Item</th><th class="num">$</th></tr>
+  <tr><td>Net Income</td><td class="num">400,000</td></tr>
+  <tr><td>+ Depreciation (non-cash)</td><td class="num">+90,000</td></tr>
+  <tr><td>+ Loss on sale (add back, real cash in CFI)</td><td class="num">+5,000</td></tr>
+  <tr><td>− A/R increase (asset ↑ → cash ↓)</td><td class="num">−40,000</td></tr>
+  <tr><td>− Inventory increase (asset ↑ → cash ↓)</td><td class="num">−25,000</td></tr>
+  <tr><td>− A/P decrease (liability ↓ → cash ↓)</td><td class="num">−15,000</td></tr>
+  <tr><td><strong>Net CFO</strong></td><td class="num"><strong>$415,000</strong></td></tr>
+</table>
+
+<h4>CFI</h4>
+<table>
+  <tr><td>+ Sale of equipment (full cash)</td><td class="num">+20,000</td></tr>
+  <tr><td>− Purchase of PP&E</td><td class="num">−350,000</td></tr>
+  <tr><td><strong>Net CFI</strong></td><td class="num"><strong>($330,000)</strong></td></tr>
+</table>
+
+<h4>CFF</h4>
+<table>
+  <tr><td>+ Issued bonds</td><td class="num">+200,000</td></tr>
+  <tr><td>− Dividends paid</td><td class="num">−80,000</td></tr>
+  <tr><td><strong>Net CFF</strong></td><td class="num"><strong>$120,000</strong></td></tr>
+</table>
+
+<h4>Reconciliation</h4>
+<div class="formula">
+  Net Change in Cash = $415,000 + ($330,000) + $120,000 = <strong>$205,000</strong><br>
+  Beginning Cash $50,000 + $205,000 = <strong>Ending Cash $255,000</strong>
+</div>
+
+<div class="gotcha"><strong>Trap 1:</strong> Forgetting to ADD the loss back. Loss of $5,000 reduced NI but no cash actually left through the income statement (the cash impact is the actual sale price). Always reverse non-cash gains/losses in CFO.</div>
+<div class="gotcha"><strong>Trap 2:</strong> Putting the gain or loss (not the full cash) in CFI. You put $20,000 in CFI (full sale price), not $5,000 (the loss).</div>
+<div class="gotcha"><strong>Trap 3:</strong> Forgetting any item. Five items (or more) under each section is normal. Build a checklist habit: NI → non-cash → working capital → CFI assets → CFF debt + equity + dividends.</div>
+</details>
+</div>
+
+<h2>Top 5 Cash Flow Statement Traps (Memorize)</h2>
+
+<ol>
+  <li><strong>Sign confusion in working capital.</strong> Assets and Cash move OPPOSITE. Liabilities and Cash move TOGETHER.</li>
+  <li><strong>Double-counting on asset sales.</strong> Remove the gain (or add back the loss) in CFO. Put the FULL cash sale price in CFI, not the gain.</li>
+  <li><strong>Naive depreciation calculation when a sale exists.</strong> The simple "Dep = ΔA/D" breaks. Always do the A/D rollforward (BB + Dep − A/D removed = EB).</li>
+  <li><strong>Wrong bucket for dividends, interest, loans to others.</strong> Dividends always CFF. Interest paid CFO under US GAAP. Lending TO others CFI (not CFF).</li>
+  <li><strong>Missing a reconciliation step.</strong> Always end with: Begin Cash + (CFO + CFI + CFF) = End Cash. If it doesn't tie, hunt the error.</li>
+</ol>
+
+<h2>6 Notes You MUST Know</h2>
+
+<ol>
+  <li>The 3 buckets must reconcile to the change in Cash (Begin Cash + Net Cash Flow = End Cash).</li>
+  <li>Indirect Method for CFO is the most common — start with NI, adjust for non-cash and working capital.</li>
+  <li>Non-cash items added back: Depreciation, Amortization, Impairment, Stock-based comp, Loss on sale.</li>
+  <li>Non-cash items subtracted: Gain on sale (real cash is in CFI).</li>
+  <li>Dividends, share buybacks, debt issuance, debt repayment all go to CFF.</li>
+  <li>Working capital sign rules: Asset ↑ = Cash ↓ (subtract). Liability ↑ = Cash ↑ (add). Mirror logic.</li>
+</ol>
+
+<div class="footer">
+  Q-012 · 2026-05-09 · Solved by Kenny · ACBU 2222 Final Practice<br>
+  Cash Flow Statement Practice — 5 trap problems with answer keys + common-mistake warnings<br>
+  Repo: KennyB76/newton-study-hub
+</div>
+
+</body>
+</html>

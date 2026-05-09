@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Q-010 — Combined Help: FIFO/LIFO Journal Entries + Cash Flow Calculation</title>
+<title>Q-010 — Combined Help: FIFO/LIFO/Average Cost + Cash Flow Calculation</title>
 <style>
   body { font-family: Georgia, serif; max-width: 880px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
   h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 8px; }
@@ -39,7 +39,7 @@
 </head>
 <body>
 
-<h1>Combined Help — FIFO/LIFO + Cash Flow (CFO/CFI/CFF)</h1>
+<h1>Combined Help — FIFO / LIFO / Average Cost + Cash Flow (CFO/CFI/CFF)</h1>
 
 <div class="source">
   <strong>Source:</strong> Trinity follow-up (2026-05-09) — combined answer to two questions on one page
@@ -49,6 +49,7 @@
   <strong>Jump to:</strong>
   <ol>
     <li><a href="#part1">Part 1 — FIFO/LIFO Journal Entries + When Each Is Better</a></li>
+    <li><a href="#part1b">Part 1b — Average Cost Method (Weighted Average)</a></li>
     <li><a href="#part2">Part 2 — Cash Flow Calculation Deep Dive (CFO / CFI / CFF)</a></li>
     <li><a href="#combined">Combined Key Takeaways</a></li>
   </ol>
@@ -175,6 +176,115 @@ Dec 5   Cost of Goods Sold          1,300
   <tr><td>Tech with falling prices (computers)</td><td><strong>FIFO</strong></td><td>Tax saving in deflation</td></tr>
   <tr><td>Oil / commodities, rising prices</td><td><strong>LIFO</strong></td><td>Tax savings dominate</td></tr>
 </table>
+
+<hr class="section-divider">
+
+<h2 id="part1b">Part 1b — Average Cost Method (Weighted Average)</h2>
+
+<p>The third inventory cost flow method — sits <strong>between</strong> FIFO and LIFO.</p>
+
+<h3>The Formula</h3>
+
+<div class="formula">
+  Weighted Average Cost per Unit = <strong>Total Cost of Goods Available</strong> ÷ <strong>Total Units Available</strong>
+</div>
+
+<p>Then BOTH COGS and Ending Inventory use this <strong>same average</strong>.</p>
+
+<h3>Same Skateboard Example — Average Cost</h3>
+
+<div class="formula">
+  Total Cost = $500 + $600 + $700 = $1,800<br>
+  Total Units = 10 + 10 + 10 = 30<br>
+  <strong>Weighted Average = $1,800 / 30 = $60 per unit</strong>
+</div>
+
+<p>Sold 20 units, 10 left over. Both use $60:</p>
+
+<div class="formula">
+  COGS = 20 × $60 = <strong>$1,200</strong><br>
+  Ending Inventory = 10 × $60 = <strong>$600</strong>
+</div>
+
+<h3>Journal Entries — Average Cost</h3>
+
+<p>Purchases: <strong>same as FIFO/LIFO</strong>. Sales entry (cash) also same. Only the COGS entry uses the average:</p>
+
+<div class="je">
+Dec 5   Cost of Goods Sold          1,200
+            Inventory                    1,200
+        (Average: 20 × $60)
+</div>
+
+<h3>3-Way Comparison</h3>
+
+<table>
+  <tr><th></th><th>FIFO</th><th>Average</th><th>LIFO</th></tr>
+  <tr><td>Sales Revenue</td><td>$2,000</td><td>$2,000</td><td>$2,000</td></tr>
+  <tr><td>COGS</td><td>$1,100</td><td>$1,200</td><td>$1,300</td></tr>
+  <tr><td><strong>Gross Profit</strong></td><td><strong>$900</strong></td><td><strong>$800</strong></td><td><strong>$700</strong></td></tr>
+  <tr><td>Tax (25%)</td><td>$225</td><td>$200</td><td>$175</td></tr>
+  <tr><td><strong>Net Income</strong></td><td><strong>$675</strong></td><td><strong>$600</strong></td><td><strong>$525</strong></td></tr>
+  <tr><td>Ending Inventory</td><td>$700</td><td>$600</td><td>$500</td></tr>
+</table>
+
+<div class="key">
+  <strong>Pattern:</strong> When prices RISE, results sit in this order:
+  <ul>
+    <li>Highest NI / lowest COGS / highest End Inv → <strong>FIFO</strong></li>
+    <li>Middle ground → <strong>Average</strong></li>
+    <li>Lowest NI / highest COGS / lowest End Inv → <strong>LIFO</strong></li>
+  </ul>
+  In FALLING prices, the order flips.
+</div>
+
+<h3>When Average Cost is Better</h3>
+
+<ul>
+  <li><strong>Mixed/blended inventory</strong> — gasoline, grain, oil, chemicals where individual units are physically indistinguishable. You can't tell which unit was purchased when.</li>
+  <li><strong>Volatile prices</strong> — Average <em>smooths out</em> wild swings. Less noise in COGS month-to-month.</li>
+  <li><strong>Administrative simplicity</strong> — one calculation per period, no need to track each layer.</li>
+  <li><strong>International (IFRS) compliance</strong> — both GAAP and IFRS allow Average. (LIFO is banned in IFRS, so multinationals often pick Average over FIFO for global consistency.)</li>
+  <li><strong>Industries with frequent re-pricing</strong> — Apple's logistics, Amazon, retailers using continuous flow.</li>
+</ul>
+
+<h3>2 Variants of Average</h3>
+
+<h4>Periodic (Weighted Average)</h4>
+<p>Calculate one average for the whole period at the end. Multiply by units sold and units left.</p>
+<p>Formula: Total Cost ÷ Total Units (we used this above).</p>
+
+<h4>Perpetual (Moving Average)</h4>
+<p>Recalculate the average <strong>every time you buy more inventory</strong>. So during the year, the cost per unit changes after each purchase.</p>
+
+<div class="formula">
+  After Jan: avg = $50<br>
+  After Jun (10 more @ $60): avg = ($500 + $600) / 20 = $55<br>
+  After Nov (10 more @ $70): avg = ($1,100 + $700) / 30 = $60<br>
+  Each sale uses the average AT THAT MOMENT.
+</div>
+
+<div class="gotcha">
+  <strong>Gotcha:</strong> Moving Average gives slightly different COGS than Weighted Average if you have sales between purchases. Same example, different numbers depending on when sales hit.
+</div>
+
+<h3>Updated Decision Framework — All 3 Methods</h3>
+
+<table>
+  <tr><th>Situation</th><th>Better</th><th>Why</th></tr>
+  <tr><td>US, rising prices, tax priority</td><td><strong>LIFO</strong></td><td>Highest COGS = lowest tax</td></tr>
+  <tr><td>International (IFRS)</td><td><strong>FIFO or Average</strong></td><td>LIFO not allowed</td></tr>
+  <tr><td>Perishable goods</td><td><strong>FIFO</strong></td><td>Matches physical flow</td></tr>
+  <tr><td>Mixed/blended inventory (oil, grain)</td><td><strong>Average</strong></td><td>Indistinguishable units</td></tr>
+  <tr><td>Volatile prices, want smooth NI</td><td><strong>Average</strong></td><td>Smooths swings</td></tr>
+  <tr><td>Going public, want highest NI</td><td><strong>FIFO</strong></td><td>Highest NI when prices rise</td></tr>
+  <tr><td>Falling prices, US, tax priority</td><td><strong>FIFO</strong></td><td>Highest COGS in deflation</td></tr>
+  <tr><td>Computer/tech industry (deflation)</td><td><strong>FIFO</strong></td><td>Tax saving in falling prices</td></tr>
+</table>
+
+<h3>Specific Identification — The 4th Method (FYI)</h3>
+
+<p>For <strong>unique high-value items</strong> (cars, fine art, jewelry, custom equipment), companies can track each individual unit's actual cost. COGS = exact cost of the specific unit sold. Not common in commodity businesses but worth knowing.</p>
 
 <hr class="section-divider">
 
@@ -333,13 +443,15 @@ Dec 5   Cost of Goods Sold          1,300
 
 <h2 id="combined">Combined Key Takeaways (Both Topics)</h2>
 
-<h3>FIFO / LIFO</h3>
+<h3>Inventory Cost Flow Methods (FIFO / LIFO / Average)</h3>
 <ol>
-  <li>Purchase entries are <strong>same</strong>. Sale entries differ only in COGS amount.</li>
-  <li>FIFO COGS = oldest cost. LIFO COGS = newest cost. Sales Revenue is identical.</li>
-  <li>Rising prices → LIFO saves tax. Falling prices → FIFO saves tax.</li>
-  <li>LIFO only allowed under US GAAP. IFRS bans it.</li>
+  <li>Purchase entries are <strong>same</strong> under all 3. Sale entries differ only in COGS amount.</li>
+  <li>FIFO COGS = oldest cost. LIFO COGS = newest cost. Average COGS = blended unit cost.</li>
+  <li>Sales Revenue is identical under all 3 methods.</li>
+  <li>Order in rising prices: FIFO highest NI → Average middle → LIFO lowest NI (and tax).</li>
+  <li>LIFO only allowed under US GAAP. IFRS allows FIFO and Average only.</li>
   <li>LIFO Conformity: if LIFO for tax, then LIFO for financials (cannot mix).</li>
+  <li>Average has 2 sub-variants: Periodic (Weighted Avg, end-of-period) vs Perpetual (Moving Avg, recalc each purchase).</li>
 </ol>
 
 <h3>Cash Flow Statement</h3>

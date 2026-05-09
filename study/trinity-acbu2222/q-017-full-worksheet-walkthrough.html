@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q-017 — Full Worksheet Walkthrough (Plant + Bond@96 + Bond@106 + CR vs MR)</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 880px; margin: 30px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+  h1 { color: #1565c0; border-bottom: 3px solid #1565c0; padding-bottom: 8px; }
+  h2 { color: #c2185b; margin-top: 40px; border-top: 2px solid #c2185b; padding-top: 18px; }
+  h3 { color: #5d4037; margin-top: 25px; }
+  .source { background: #fff3e0; padding: 10px 15px; border-left: 4px solid #ff9800; font-size: 0.9em; }
+  .key { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 12px 18px; margin: 18px 0; }
+  .answer { background: #e8f5e9; border-left: 5px solid #2e7d32; padding: 12px 18px; margin: 12px 0; }
+  .je { font-family: Menlo, Consolas, monospace; background: #fff8e1; padding: 12px 16px; border-radius: 6px; margin: 10px 0; white-space: pre; line-height: 1.5; font-size: 0.95em; }
+  .formula { background: #fff8e1; padding: 10px 15px; border-radius: 6px; font-family: Menlo, monospace; margin: 8px 0; }
+  table { border-collapse: collapse; margin: 12px 0; width: 100%; background: white; }
+  th, td { border: 1px solid #bdbdbd; padding: 8px 12px; }
+  th { background: #eceff1; }
+  td.num, th.num { text-align: right; }
+  .blank { display: inline-block; min-width: 100px; border-bottom: 2px solid #1565c0; padding: 0 6px; color: #1565c0; font-weight: bold; }
+  .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #888; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Full Worksheet Walkthrough — Plant + Bonds + CR vs MR</h1>
+
+<div class="source">
+  <strong>Source:</strong> Principles of Financial Final Review · Professor Romeo<br>
+  Worksheet 의 모든 빈칸 + 답 + 자세한 설명 한 페이지에.
+</div>
+
+<!-- ========== Section 1: PLANT ASSETS ========== -->
+<h2>Section 1 — PLANT ASSETS</h2>
+
+<div class="key">
+  <strong>Problem:</strong> Kimera Company sold a machine for $8,500 that cost $50,000. It had a book value of $12,500 at the time of sale. Prepare the entry to record the sale of the machine for Kimera Company.
+</div>
+
+<h3>Step-by-step (Kimera Plant Sale)</h3>
+
+<table>
+  <tr><th>What we know</th><th>Amount</th></tr>
+  <tr><td>Cash received</td><td class="num">$8,500</td></tr>
+  <tr><td>Original Cost (Equipment)</td><td class="num">$50,000</td></tr>
+  <tr><td>Book Value at sale</td><td class="num">$12,500</td></tr>
+  <tr><td>Accumulated Depreciation (= Cost − BV)</td><td class="num">$50,000 − $12,500 = <strong>$37,500</strong></td></tr>
+  <tr><td>Loss (= BV − Cash)</td><td class="num">$12,500 − $8,500 = <strong>$4,000</strong></td></tr>
+</table>
+
+<h3>Journal Entry — ANSWER</h3>
+
+<div class="je">
+Cash                              8,500
+Accumulated Depreciation         37,500
+Loss on Sale of Equipment         4,000
+    Equipment                            50,000
+</div>
+
+<div class="answer">
+  <strong>Logic:</strong> Cash 받음 ↑ + sold asset 의 Acc Depr 전부 제거 + sold asset 의 Cost 전부 제거. 차액이 Gain (Cash &gt; BV) 또는 Loss (Cash &lt; BV). 이 경우 Cash $8,500 &lt; BV $12,500 → Loss $4,000.
+</div>
+
+<!-- ========== Section 2: BONDS at 96 (Discount) ========== -->
+<h2>Section 2 — BONDS at 96 (Discount)</h2>
+
+<div class="key">
+  <strong>Problem:</strong> On January 1, 2024, West End Corporation issued $500,000, 5%, 5-year bonds dated January 1, 2024, at <b>96</b>. The bonds pay semiannual interest on January 1<sup>st</sup> and July 1<sup>st</sup>.
+</div>
+
+<h3>Setup</h3>
+
+<table>
+  <tr><th>Item</th><th class="num">Value</th></tr>
+  <tr><td>Face Value</td><td class="num">$500,000</td></tr>
+  <tr><td>Stated Rate (annual)</td><td class="num">5%</td></tr>
+  <tr><td>Semiannual stated rate</td><td class="num">2.5% (= 5% / 2)</td></tr>
+  <tr><td>Issue Price (96% × $500,000)</td><td class="num"><strong>$480,000 cash</strong></td></tr>
+  <tr><td>Discount on Bonds Payable</td><td class="num"><strong>$20,000</strong> ($500K − $480K)</td></tr>
+  <tr><td>Total periods (5 yr × 2)</td><td class="num">10</td></tr>
+  <tr><td>Cash Interest per period (Face × stated/2)</td><td class="num">$500,000 × 2.5% = <strong>$12,500</strong></td></tr>
+  <tr><td>Discount Amortization (Straight-Line, $20K / 10)</td><td class="num"><strong>$2,000 per period</strong></td></tr>
+  <tr><td>Interest Expense per period (Cash + Disc Amort)</td><td class="num">$12,500 + $2,000 = <strong>$14,500</strong></td></tr>
+</table>
+
+<h3>January 1, 2024 ~ Bond Issue/Sale — ANSWER</h3>
+
+<div class="je">
+Cash                            480,000
+Discount on Bonds Payable        20,000
+    Bonds Payable                       500,000
+</div>
+
+<h3>July 1, 2024 ~ Semiannual Interest Payment — ANSWER</h3>
+
+<div class="je">
+Interest Expense                 14,500
+    Discount on Bonds Payable             2,000
+    Cash                                 12,500
+</div>
+
+<div class="answer">
+  <strong>Why $14,500 not $12,500?</strong> Cash paid is $12,500 (= face × stated × period). But the bond was sold cheap ($480K), so each period the company "expenses up" $2,000 of the discount. Total cost of borrowing per period = $14,500.
+</div>
+
+<h3>Carrying Value Walk (Discount → up to face)</h3>
+
+<table>
+  <tr><th>Period</th><th class="num">Cash Int</th><th class="num">Disc Amort</th><th class="num">Int Exp</th><th class="num">Disc Bal</th><th class="num">CV</th></tr>
+  <tr><td>Issue (Jan 1, 2024)</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">$20,000</td><td class="num">$480,000</td></tr>
+  <tr><td>1 (Jul 1, 2024)</td><td class="num">$12,500</td><td class="num">$2,000</td><td class="num">$14,500</td><td class="num">$18,000</td><td class="num">$482,000 ↑</td></tr>
+  <tr><td>2 (Jan 1, 2025)</td><td class="num">$12,500</td><td class="num">$2,000</td><td class="num">$14,500</td><td class="num">$16,000</td><td class="num">$484,000 ↑</td></tr>
+  <tr><td>...</td><td class="num">...</td><td class="num">...</td><td class="num">...</td><td class="num">...</td><td class="num">...</td></tr>
+  <tr><td>10 (Jan 1, 2029, maturity)</td><td class="num">$12,500</td><td class="num">$2,000</td><td class="num">$14,500</td><td class="num">$0</td><td class="num"><strong>$500,000</strong></td></tr>
+</table>
+
+<!-- ========== Section 3: BONDS at 106 (Premium) ========== -->
+<h2>Section 3 — BONDS at 106 (Premium)</h2>
+
+<div class="key">
+  <strong>Problem:</strong> Same West End Corporation bonds, but issued at <b>106</b> instead of 96. Semiannual interest Jan 1 + July 1.
+</div>
+
+<h3>Setup</h3>
+
+<table>
+  <tr><th>Item</th><th class="num">Value</th></tr>
+  <tr><td>Face Value</td><td class="num">$500,000</td></tr>
+  <tr><td>Issue Price (106% × $500,000)</td><td class="num"><strong>$530,000 cash</strong></td></tr>
+  <tr><td>Premium on Bonds Payable</td><td class="num"><strong>$30,000</strong> ($530K − $500K)</td></tr>
+  <tr><td>Total periods</td><td class="num">10</td></tr>
+  <tr><td>Cash Interest per period</td><td class="num"><strong>$12,500</strong> (same as discount case)</td></tr>
+  <tr><td>Premium Amortization (S/L, $30K / 10)</td><td class="num"><strong>$3,000 per period</strong></td></tr>
+  <tr><td>Interest Expense per period (Cash − Prem Amort)</td><td class="num">$12,500 − $3,000 = <strong>$9,500</strong></td></tr>
+</table>
+
+<h3>January 1, 2024 ~ Bond Issue/Sale — ANSWER</h3>
+
+<div class="je">
+Cash                            530,000
+    Bonds Payable                       500,000
+    Premium on Bonds Payable             30,000
+</div>
+
+<h3>June 30, 2024 ~ Interest Accrual — ANSWER</h3>
+
+<p>If the company is closing books on Jun 30 (before paying cash on Jul 1):</p>
+
+<div class="je">
+Interest Expense                  9,500
+Premium on Bonds Payable          3,000
+    Interest Payable                    12,500
+</div>
+
+<h3>July 1, 2024 ~ Interest Payment — ANSWER</h3>
+
+<p>If accrual was already done on Jun 30 → just pay cash:</p>
+
+<div class="je">
+Interest Payable                 12,500
+    Cash                                12,500
+</div>
+
+<p><strong>Alternatively</strong> — if no accrual is done first and the entire entry is on Jul 1:</p>
+
+<div class="je">
+Interest Expense                  9,500
+Premium on Bonds Payable          3,000
+    Cash                                12,500
+</div>
+
+<div class="answer">
+  <strong>Why $9,500 not $12,500?</strong> Cash paid is still $12,500 (= face × stated × period). But the bond was sold at a premium ($530K), so each period $3,000 of the premium is "credited back" to reduce expense. Net cost = $9,500.
+</div>
+
+<h3>Carrying Value Walk (Premium → down to face)</h3>
+
+<table>
+  <tr><th>Period</th><th class="num">Cash Int</th><th class="num">Prem Amort</th><th class="num">Int Exp</th><th class="num">Prem Bal</th><th class="num">CV</th></tr>
+  <tr><td>Issue</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">$30,000</td><td class="num">$530,000</td></tr>
+  <tr><td>1</td><td class="num">$12,500</td><td class="num">$3,000</td><td class="num">$9,500</td><td class="num">$27,000</td><td class="num">$527,000 ↓</td></tr>
+  <tr><td>2</td><td class="num">$12,500</td><td class="num">$3,000</td><td class="num">$9,500</td><td class="num">$24,000</td><td class="num">$524,000 ↓</td></tr>
+  <tr><td>...</td><td class="num">...</td><td class="num">...</td><td class="num">...</td><td class="num">...</td><td class="num">...</td></tr>
+  <tr><td>10 (maturity)</td><td class="num">$12,500</td><td class="num">$3,000</td><td class="num">$9,500</td><td class="num">$0</td><td class="num"><strong>$500,000</strong></td></tr>
+</table>
+
+<!-- ========== Section 4: CR vs MR ========== -->
+<h2>Section 4 — Contractual Rate (CR) vs Market Rate (MR)</h2>
+
+<table>
+  <tr><th>Condition</th><th>Bond Price At</th><th>Why</th></tr>
+  <tr><td>If CR &gt; MR</td><td><span class="blank">PREMIUM</span></td><td>Stated rate is higher than what market demands. Investors will pay extra to buy this bond.</td></tr>
+  <tr><td>If CR &lt; MR</td><td><span class="blank">DISCOUNT</span></td><td>Stated rate is lower than what market demands. Investors won't buy at face — only at a discount.</td></tr>
+  <tr><td>If CR = MR</td><td><span class="blank">FACE VALUE (Par)</span></td><td>Rates match exactly. No adjustment needed.</td></tr>
+</table>
+
+<div class="answer">
+  <strong>The 3 worksheet blanks → ANSWERS:</strong><br>
+  ① CR &gt; MR → <b>premium</b><br>
+  ② CR &lt; MR → <b>discount</b><br>
+  ③ CR = MR → <b>face value</b>
+</div>
+
+<!-- ========== Master visualization ========== -->
+<h2>Master Arrow — Carrying Value Walk for Both Bonds</h2>
+
+<div class="je">
+   Period:  Issue                                          Maturity (10)
+            │                                                   │
+   $530K ━━━ ↓↓↓ Premium walks DOWN to face ↓↓↓ ━━━━━━━━━━━━━━━ │
+            │                                                   │
+            │                                                   │
+   $500K ════════════ FACE VALUE ═══════════════════════════════ ▼ FACE
+            │                                                   │
+            │                                                   │
+   $480K ━━━ ↑↑↑ Discount walks UP to face   ↑↑↑ ━━━━━━━━━━━━━━ │
+
+   Both bonds end at FACE VALUE on maturity.
+   Cash Interest is FIXED ($12,500). Only Interest Expense differs.
+</div>
+
+<!-- ========== Common Mistakes ========== -->
+<h2>5 Common Mistakes</h2>
+
+<ol>
+  <li><strong>"Bond at 96" = $500K cash 인 줄</strong>. NO — 96 is 96% of face = $480K cash. Same for 106 = $530K.</li>
+  <li><strong>Bonds Payable account 에 직접 더하거나 빼기</strong>. Bonds Pay 는 항상 face value. Discount/Premium 은 별도 contra account.</li>
+  <li><strong>Cash Interest = Interest Expense 로 잘못 등록</strong>. Discount: Int Exp &gt; Cash. Premium: Int Exp &lt; Cash.</li>
+  <li><strong>Plant sale 시 두 entry 따로 안 쓰기</strong>. 한 entry 에 (Cash + remove A/D + remove Cost + Gain/Loss) 다 들어감.</li>
+  <li><strong>Plant sale 시 Cost 만 제거하고 A/D 까먹기</strong>. 두 account 다 제거해야 함 (Cost + Acc Depr).</li>
+</ol>
+
+<h2>6 Key Takeaways</h2>
+
+<ol>
+  <li>Plant sale entry = Cash ↑, A/D ↑(remove), Cost (remove). 차액 = Gain/Loss.</li>
+  <li>Bond price quoted as % of face. 96 = $480K. 106 = $530K. 100 = face value.</li>
+  <li>Bonds Payable always = face. Discount/Premium = contra account.</li>
+  <li>Cash Interest is FIXED = face × stated rate × period (semiannual ÷2).</li>
+  <li>Discount: Int Exp = Cash + Amort. Premium: Int Exp = Cash − Amort.</li>
+  <li>CV always walks toward face value. CR &gt; MR = Premium (CV ↓). CR &lt; MR = Discount (CV ↑).</li>
+</ol>
+
+<div class="footer">
+  Q-017 · 2026-05-09 · Solved by Kenny · ACBU 2222 Final Review<br>
+  Full worksheet walkthrough — all blanks filled with detailed work-through<br>
+  Repo: KennyB76/newton-study-hub
+</div>
+
+</body>
+</html>
